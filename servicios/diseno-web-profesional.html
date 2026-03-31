@@ -15,6 +15,7 @@
     rel="stylesheet"
   >
   <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../chatbot.css">
 </head>
 <body class="service-page">
   <div class="page-shell">
@@ -22,14 +23,9 @@
       <div class="nav">
         <a class="brand" href="../index.html#inicio" aria-label="Ir al inicio de Morán Studio">
           <img class="brand-mark" src="../assets/images/logo.png" alt="Isotipo de Morán Studio">
-          <img class="brand-wordmark" src="../assets/images/logo.png" alt="Logotipo de Morán Studio">
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" id="menu-principal" aria-label="Navegación principal">
+          <img class="brand-wordmark" src="../assets/images/l.png" alt="Logotipo de Morán Studio">
+        </a
+        <nav class="site-nav" aria-label="Navegación principal">
           <a href="../index.html#sobre-mi">Sobre mí</a>
           <a href="../index.html#proyectos">Proyectos</a>
           <a href="../index.html#servicios">Servicios</a>
@@ -199,6 +195,38 @@
       </div>
     </footer>
   </div>
+  <section class="chatbot" data-chatbot aria-label="Asistente de Moran Studio">
+    <div class="chatbot__panel" data-chatbot-panel role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="chatbot-title-service-design">
+      <div class="chatbot__header">
+        <div class="chatbot__header-copy">
+          <span class="chatbot__eyebrow">Chat comercial</span>
+          <h2 class="chatbot__title" id="chatbot-title-service-design">Asistente Moran Studio</h2>
+          <p class="chatbot__subtitle">Te ayudo a elegir la web ideal para tu negocio</p>
+        </div>
+        <button class="chatbot__close" type="button" data-chatbot-close aria-label="Cerrar chat">×</button>
+      </div>
+      <div class="chatbot__messages" data-chatbot-messages aria-live="polite" aria-atomic="false"></div>
+      <form class="chatbot__composer" data-chatbot-form>
+        <div class="chatbot__input-row">
+          <input class="chatbot__input" type="text" data-chatbot-input placeholder="Escribe tu mensaje..." aria-label="Escribe tu mensaje">
+          <button class="chatbot__send" type="submit" aria-label="Enviar mensaje">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
+              <path d="M4 12.5 19.2 4l-3.7 16-4.3-5-4.5-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+              <path d="M19 4 10.8 14.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+        <p class="chatbot__hint">Responde preguntas frecuentes, recomienda webs y te lleva directo a WhatsApp.</p>
+      </form>
+    </div>
+    <button class="chatbot__toggle" type="button" data-chatbot-toggle aria-expanded="false" aria-controls="chatbot-title-service-design" aria-label="Abrir asistente de Moran Studio">
+      <svg class="chatbot__toggle-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+        <path d="M6.2 16.8c-1.5-1.4-2.5-3.4-2.5-5.7 0-4.4 3.7-8 8.3-8s8.3 3.6 8.3 8-3.7 8-8.3 8c-1.1 0-2.2-.2-3.1-.6l-4.1 1.4 1.4-3.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+      </svg>
+      <span class="chatbot__toggle-close" aria-hidden="true">×</span>
+    </button>
+  </section>
   <script src="../script.js"></script>
+  <script src="../chatbot.js"></script>
 </body>
 </html>
