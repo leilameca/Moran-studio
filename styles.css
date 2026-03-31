@@ -6165,3 +6165,96 @@ body {
     height: 92px;
   }
 }
+
+/* Hero art fit fix: la escena derecha debe escalar completa dentro de su columna */
+@media (min-width: 1081px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    width: min(1500px, calc(100vw - 48px));
+  }
+
+  .hero-side {
+    width: 100%;
+    min-width: 0;
+    margin-right: 0;
+    padding-right: 0;
+    justify-content: flex-end;
+  }
+
+  .hero-stage-board {
+    width: min(100%, 800px);
+    min-height: clamp(560px, 40vw, 700px);
+    margin: 0 0 0 auto;
+    padding: clamp(24px, 2vw, 34px) clamp(8px, 1vw, 18px) clamp(30px, 2.4vw, 44px)
+      clamp(58px, 5vw, 92px);
+    transform: none;
+  }
+
+  .hero-stage-board::before {
+    inset: clamp(40px, 3.2vw, 54px) clamp(10px, 1vw, 18px) clamp(30px, 2.4vw, 42px)
+      clamp(76px, 6vw, 112px);
+  }
+
+  .hero-stage-board::after {
+    right: 0;
+    top: clamp(42px, 3.6vw, 64px);
+    width: clamp(200px, 18vw, 300px);
+    height: clamp(200px, 18vw, 300px);
+  }
+
+  .hero-depth-screen {
+    right: clamp(18px, 2.8vw, 48px);
+    top: clamp(58px, 4.6vw, 86px);
+    width: min(100%, 292px);
+  }
+
+  .hero-depth-screen img {
+    height: auto;
+    aspect-ratio: 6 / 5;
+    object-fit: contain;
+    background: #efe6da;
+  }
+
+  .hero-showcase {
+    width: min(100%, 680px);
+    margin-left: auto;
+    transform: none;
+  }
+
+  .hero-showcase-image {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 6 / 5;
+    object-fit: contain;
+    object-position: center top;
+    background: #f4ede4;
+  }
+
+  .hero-overlay-card--top {
+    left: clamp(10px, 1.2vw, 22px);
+  }
+
+  .hero-overlay-card--bottom {
+    right: clamp(6px, 1vw, 16px);
+    width: min(100%, 286px);
+  }
+}
+
+@media (min-width: 1081px) and (max-width: 1320px) {
+  .hero-layout {
+    width: min(1320px, calc(100vw - 38px));
+  }
+
+  .hero-stage-board {
+    width: min(100%, 720px);
+    padding-left: clamp(44px, 4.2vw, 76px);
+  }
+
+  .hero-showcase {
+    width: min(100%, 600px);
+  }
+
+  .hero-depth-screen {
+    width: min(100%, 250px);
+  }
+}
