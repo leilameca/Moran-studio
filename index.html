@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="es">
+﻿<!DOCTYPE html>
+<html lang="es" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./chatbot.css">
 </head>
 <body>
+  <div class="noise-overlay" aria-hidden="true"></div>
   <div class="page-shell">
     <header class="site-header">
       <div class="nav">
@@ -40,6 +41,27 @@
           <a href="#servicios">Servicios</a>
           <a href="#contacto">Contacto</a>
         </nav>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          type="button"
+          aria-label="Cambiar tema"
+          title="Cambiar entre modo oscuro y claro"
+        >
+          <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
+                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </button>
       </div>
     </header>
 
@@ -48,22 +70,39 @@
         <div class="hero-panel reveal is-visible" data-reveal>
           <div class="hero-layout">
             <div class="hero-lead">
-              <p class="eyebrow">Morán Studio / Diseño web estratégico</p>
+              <p class="eyebrow">Morán Studio — Diseño web estratégico</p>
               <h1 class="hero-title">
-                <span>Webs premium para negocios</span>
-                <span>que quieren verse mejor</span>
-                <span>y vender con más claridad.</span>
+                <span class="hero-title-line">Tu marca,</span>
+                <span class="hero-title-line hero-title-accent">al nivel que</span>
+                <span class="hero-title-line">merece.</span>
               </h1>
               <p class="hero-summary">
-                Diseño y desarrollo páginas web para marcas personales, estudios y negocios que necesitan una presencia
-                digital más sólida, clara y fácil de elegir.
+                Webs premium que convierten. Sin relleno, sin genérico.
               </p>
-              <div class="hero-support">
-                <div class="hero-cta-row">
-                  <a class="button button-primary" href="#proyectos">Ver proyectos</a>
-                  <a class="button button-secondary" href="#contacto">Solicitar propuesta</a>
+
+              <div class="hero-stats" aria-label="Indicadores del estudio">
+                <div class="hero-stat">
+                  <span class="hero-stat-value" data-count-to="4">0</span>
+                  <span class="hero-stat-unit">días</span>
+                  <span class="hero-stat-label">landing page lista</span>
                 </div>
-                <p class="hero-trust-note">Landing pages en 4 días. Webs completas en 1 a 2 semanas. Disponible para proyectos selectos.</p>
+                <div class="hero-stat-divider" aria-hidden="true"></div>
+                <div class="hero-stat">
+                  <span class="hero-stat-value" data-count-to="20">0</span>
+                  <span class="hero-stat-unit">+</span>
+                  <span class="hero-stat-label">proyectos entregados</span>
+                </div>
+                <div class="hero-stat-divider" aria-hidden="true"></div>
+                <div class="hero-stat">
+                  <span class="hero-stat-value" data-count-to="100">0</span>
+                  <span class="hero-stat-unit">%</span>
+                  <span class="hero-stat-label">responsive cuidado</span>
+                </div>
+              </div>
+
+              <div class="hero-cta-row">
+                <a class="button button-primary" href="#proyectos">Ver proyectos</a>
+                <a class="button button-secondary" href="#contacto">Solicitar propuesta</a>
               </div>
             </div>
 
@@ -152,12 +191,36 @@
           <div class="intro-band-grid reveal" data-reveal>
             <div class="intro-band-copy">
               <p class="eyebrow">Propuesta de valor</p>
-              <h2>Una web bien pensada no solo se ve mejor. También hace que tu negocio se entienda, inspire más confianza y se sienta más valioso.</h2>
+              <h2>Una web bien pensada hace más que verse bien.</h2>
             </div>
             <div class="intro-band-points">
-              <p>Claridad para explicar lo que haces sin perder elegancia.</p>
-              <p>Una presencia visual que suba el nivel percibido de tu marca.</p>
-              <p>Una estructura que invite a escribirte, reservar o comprar.</p>
+              <div class="intro-point">
+                <span class="intro-point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                    <path d="M12 3 13.8 8.2 19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Claridad que convierte</span>
+              </div>
+              <div class="intro-point">
+                <span class="intro-point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                    <path d="M12 4 6 7v5c0 3.6 2.5 6.8 6 7.7 3.5-.9 6-4.1 6-7.7V7l-6-3Z"
+                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Percepción que sube el valor</span>
+              </div>
+              <div class="intro-point">
+                <span class="intro-point-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
+                    <path d="M5 12h14M12 5l7 7-7 7"
+                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <span>Estructura que invita a escribirte</span>
+              </div>
             </div>
           </div>
         </div>
@@ -353,14 +416,14 @@
             <div class="project-feature-media">
               <video
                 class="project-feature-video"
-                src="./assets/videos/Project-Mash-Showcase.mp4"
                 poster="./assets/images/project-mash-home.png"
-                autoplay
                 muted
                 loop
                 playsinline
-                preload="metadata"
+                preload="none"
+                data-lazy-video
               >
+                <source data-src="./assets/videos/Project-Mash-Showcase.mp4" type="video/mp4">
                 Tu navegador no soporta video HTML5.
               </video>
             </div>
@@ -370,6 +433,9 @@
             <article class="project-story reveal reveal-delay" data-reveal>
               <div class="project-story-media">
                 <img src="./assets/images/project-visage-preview.png" alt="Vista previa del proyecto Visage Studio">
+                <div class="project-story-overlay" aria-hidden="true">
+                  <span class="project-story-overlay-label">Ver proyecto</span>
+                </div>
               </div>
               <div class="project-story-copy">
                 <p class="project-tag">Belleza / marca personal</p>
@@ -382,6 +448,9 @@
             <article class="project-story project-story--tall reveal reveal-delay-2" data-reveal>
               <div class="project-story-media">
                 <img src="./assets/images/project-solarys-preview.png" alt="Vista previa del proyecto SOLARYS Ingeniería">
+                <div class="project-story-overlay" aria-hidden="true">
+                  <span class="project-story-overlay-label">Ver proyecto</span>
+                </div>
               </div>
               <div class="project-story-copy">
                 <p class="project-tag">Corporativo / energía solar</p>
@@ -394,6 +463,9 @@
             <article class="project-story project-story--wide reveal" data-reveal>
               <div class="project-story-media">
                 <img src="./assets/images/project-fitappetit-preview.png" alt="Vista previa del proyecto Fit Appetit RD">
+                <div class="project-story-overlay" aria-hidden="true">
+                  <span class="project-story-overlay-label">Ver proyecto</span>
+                </div>
               </div>
               <div class="project-story-copy">
                 <p class="project-tag">Gastronomía / marca comercial</p>
@@ -797,6 +869,7 @@
       </span>
     </button>
   </section>
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
   <script src="./script.js"></script>
   <script src="./chatbot.js"></script>
 </body>

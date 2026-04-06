@@ -1,4 +1,4 @@
-const revealItems = document.querySelectorAll("[data-reveal]");
+﻿const revealItems = document.querySelectorAll("[data-reveal]");
 const siteHeader = document.querySelector(".site-header");
 
 const revealObserver = new IntersectionObserver(
@@ -105,3 +105,142 @@ faqItems.forEach((item) => {
   syncExpandedState();
   item.addEventListener("toggle", syncExpandedState);
 });
+
+(() => {
+  const root = document.documentElement;
+  const themeToggle = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("ms-theme");
+  const fallbackTheme = root.getAttribute("data-theme") || "dark";
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+
+    if (themeToggle) {
+      const isDark = theme === "dark";
+      themeToggle.setAttribute("aria-pressed", String(isDark));
+      themeToggle.setAttribute(
+        "title",
+        isDark ? "Cambiar a modo claro" : "Cambiar a modo oscuro"
+      );
+    }
+  };
+
+  applyTheme(savedTheme || fallbackTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const nextTheme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(nextTheme);
+      localStorage.setItem("ms-theme", nextTheme);
+    });
+  }
+})();
+
+const heroCounters = document.querySelectorAll("[data-count-to]");
+
+if (heroCounters.length > 0) {
+  const animateHeroCounter = (element) => {
+    const target = Number.parseInt(element.dataset.countTo || "0", 10);
+    const duration = 1400;
+    const startTime = performance.now();
+
+    const updateValue = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = String(Math.round(eased * target));
+
+      if (progress < 1) {
+        requestAnimationFrame(updateValue);
+      }
+    };
+
+    requestAnimationFrame(updateValue);
+  };
+
+  const heroCounterObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        animateHeroCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  heroCounters.forEach((counter) => {
+    heroCounterObserver.observe(counter);
+  });
+}
+
+const cursorDot = document.getElementById("cursor-dot");
+
+if (cursorDot && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+  let mouseX = 0;
+  let mouseY = 0;
+  let currentX = 0;
+  let currentY = 0;
+
+  const lerp = (start, end, amount) => start + (end - start) * amount;
+
+  const renderCursor = () => {
+    currentX = lerp(currentX, mouseX, 0.18);
+    currentY = lerp(currentY, mouseY, 0.18);
+    cursorDot.style.transform = `translate(calc(${currentX}px - 50%), calc(${currentY}px - 50%))`;
+    requestAnimationFrame(renderCursor);
+  };
+
+  document.addEventListener("mousemove", (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+    cursorDot.classList.add("is-visible");
+  });
+
+  document
+    .querySelectorAll("a, button, [role='button'], summary, .project-story, .service-line")
+    .forEach((element) => {
+      element.addEventListener("mouseenter", () => {
+        cursorDot.classList.add("is-hovering-link");
+      });
+
+      element.addEventListener("mouseleave", () => {
+        cursorDot.classList.remove("is-hovering-link");
+      });
+    });
+
+  document.addEventListener("mouseleave", () => {
+    cursorDot.classList.remove("is-visible");
+  });
+
+  requestAnimationFrame(renderCursor);
+}
+
+const lazyVideos = document.querySelectorAll("[data-lazy-video]");
+
+if (lazyVideos.length > 0) {
+  const lazyVideoObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        const video = entry.target;
+        video.querySelectorAll("source[data-src]").forEach((source) => {
+          source.src = source.dataset.src;
+        });
+        video.load();
+        video.play().catch(() => {});
+        observer.unobserve(video);
+      });
+    },
+    { rootMargin: "200px 0px" }
+  );
+
+  lazyVideos.forEach((video) => {
+    lazyVideoObserver.observe(video);
+  });
+}
