@@ -1,880 +1,541 @@
-﻿<!DOCTYPE html>
-<html lang="es" data-theme="dark">
+<!DOCTYPE html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Morán Studio | Diseño web estratégico para marcas y negocios que necesitan verse mejor</title>
+  <title>Moran Studio | Diseño web que convierte</title>
   <meta
     name="description"
-    content="Morán Studio diseña páginas web estratégicas para marcas y negocios que necesitan verse más premium, comunicar mejor y convertir con más claridad."
+    content="Moran Studio diseña páginas web premium para clínicas, negocios de servicios, empresas locales y marcas que necesitan una presencia digital elegante, estratégica y persuasiva."
   >
+  <meta name="theme-color" content="#0F0F0F">
+  <meta property="og:title" content="Moran Studio | Diseño web que convierte">
+  <meta
+    property="og:description"
+    content="Portafolio premium de diseño y desarrollo web para negocios que quieren verse mejor, vender mejor y generar más confianza."
+  >
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="./assets/images/hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
     rel="stylesheet"
   >
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
-  <link rel="shortcut icon" href="./assets/images/logo.png">
-  <link rel="apple-touch-icon" href="./assets/images/logo.png">
-  <meta name="theme-color" content="#11100f">
   <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./chatbot.css">
 </head>
 <body>
-  <div class="noise-overlay" aria-hidden="true"></div>
-  <div class="page-shell">
-    <header class="site-header">
-      <div class="nav">
-        <a class="brand" href="#inicio" aria-label="Ir al inicio de Morán Studio">
-          <img class="brand-mark" src="./assets/images/logo.png" alt="Isotipo de Morán Studio">
-          <img class="brand-wordmark" src="./assets/images/logo2.png" alt="Logotipo de Morán Studio">
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal" aria-label="Abrir menú">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <nav class="site-nav" id="menu-principal" aria-label="Navegación principal">
-          <a href="#sobre-mi">Sobre mí</a>
-          <a href="#proyectos">Proyectos</a>
-          <a href="#servicios">Servicios</a>
-          <a href="#contacto">Contacto</a>
-        </nav>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          type="button"
-          aria-label="Cambiar tema"
-          title="Cambiar entre modo oscuro y claro"
-        >
-          <span class="theme-toggle-icon theme-toggle-icon--sun" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </span>
-          <span class="theme-toggle-icon theme-toggle-icon--moon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" width="16" height="16">
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"
-                    stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </span>
-        </button>
+  <div class="scroll-progress" data-progress aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="shell nav-shell">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de Moran Studio">
+        <img class="brand-logo" src="./assets/images/logo.png" alt="Logo de Moran Studio">
+        <div class="brand-copy">
+          <strong>Moran Studio</strong>
+          <span>Diseño web que convierte.</span>
+        </div>
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-menu-toggle
+      >
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal" data-nav>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#diferencial">Por qué Moran</a>
+        <a href="#proceso">Proceso</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="button button-dark nav-cta" href="https://wa.me/1809267630" target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-bg" aria-hidden="true">
+        <img src="./assets/images/hero.png" alt="">
       </div>
-    </header>
+      <div class="hero-overlay" aria-hidden="true"></div>
 
-    <main>
-      <section class="hero" id="inicio">
-        <div class="hero-panel reveal is-visible" data-reveal>
-          <div class="hero-layout">
-            <div class="hero-lead">
-              <p class="eyebrow">Morán Studio — Diseño web estratégico</p>
-              <h1 class="hero-title">
-                <span class="hero-title-line">Tu marca,</span>
-                <span class="hero-title-line hero-title-accent">al nivel que</span>
-                <span class="hero-title-line">merece.</span>
-              </h1>
-              <p class="hero-summary">
-                Webs premium que convierten. Sin relleno, sin genérico.
-              </p>
+      <div class="shell hero-shell">
+        <div class="hero-copy reveal is-visible" data-reveal>
+          <p class="eyebrow">Moran Studio / Diseño premium para negocios que ya están listos para verse mejor</p>
+          <h1>Tu negocio no necesita otra web. Necesita una presencia que convierta.</h1>
+          <p class="hero-text">
+            Diseño y desarrollo páginas web con estética premium, estructura limpia y enfoque comercial para
+            clínicas, negocios de servicios, marcas personales y empresas que quieren verse más sólidas online.
+          </p>
 
-              <div class="hero-stats" aria-label="Indicadores del estudio">
-                <div class="hero-stat">
-                  <span class="hero-stat-value" data-count-to="4">0</span>
-                  <span class="hero-stat-unit">días</span>
-                  <span class="hero-stat-label">landing page lista</span>
-                </div>
-                <div class="hero-stat-divider" aria-hidden="true"></div>
-                <div class="hero-stat">
-                  <span class="hero-stat-value" data-count-to="20">0</span>
-                  <span class="hero-stat-unit">+</span>
-                  <span class="hero-stat-label">proyectos entregados</span>
-                </div>
-                <div class="hero-stat-divider" aria-hidden="true"></div>
-                <div class="hero-stat">
-                  <span class="hero-stat-value" data-count-to="100">0</span>
-                  <span class="hero-stat-unit">%</span>
-                  <span class="hero-stat-label">responsive cuidado</span>
-                </div>
-              </div>
-
-              <div class="hero-cta-row">
-                <a class="button button-primary" href="#proyectos">Ver proyectos</a>
-                <a class="button button-secondary" href="#contacto">Solicitar propuesta</a>
-              </div>
-            </div>
-
-            <div class="hero-side">
-              <div class="hero-stage-board">
-                <div class="hero-depth-screen" aria-hidden="true">
-                  <img src="./assets/images/project-solarys-preview.png" alt="">
-                </div>
-
-                <article class="hero-overlay-card hero-overlay-card--top">
-                  <span class="hero-overlay-label">Caso destacado</span>
-                  <strong>MASH Oficial</strong>
-                  <p>Catálogo digital con más presencia, mejor jerarquía y una estructura mucho más comercial.</p>
-                </article>
-
-                <div class="hero-showcase">
-                  <div class="hero-showcase-bar" aria-hidden="true">
-                    <div class="hero-showcase-dots">
-                      <span></span>
-                      <span></span>
-                      <span></span>
-                    </div>
-                    <span class="hero-showcase-caption">Diseño web estratégico</span>
-                  </div>
-                  <img
-                    class="hero-showcase-image"
-                    src="./assets/images/project-mash-home.png"
-                    alt="Vista previa de una web editorial y elegante diseñada por Morán Studio"
-                  >
-                </div>
-
-                <article class="hero-overlay-card hero-overlay-card--bottom">
-                  <div class="hero-overlay-media">
-                    <img src="./assets/images/project-visage-preview.png" alt="Vista previa de proyecto para marca boutique">
-                  </div>
-                  <div class="hero-overlay-copy">
-                    <span class="hero-overlay-label">Enfoque</span>
-                    <strong>Marca, claridad y conversión</strong>
-                  </div>
-                </article>
-              </div>
-            </div>
-
-            <ul class="hero-signal-list" aria-label="Pilares del servicio">
-              <li class="hero-signal-item">
-                <span class="hero-signal-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M12 3 13.8 8.2 19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div class="hero-signal-text">
-                  <strong>Presencia premium</strong>
-                  <span>Para que tu marca se vea más sólida desde el primer scroll.</span>
-                </div>
-              </li>
-              <li class="hero-signal-item">
-                <span class="hero-signal-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="4" y="5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <div class="hero-signal-text">
-                  <strong>Claridad comercial</strong>
-                  <span>Para explicar mejor lo que ofreces y facilitar la decisión.</span>
-                </div>
-              </li>
-              <li class="hero-signal-item">
-                <span class="hero-signal-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m8 8-4 4 4 4M16 8l4 4-4 4M13 6l-2 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <div class="hero-signal-text">
-                  <strong>Responsive cuidado</strong>
-                  <span>Para que desktop y móvil se sientan igual de bien resueltos.</span>
-                </div>
-              </li>
-            </ul>
+          <div class="hero-actions">
+            <a class="button button-light" href="https://wa.me/1809267630" target="_blank" rel="noreferrer">Escribirme por WhatsApp</a>
+            <a class="button button-ghost" href="#proyectos">Ver proyectos</a>
           </div>
-        </div>
-      </section>
 
-      <section class="section intro-band">
-        <div class="container">
-          <div class="intro-band-grid reveal" data-reveal>
-            <div class="intro-band-copy">
-              <p class="eyebrow">Propuesta de valor</p>
-              <h2>Una web bien pensada hace más que verse bien.</h2>
-              <p class="scroll-generated reveal reveal-delay" data-reveal data-typewriter="Más claridad. Más deseo. Más intención comercial.">
-                <span class="scroll-generated-label">Se traduce en</span>
-                <span class="scroll-generated-text">Más claridad. Más deseo. Más intención comercial.</span>
-              </p>
+          <div class="hero-proof">
+            <div class="hero-proof-item">
+              <strong>Diseño con intención</strong>
+              <span>No hago páginas genéricas. Construyo presencia digital alineada con la marca y el negocio.</span>
             </div>
-            <div class="intro-band-points">
-              <div class="intro-point">
-                <span class="intro-point-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
-                    <path d="M12 3 13.8 8.2 19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z"
-                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span>Claridad que convierte</span>
-              </div>
-              <div class="intro-point">
-                <span class="intro-point-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
-                    <path d="M12 4 6 7v5c0 3.6 2.5 6.8 6 7.7 3.5-.9 6-4.1 6-7.7V7l-6-3Z"
-                          stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span>Percepción que sube el valor</span>
-              </div>
-              <div class="intro-point">
-                <span class="intro-point-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" width="18" height="18">
-                    <path d="M5 12h14M12 5l7 7-7 7"
-                          stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span>Estructura que invita a escribirte</span>
-              </div>
+            <div class="hero-proof-item">
+              <strong>Percepción premium</strong>
+              <span>La web debe hacerte ver más profesional, más confiable y más valioso desde el primer segundo.</span>
+            </div>
+            <div class="hero-proof-item">
+              <strong>Conversión sin ruido</strong>
+              <span>Jerarquía visual, claridad y llamados estratégicos a la acción para que el siguiente paso sea escribirte.</span>
             </div>
           </div>
         </div>
-      </section>
 
-      <section class="section about-story" id="sobre-mi">
-        <div class="container">
-          <div class="about-story-grid">
-            <div class="about-story-copy reveal" data-reveal>
-              <p class="eyebrow">Sobre Morán Studio</p>
-              <h2>Diseño webs para negocios que ya tienen valor, pero todavía no lo comunican al nivel que merecen.</h2>
-              <p>
-                Soy Leilany Morán, diseñadora y desarrolladora web freelance. Trabajo con marcas y negocios que ya
-                tienen valor, pero necesitan una presencia digital que lo comunique con más criterio, más nivel visual y
-                más confianza.
-              </p>
-              <p>
-                Mi enfoque mezcla dirección visual, estructura comercial y una ejecución cuidada para que cada página se
-                sienta propia, estratégica y construida con intención real.
-              </p>
-              <div class="about-story-meta">
-                <article>
-                  <span>Perfil</span>
-                  <strong>Diseñadora y desarrolladora web freelance</strong>
-                </article>
-                <article>
-                  <span>Enfoque</span>
-                  <strong>Estética premium, claridad comercial y presencia de marca</strong>
-                </article>
-                <article>
-                  <span>Objetivo</span>
-                  <strong>Que tu negocio se vea más claro, más sólido y más fácil de elegir</strong>
-                </article>
-              </div>
+        <div class="hero-visual reveal reveal-delay" data-reveal data-parallax>
+          <div class="hero-device">
+            <div class="hero-device-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
+            <img src="./assets/images/project-mash-home.png" alt="Vista previa editorial de un proyecto premium de Moran Studio">
+          </div>
 
-            <div class="about-story-visual reveal reveal-delay" data-reveal>
-              <div class="portrait-frame">
-                <img
-                  class="about-photo"
-                  src="./assets/images/profile-leilany-about.png"
-                  alt="Foto profesional de Leilany Moran sonriendo con fondo limpio"
-                >
-              </div>
-              <div class="about-story-badge">No hago páginas genéricas</div>
-              <ul class="about-story-chips" aria-label="Enfoques de trabajo">
-                <li>Diseño premium</li>
-                <li>Conversión y claridad</li>
-                <li>Dirección visual real</li>
-              </ul>
-            </div>
+          <div class="hero-visual-note">
+            <span>Enfoque del estudio</span>
+            <strong>Diseño web que hace que el negocio se vea más serio, más claro y más deseable.</strong>
           </div>
         </div>
-      </section>
+      </div>
 
+      <div class="shell hero-marquee">
+        <div class="hero-marquee-track">
+          <span>Landing pages</span>
+          <span>Páginas corporativas</span>
+          <span>Tiendas online</span>
+          <span>Sistemas de citas</span>
+          <span>Rediseño web</span>
+          <span>Soluciones personalizadas</span>
+          <span>Landing pages</span>
+          <span>Páginas corporativas</span>
+          <span>Tiendas online</span>
+          <span>Sistemas de citas</span>
+          <span>Rediseño web</span>
+          <span>Soluciones personalizadas</span>
+        </div>
+      </div>
+    </section>
 
-      <section class="section services-editorial" id="servicios">
-        <div class="container">
-          <div class="section-lead reveal" data-reveal>
-            <p class="eyebrow">Servicios</p>
-            <h2>Servicios pensados para que tu web deje de verse correcta y empiece a verse realmente a la altura de tu marca.</h2>
+    <section class="section services-section" id="servicios">
+      <div class="shell">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">Qué hago</p>
+          <div class="section-head-grid">
+            <h2>Diseño webs que se ven mejor, explican mejor y ayudan a vender mejor.</h2>
             <p>
-              Cada servicio responde a una necesidad distinta, pero todos comparten lo mismo: dirección visual,
-              estructura comercial y una presencia digital que trabaje a favor de tu negocio.
+              Cada servicio está pensado para resolver presencia, claridad y conversión. No vendo “páginas bonitas”.
+              Diseño herramientas de posicionamiento digital para negocios reales.
             </p>
           </div>
-
-          <div class="services-editorial-layout">
-            <div class="services-editorial-list">
-              <article class="service-line service-line--featured reveal" data-reveal>
-                <div class="service-line-index">01</div>
-                <div class="service-line-copy">
-                  <div class="service-line-head">
-                    <span class="service-line-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <rect x="4" y="5" width="16" height="14" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="M8 9h8M8 13h5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                      </svg>
-                    </span>
-                    <div>
-                      <p class="service-line-label">Servicio principal</p>
-                      <h3>Diseño web estratégico</h3>
-                    </div>
-                  </div>
-                  <p>Webs a medida para negocios que necesitan verse más sólidos, transmitir más confianza y convertir con una presencia digital mejor resuelta.</p>
-                </div>
-                <div class="service-line-meta">
-                  <span>Ideal para marcas que no quieren verse genéricas ni improvisadas.</span>
-                  <a class="service-line-link" href="./servicios/diseno-web-profesional.html">Ver servicio</a>
-                </div>
-              </article>
-
-              <article class="service-line reveal reveal-delay" data-reveal>
-                <div class="service-line-index">02</div>
-                <div class="service-line-copy">
-                  <div class="service-line-head">
-                    <span class="service-line-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 7.5h16M7 4v7M17 13v7M10 16.5H4M20 16.5h-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                      </svg>
-                    </span>
-                    <div>
-                      <p class="service-line-label">Flexibilidad</p>
-                      <h3>Web con sistema editable</h3>
-                    </div>
-                  </div>
-                  <p>Para marcas que necesitan autonomía para actualizar contenido sin sacrificar estética, estructura ni consistencia visual.</p>
-                </div>
-                <div class="service-line-meta">
-                  <span>Perfecta para catálogos, negocios activos y marcas con cambios frecuentes.</span>
-                  <a class="service-line-link" href="./servicios/web-con-sistema-editable.html">Ver servicio</a>
-                </div>
-              </article>
-
-              <article class="service-line reveal reveal-delay-2" data-reveal>
-                <div class="service-line-index">03</div>
-                <div class="service-line-copy">
-                  <div class="service-line-head">
-                    <span class="service-line-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <circle cx="11" cy="11" r="5.5" stroke="currentColor" stroke-width="1.5"/>
-                        <path d="m15.2 15.2 4.3 4.3M8.5 11h5M11 8.5v5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                      </svg>
-                    </span>
-                    <div>
-                      <p class="service-line-label">Visibilidad</p>
-                      <h3>Optimización web y SEO base</h3>
-                    </div>
-                  </div>
-                  <p>Ajustes clave para que tu sitio se entienda mejor, cargue con más claridad y tenga una base más fuerte de visibilidad.</p>
-                </div>
-                <div class="service-line-meta">
-                  <span>Una base útil para marcas que quieren crecer con una web más clara y mejor pensada.</span>
-                  <a class="service-line-link" href="./servicios/optimizacion-seo-basica.html">Ver servicio</a>
-                </div>
-              </article>
-            </div>
-
-            <aside class="services-note reveal reveal-delay" data-reveal>
-              <p class="eyebrow">Lo que cambia cuando está bien resuelta</p>
-              <ul class="services-note-list">
-                <li>Tu negocio se entiende más rápido y con menos fricción.</li>
-                <li>La percepción de marca sube desde el primer vistazo.</li>
-                <li>La estructura guía mejor a la persona a escribirte o comprar.</li>
-                <li>La web deja de ser un adorno y empieza a respaldar tu negocio.</li>
-              </ul>
-              <a class="button button-secondary" href="https://wa.me/18092697630" target="_blank" rel="noreferrer">Quiero una web así</a>
-            </aside>
-          </div>
         </div>
-      </section>
 
-
-      <section class="section projects" id="proyectos">
-        <div class="container">
-          <div class="projects-head reveal" data-reveal>
-            <div>
-              <p class="eyebrow">Proyectos destacados</p>
-              <h2>Proyectos pensados para elevar la percepción de marca, no solo para verse bonitos.</h2>
-            </div>
+        <div class="services-editorial">
+          <article class="services-note reveal" data-reveal>
+            <span class="note-tag">Dirección del estudio</span>
+            <h3>Un sitio premium no se siente premium solo por verse bonito.</h3>
             <p>
-              Cada caso combina estética, estructura y decisión comercial para que la experiencia se vea mejor, se entienda mejor y se sienta más valiosa.
+              Se siente premium cuando el diseño, el orden y el mensaje hacen que el negocio parezca más serio,
+              más claro y más confiable.
             </p>
-          </div>
-
-          <article class="project-feature reveal" data-reveal>
-            <div class="project-feature-copy">
-              <p class="project-tag">Marca / catálogo digital</p>
-              <h3>MASH Oficial</h3>
-              <p class="project-summary">
-                Un sitio pensado para presentar producto con más deseo, más orden y una sensación de marca mucho más alta desde el primer vistazo.
-              </p>
-              <div class="project-insights" aria-label="Resumen del caso MASH Oficial">
-                <article>
-                  <span>Objetivo</span>
-                  <strong>Elevar la percepción de marca y presentar el catálogo con más nivel.</strong>
-                </article>
-                <article>
-                  <span>Enfoque</span>
-                  <strong>Diseño editorial, navegación limpia y jerarquía visual para vender sin ruido.</strong>
-                </article>
-                <article>
-                  <span>Resultado</span>
-                  <strong>Una experiencia más clara, más premium y mucho más fácil de recorrer.</strong>
-                </article>
-              </div>
-              <div class="hero-actions">
-                <a class="button button-primary" href="https://mashoficial.com" target="_blank" rel="noreferrer">Ver caso en vivo</a>
-                <a class="button button-secondary" href="#contacto">Quiero algo así</a>
-              </div>
-            </div>
-
-            <div class="project-feature-media">
-              <video
-                class="project-feature-video"
-                poster="./assets/images/project-mash-home.png"
-                muted
-                loop
-                playsinline
-                preload="none"
-                data-lazy-video
-              >
-                <source data-src="./assets/videos/Project-Mash-Showcase.mp4" type="video/mp4">
-                Tu navegador no soporta video HTML5.
-              </video>
-            </div>
           </article>
 
-          <div class="projects-grid-alt">
-            <article class="project-story reveal reveal-delay" data-reveal>
-              <div class="project-story-media">
-                <img src="./assets/images/project-visage-preview.png" alt="Vista previa del proyecto Visage Studio">
-                <div class="project-story-overlay" aria-hidden="true">
-                  <span class="project-story-overlay-label">Ver proyecto</span>
-                </div>
-              </div>
-              <div class="project-story-copy">
-                <p class="project-tag">Belleza / marca personal</p>
-                <h3>Visage Studio</h3>
-                <p>Una propuesta editorial para una marca de belleza que necesitaba verse más refinada, más aspiracional y más segura.</p>
-                <a class="service-line-link" href="https://leilameca.github.io/propuesta-visage-studio-web/" target="_blank" rel="noreferrer">Ver proyecto</a>
+          <div class="service-list">
+            <article class="service-item reveal" data-reveal>
+              <span class="service-number">01</span>
+              <div>
+                <h3>Páginas web corporativas</h3>
+                <p>Para empresas y negocios que necesitan una imagen digital más sólida, clara y profesional.</p>
               </div>
             </article>
 
-            <article class="project-story project-story--tall reveal reveal-delay-2" data-reveal>
-              <div class="project-story-media">
-                <img src="./assets/images/project-solarys-preview.png" alt="Vista previa del proyecto SOLARYS Ingeniería">
-                <div class="project-story-overlay" aria-hidden="true">
-                  <span class="project-story-overlay-label">Ver proyecto</span>
-                </div>
-              </div>
-              <div class="project-story-copy">
-                <p class="project-tag">Corporativo / energía solar</p>
-                <h3>SOLARYS Ingeniería</h3>
-                <p>Una presencia corporativa más clara para explicar servicios técnicos con credibilidad, orden y seriedad visual.</p>
-                <a class="service-line-link" href="https://leilameca.github.io/SOLARYS-Ingenieria/" target="_blank" rel="noreferrer">Ver proyecto</a>
+            <article class="service-item reveal reveal-delay" data-reveal>
+              <span class="service-number">02</span>
+              <div>
+                <h3>Landing pages</h3>
+                <p>Páginas enfocadas en conversión para campañas, servicios concretos o lanzamientos que necesitan respuesta rápida.</p>
               </div>
             </article>
 
-            <article class="project-story project-story--wide reveal" data-reveal>
-              <div class="project-story-media">
-                <img src="./assets/images/project-fitappetit-preview.png" alt="Vista previa del proyecto Fit Appetit RD">
-                <div class="project-story-overlay" aria-hidden="true">
-                  <span class="project-story-overlay-label">Ver proyecto</span>
-                </div>
-              </div>
-              <div class="project-story-copy">
-                <p class="project-tag">Gastronomía / marca comercial</p>
-                <h3>Fit Appetit RD</h3>
-                <p>Una web comercial más fresca y estructurada para presentar menú, beneficios y pedidos con mucha más claridad.</p>
-                <a class="service-line-link" href="https://leilameca.github.io/fitappetitrd/#hero" target="_blank" rel="noreferrer">Ver proyecto</a>
+            <article class="service-item reveal reveal-delay-2" data-reveal>
+              <span class="service-number">03</span>
+              <div>
+                <h3>Tiendas online</h3>
+                <p>Experiencias visuales limpias para vender productos con más orden, mejor percepción y menos fricción.</p>
               </div>
             </article>
-          </div>
-        </div>
-      </section>
 
-
-      <section class="section distinction">
-        <div class="container">
-          <div class="distinction-grid">
-            <div class="distinction-copy reveal" data-reveal>
-              <p class="eyebrow">Por qué trabajar conmigo</p>
-              <h2>No diseño webs para llenar espacio online. Diseño presencia digital con criterio, claridad y una intención comercial real.</h2>
-              <p>
-                La idea no es solo que se vea bonito. Es que tu negocio se perciba mejor, se entienda más rápido y se sienta más confiable desde el primer contacto.
-              </p>
-            </div>
-
-            <ul class="distinction-list">
-              <li class="distinction-item reveal" data-reveal>
-                <span class="distinction-item-index">01</span>
-                <div>
-                  <div class="distinction-item-head">
-                    <span class="distinction-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 3 13.8 8.2 19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <h3>Estética con propósito</h3>
-                  </div>
-                  <p>No separo lo visual de lo comercial. Ambas cosas trabajan juntas para que la web se vea bien y funcione mejor.</p>
-                </div>
-              </li>
-              <li class="distinction-item reveal reveal-delay" data-reveal>
-                <span class="distinction-item-index">02</span>
-                <div>
-                  <div class="distinction-item-head">
-                    <span class="distinction-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 6.5h16M4 12h10M4 17.5h13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                      </svg>
-                    </span>
-                    <h3>Mensaje más claro</h3>
-                  </div>
-                  <p>Organizo el contenido para que la persona entienda rápido qué haces, qué ofreces y por qué debería escribirte.</p>
-                </div>
-              </li>
-              <li class="distinction-item reveal reveal-delay-2" data-reveal>
-                <span class="distinction-item-index">03</span>
-                <div>
-                  <div class="distinction-item-head">
-                    <span class="distinction-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M12 4 6 7v5c0 3.6 2.5 6.8 6 7.7 3.5-.9 6-4.1 6-7.7V7l-6-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <h3>Percepción de valor</h3>
-                  </div>
-                  <p>La meta es que tu marca se sienta más cuidada, más profesional y mucho más creíble desde la primera impresión.</p>
-                </div>
-              </li>
-              <li class="distinction-item reveal" data-reveal>
-                <span class="distinction-item-index">04</span>
-                <div>
-                  <div class="distinction-item-head">
-                    <span class="distinction-icon" aria-hidden="true">
-                      <svg viewBox="0 0 24 24" fill="none">
-                        <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                      </svg>
-                    </span>
-                    <h3>Proceso serio y cuidado</h3>
-                  </div>
-                  <p>Trabajo contigo con estructura y criterio para traducir lo que tu negocio necesita en una web que realmente lo represente mejor.</p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <section class="section process-section">
-        <div class="container">
-          <div class="section-lead reveal" data-reveal>
-            <p class="eyebrow">Proceso</p>
-            <h2>Así convierto una idea suelta en una web con dirección, presencia y estructura.</h2>
-          </div>
-
-          <div class="process-flow">
-            <article class="process-step reveal" data-reveal>
-              <span class="process-step-number">01</span>
-              <div class="process-step-head">
-                <span class="process-step-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <circle cx="11" cy="11" r="5.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="m15.2 15.2 4.3 4.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <h3>Descubrimiento</h3>
+            <article class="service-item reveal" data-reveal>
+              <span class="service-number">04</span>
+              <div>
+                <h3>Rediseño web</h3>
+                <p>Para marcas que ya tienen sitio, pero necesitan una presencia digital que esté al nivel real de su negocio.</p>
               </div>
-              <p>Entiendo tu negocio, tu momento y la percepción que necesitas construir.</p>
             </article>
-            <article class="process-step reveal reveal-delay" data-reveal>
-              <span class="process-step-number">02</span>
-              <div class="process-step-head">
-                <span class="process-step-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M5 19h14M7 16V8m5 8V5m5 11v-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                  </svg>
-                </span>
-                <h3>Estrategia</h3>
+
+            <article class="service-item reveal reveal-delay" data-reveal>
+              <span class="service-number">05</span>
+              <div>
+                <h3>Sistemas de citas</h3>
+                <p>Soluciones pensadas para clínicas, consultorios y servicios que necesitan agendar con más claridad y orden.</p>
               </div>
-              <p>Defino estructura, prioridades, CTA y la narrativa que debe sostener la experiencia.</p>
             </article>
-            <article class="process-step reveal reveal-delay-2" data-reveal>
-              <span class="process-step-number">03</span>
-              <div class="process-step-head">
-                <span class="process-step-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m6 18 8.5-8.5 3 3L9 21H6v-3Zm10-10 2-2 3 3-2 2-3-3Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <h3>Diseño</h3>
+
+            <article class="service-item reveal reveal-delay-2" data-reveal>
+              <span class="service-number">06</span>
+              <div>
+                <h3>Sistemas web para negocios</h3>
+                <p>Plataformas funcionales y personalizadas para resolver procesos, reservas, formularios o flujos internos.</p>
               </div>
-              <p>Construyo una dirección visual refinada, coherente con tu marca y más memorable.</p>
             </article>
-            <article class="process-step reveal" data-reveal>
-              <span class="process-step-number">04</span>
-              <div class="process-step-head">
-                <span class="process-step-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="m8 7-4 5 4 5M16 7l4 5-4 5M13 5l-2 14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <h3>Desarrollo</h3>
+
+            <article class="service-item reveal" data-reveal>
+              <span class="service-number">07</span>
+              <div>
+                <h3>Soluciones web personalizadas</h3>
+                <p>Cuando el negocio necesita una estructura propia y no un formato estándar disfrazado de diseño a medida.</p>
               </div>
-              <p>Llevo el diseño a una experiencia responsive, limpia y lista para rendir bien en cualquier pantalla.</p>
-            </article>
-            <article class="process-step reveal reveal-delay" data-reveal>
-              <span class="process-step-number">05</span>
-              <div class="process-step-head">
-                <span class="process-step-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M5 12.5 10 17l9-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <h3>Entrega y optimización</h3>
-              </div>
-              <p>Revisamos detalles finales para que la web salga con más claridad, más nivel y más intención comercial.</p>
             </article>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <section class="section proof-section">
-        <div class="container">
-          <div class="proof-layout">
-            <div class="proof-copy reveal" data-reveal>
-              <p class="eyebrow">Confianza</p>
-              <h2>Trabajo con marcas y negocios que entienden que verse mejor online también cambia cómo se les elige.</h2>
-              <p>
-                Mi trabajo encaja especialmente bien con marcas personales, estudios, negocios de servicios, propuestas boutique y empresas que necesitan una presencia digital más cuidada, más clara y más confiable.
-              </p>
-              <div class="proof-chips" aria-label="Tipos de clientes">
-                <span>Marcas personales</span>
-                <span>Negocios de servicios</span>
-                <span>Belleza y bienestar</span>
-                <span>Catálogos visuales</span>
-                <span>Empresas que necesitan credibilidad</span>
-              </div>
-            </div>
-
-            <div class="proof-testimonials">
-              <blockquote class="proof-quote reveal reveal-delay" data-reveal>
-                <p>
-                  "Trabajar con Leilany fue un antes y un después para mi marca. La web logró transmitir exactamente lo
-                  que quería y ahora mis clientas entienden mejor el valor de mis servicios."
-                </p>
-                <footer>
-                  <strong>Camila R.</strong>
-                  <span>Fundadora de estudio de belleza</span>
-                </footer>
-              </blockquote>
-              <blockquote class="proof-quote reveal reveal-delay-2" data-reveal>
-                <p>
-                  "Lo que más me gustó fue que no solo pensó en el diseño, sino en cómo mi página podía ayudarme a
-                  conectar mejor con mis clientes. Todo se sintió muy personalizado."
-                </p>
-                <footer>
-                  <strong>Valentina M.</strong>
-                  <span>Marca de servicios creativos</span>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section faq-section" id="faq">
-        <div class="container">
-          <div class="faq-layout">
-            <div class="faq-copy reveal" data-reveal>
-              <p class="eyebrow">FAQ</p>
-              <h2>Dudas frecuentes antes de empezar un proyecto web.</h2>
-              <p>
-                Esta sección está pensada para quitar fricción, aclarar expectativas y hacer que dar el siguiente paso
-                se sienta mucho más fácil.
-              </p>
-            </div>
-
-            <div class="faq-list reveal reveal-delay" data-reveal>
-              <details class="faq-item" open>
-                <summary>¿Qué tipo de páginas diseñas?</summary>
-                <p>Trabajo con landing pages, webs de servicios, sitios para marcas personales, portafolios profesionales y webs comerciales para negocios que necesitan verse mejor y comunicar con más claridad.</p>
-              </details>
-              <details class="faq-item">
-                <summary>¿Trabajas con marcas personales o negocios pequeños?</summary>
-                <p>Sí. Trabajo con marcas personales, estudios y negocios en crecimiento que necesitan verse más profesionales, más claros y más confiables.</p>
-              </details>
-              <details class="faq-item">
-                <summary>¿Cuánto tarda un proyecto?</summary>
-                <p>Como referencia, una landing page puede tomar 4 días y una web más completa entre 1 y 2 semanas, según alcance y contenido.</p>
-              </details>
-              <details class="faq-item">
-                <summary>¿También rediseñas webs?</summary>
-                <p>Sí. Si tu página actual ya no representa bien tu nivel, puedo replantearla visual y estructuralmente para que se sienta más sólida, más clara y mucho más valiosa.</p>
-              </details>
-              <details class="faq-item">
-                <summary>¿Qué necesitas de mi parte para comenzar?</summary>
-                <p>Lo ideal es contar con una idea general de tu negocio, tus servicios y lo que quieres lograr. No hace falta que llegues con todo resuelto: puedo ayudarte a ordenar la dirección.</p>
-              </details>
-              <details class="faq-item">
-                <summary>¿Puedo escribirte aunque todavía no tenga todo definido?</summary>
-                <p>Claro. Muchas veces parte del trabajo consiste precisamente en ayudarte a definir qué tipo de web conviene, qué debe decir y cómo debe presentarse.</p>
-              </details>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section final-cta" id="contacto">
-        <div class="container">
-          <div class="final-cta-panel reveal" data-reveal>
-            <div class="final-cta-copy">
-              <p class="eyebrow">Último paso</p>
-              <h2>Si tu negocio necesita verse mejor online, hagamos una web que esté a su nivel.</h2>
-              <p>
-                Si quieres una presencia digital más clara, más sólida y menos genérica, puedo ayudarte a construirla con dirección visual, estructura comercial y desarrollo cuidado.
-              </p>
-            </div>
-
-            <div class="final-cta-actions">
-              <div class="final-cta-buttons">
-                <a class="button button-primary" href="https://wa.me/18092697630" target="_blank" rel="noreferrer">Hablemos por WhatsApp</a>
-                <a class="button button-secondary" href="#proyectos">Ver proyectos</a>
-              </div>
-
-              <div class="final-cta-contact">
-                <span class="final-cta-contact-label">Correo directo</span>
-                <a class="final-cta-contact-link" href="mailto:leilanycristadedios@gmail.com">leilanycristadedios@gmail.com</a>
-                <p class="final-cta-note">
-                  Si prefieres, también puedes contarme tu proyecto por correo y te respondo con una orientación inicial.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="footer-panel footer-shell">
-          <div class="footer-brand footer-brand-panel">
-            <p class="footer-eyebrow">Estudio boutique de diseño web</p>
-            <a class="footer-logo" href="#inicio" aria-label="Ir al inicio de Morán Studio">
-              <img class="brand-mark" src="./assets/images/logo.png" alt="Isotipo de Morán Studio">
-              <img class="brand-wordmark" src="./assets/images/logo2.png" alt="Logotipo de Morán Studio">
-            </a>
-            <p class="footer-brand-text">
-              Morán Studio diseña y desarrolla páginas web para marcas personales, estudios y negocios que necesitan verse más sólidos, más claros y más valiosos online.
+    <section class="section projects-section" id="proyectos">
+      <div class="shell">
+        <div class="section-head section-head--light reveal" data-reveal>
+          <p class="eyebrow">Proyectos</p>
+          <div class="section-head-grid">
+            <h2>Trabajo real para marcas que necesitaban verse con más nivel, más claridad y más intención.</h2>
+            <p>
+              Este portafolio no está armado para llenar espacio. Cada proyecto muestra una forma distinta de elevar
+              percepción, ordenar oferta y construir una experiencia que invite a confiar.
             </p>
-            <p class="footer-meta-note">Disponible para proyectos seleccionados. Respuesta inicial en 24 a 48 horas.</p>
-          </div>
-
-          <div class="footer-columns footer-directory">
-            <div class="footer-column">
-              <span class="footer-title">Navegación</span>
-              <a href="#sobre-mi">Sobre mí</a>
-              <a href="#servicios">Servicios</a>
-              <a href="#proyectos">Proyectos</a>
-              <a href="#faq">FAQ</a>
-              <a href="#contacto">Contacto</a>
-            </div>
-
-            <div class="footer-column">
-              <span class="footer-title">Servicios</span>
-              <a href="./servicios/diseno-web-profesional.html">Diseño web profesional</a>
-              <a href="./servicios/web-con-sistema-editable.html">Web con sistema editable</a>
-              <a href="./servicios/optimizacion-seo-basica.html">Optimización SEO básica</a>
-            </div>
-
-            <div class="footer-column footer-column--contact">
-              <span class="footer-title">Contacto</span>
-              <a class="footer-contact" href="https://wa.me/18092697630" target="_blank" rel="noreferrer">
-                <span class="footer-contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <path d="M20 11.6a7.9 7.9 0 0 1-11.7 7l-4 1 1-3.9A7.9 7.9 0 1 1 20 11.6Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                    <path d="M9.1 8.8c.1-.3.4-.5.8-.5h.5c.2 0 .4.2.5.4l.8 1.8c.1.3.1.5-.1.7l-.6.8c.6 1 1.4 1.8 2.4 2.4l.8-.5c.2-.2.5-.2.7-.1l1.8.8c.2.1.4.3.4.5v.5c0 .4-.2.7-.5.8-.6.2-1.2.3-1.8.1a7.8 7.8 0 0 1-4.4-4.4c-.2-.6-.1-1.2.1-1.8Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span class="footer-contact-copy">
-                  <span>WhatsApp</span>
-                  <strong>809-269-7630</strong>
-                </span>
-              </a>
-              <a class="footer-contact" href="mailto:leilanycristadedios@gmail.com">
-                <span class="footer-contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="3.5" y="5.5" width="17" height="13" rx="2.5" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="m5 8 7 5 7-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  </svg>
-                </span>
-                <span class="footer-contact-copy">
-                  <span>Email</span>
-                  <strong>leilanycristadedios@gmail.com</strong>
-                </span>
-              </a>
-              <a class="footer-contact" href="https://instagram.com/moranstudiord" target="_blank" rel="noreferrer">
-                <span class="footer-contact-icon" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none">
-                    <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.5"/>
-                    <circle cx="12" cy="12" r="3.75" stroke="currentColor" stroke-width="1.5"/>
-                    <circle cx="17.2" cy="6.8" r="1" fill="currentColor"/>
-                  </svg>
-                </span>
-                <span class="footer-contact-copy">
-                  <span>Instagram</span>
-                  <strong>@moranstudiord</strong>
-                </span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div class="footer-bottom">
-          <p>&copy; 2026 Morán Studio. Todos los derechos reservados.</p>
-          <p>Diseño web editorial y comercial para marcas personales y negocios.</p>
+        <div class="portfolio-browser reveal" data-reveal>
+          <div class="portfolio-browser-nav" role="tablist" aria-label="Proyectos de Moran Studio">
+            <button
+              class="portfolio-item is-active"
+              type="button"
+              role="tab"
+              aria-selected="true"
+              tabindex="0"
+              data-project-tab
+              data-title="MASH"
+              data-sector="Marca comercial / catálogo editorial"
+              data-summary="Una propuesta editorial para una marca de mobiliario exterior que necesitaba mostrar producto con más deseo, mejor jerarquía y una presencia digital mucho más aspiracional."
+              data-impact="Se elevó la percepción de marca, se ordenó el catálogo y la experiencia ganó claridad comercial sin perder elegancia."
+              data-url="https://mashoficial.com"
+              data-image="./assets/images/project-mash-home.png"
+              data-alt="Vista del proyecto MASH en múltiples dispositivos"
+            >
+              <span class="portfolio-item-index">01</span>
+              <span class="portfolio-item-copy">
+                <strong>MASH</strong>
+                <span>Marca comercial</span>
+              </span>
+            </button>
+
+            <button
+              class="portfolio-item"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-project-tab
+              data-title="Visage Studio"
+              data-sector="Belleza / marca de servicios"
+              data-summary="Una experiencia más refinada para transmitir detalle, elegancia y una sensación de servicio premium desde el primer scroll."
+              data-impact="La propuesta reforzó el valor percibido del estudio y construyó una presencia mucho más segura, femenina y aspiracional."
+              data-url="https://leilameca.github.io/propuesta-visage-studio-web/"
+              data-image="./assets/images/project-visage-preview.png"
+              data-alt="Vista previa del proyecto Visage Studio"
+            >
+              <span class="portfolio-item-index">02</span>
+              <span class="portfolio-item-copy">
+                <strong>Visage Studio</strong>
+                <span>Belleza y experiencia premium</span>
+              </span>
+            </button>
+
+            <button
+              class="portfolio-item"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-project-tab
+              data-title="Lujan Smile Journey"
+              data-sector="Salud dental / experiencia humana"
+              data-summary="Una propuesta enfocada en cercanía, confianza y una comunicación más limpia para una experiencia clínica mejor presentada."
+              data-impact="El proyecto ayuda a que el servicio se vea más cálido, profesional y fácil de elegir sin sentirse frío ni impersonal."
+              data-url="https://leilameca.github.io/lujan-smile-journey/"
+              data-art="Smile"
+              data-art-class="project-stage-art project-stage-art--smile"
+            >
+              <span class="portfolio-item-index">03</span>
+              <span class="portfolio-item-copy">
+                <strong>Lujan Smile Journey</strong>
+                <span>Salud dental</span>
+              </span>
+            </button>
+
+            <button
+              class="portfolio-item"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-project-tab
+              data-title="SOLARYS Ingeniería"
+              data-sector="Ingeniería / corporativo"
+              data-summary="Una web más técnica y creíble para comunicar soluciones complejas con orden, seriedad y mejor lectura visual."
+              data-impact="La marca gana estructura, claridad y una percepción más firme frente a clientes que necesitan confianza antes de cotizar."
+              data-url="https://leilameca.github.io/SOLARYS-Ingenieria/"
+              data-image="./assets/images/project-solarys-preview.png"
+              data-alt="Vista previa del proyecto SOLARYS Ingeniería"
+            >
+              <span class="portfolio-item-index">04</span>
+              <span class="portfolio-item-copy">
+                <strong>SOLARYS Ingeniería</strong>
+                <span>Corporativo e ingeniería</span>
+              </span>
+            </button>
+
+            <button
+              class="portfolio-item"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-project-tab
+              data-title="FitAppetit"
+              data-sector="Alimentos / conversión directa"
+              data-summary="Un sitio comercial más fresco y mejor estructurado para presentar menú, beneficios y pedidos con menos fricción."
+              data-impact="La experiencia se siente más ágil, más cercana y mucho más útil para una marca que depende de decisiones rápidas desde móvil."
+              data-url="https://leilameca.github.io/fitappetitrd/"
+              data-image="./assets/images/project-fitappetit-preview.png"
+              data-alt="Vista previa del proyecto FitAppetit"
+            >
+              <span class="portfolio-item-index">05</span>
+              <span class="portfolio-item-copy">
+                <strong>FitAppetit</strong>
+                <span>Marca comercial</span>
+              </span>
+            </button>
+
+            <button
+              class="portfolio-item"
+              type="button"
+              role="tab"
+              aria-selected="false"
+              tabindex="-1"
+              data-project-tab
+              data-title="Consultorio Odontológico Díaz"
+              data-sector="Odontología / confianza profesional"
+              data-summary="Presencia digital pensada para reforzar profesionalismo, seguridad y claridad de servicio en un sector donde la confianza lo es todo."
+              data-impact="El caso se centra en hacer que el consultorio se vea más confiable, más claro y mejor organizado para nuevos pacientes."
+              data-url="https://leilameca.github.io/consultorio-odontologico-diaz/"
+              data-art="Care"
+              data-art-class="project-stage-art project-stage-art--clinic"
+            >
+              <span class="portfolio-item-index">06</span>
+              <span class="portfolio-item-copy">
+                <strong>Consultorio Odontológico Díaz</strong>
+                <span>Salud y confianza</span>
+              </span>
+            </button>
+          </div>
+
+          <article class="portfolio-stage" data-project-stage>
+            <div class="portfolio-stage-media">
+              <img
+                class="portfolio-stage-image"
+                src="./assets/images/project-mash-home.png"
+                alt="Vista del proyecto MASH en múltiples dispositivos"
+                data-project-image
+              >
+              <div class="project-stage-art is-hidden" data-project-art aria-hidden="true">
+                <strong data-project-art-text></strong>
+              </div>
+            </div>
+
+            <div class="portfolio-stage-copy">
+              <span class="project-label" data-project-sector>Marca comercial / catálogo editorial</span>
+              <h3 data-project-title>MASH</h3>
+              <p data-project-summary>
+                Una propuesta editorial para una marca de mobiliario exterior que necesitaba mostrar producto con más deseo,
+                mejor jerarquía y una presencia digital mucho más aspiracional.
+              </p>
+
+              <div class="portfolio-stage-detail">
+                <span>Lo que logró</span>
+                <p data-project-impact>
+                  Se elevó la percepción de marca, se ordenó el catálogo y la experiencia ganó claridad comercial sin perder elegancia.
+                </p>
+              </div>
+
+              <div class="project-actions">
+                <a class="button button-light" href="https://mashoficial.com" target="_blank" rel="noreferrer" data-project-link>Ver demo real</a>
+                <a class="button button-outline" href="https://wa.me/1809267630" target="_blank" rel="noreferrer">Quiero un proyecto así</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </footer>
-  </div>
-  <section class="chatbot" data-chatbot aria-label="Asistente de Morán Studio">
-    <div class="chatbot__panel" id="chatbot-panel" data-chatbot-panel role="dialog" aria-modal="false" aria-hidden="true" aria-labelledby="chatbot-title">
-      <div class="chatbot__header">
-        <div class="chatbot__header-copy">
-          <span class="chatbot__eyebrow">Morán Studio</span>
-          <h2 class="chatbot__title" id="chatbot-title">Asistente de experiencia web</h2>
-          <p class="chatbot__subtitle">Te ayudo a elegir la web ideal y llevar la conversación a WhatsApp cuando convenga.</p>
+    </section>
+
+    <section class="section difference-section" id="diferencial">
+      <div class="shell">
+        <div class="difference-layout">
+          <div class="difference-copy reveal" data-reveal>
+            <p class="eyebrow">Por qué Moran Studio</p>
+            <h2>No vendo solo diseño. Construyo presencia digital con intención.</h2>
+            <p>
+              Mi trabajo no busca que tu marca se vea “moderna” por verse moderna. Busca que se perciba mejor,
+              que se entienda más rápido y que inspire más confianza en las personas correctas.
+            </p>
+          </div>
+
+          <div class="difference-grid">
+            <article class="difference-card reveal" data-reveal>
+              <span>01</span>
+              <h3>Estética premium con enfoque comercial</h3>
+              <p>La forma importa, pero solo cuando trabaja a favor del negocio. Diseño con criterio visual y también con intención de venta.</p>
+            </article>
+
+            <article class="difference-card reveal reveal-delay" data-reveal>
+              <span>02</span>
+              <h3>Experiencias alineadas con la marca</h3>
+              <p>No uso estructuras genéricas disfrazadas. Cada web se diseña para que se sienta propia, coherente y mejor posicionada.</p>
+            </article>
+
+            <article class="difference-card reveal reveal-delay-2" data-reveal>
+              <span>03</span>
+              <h3>Percepción de valor real</h3>
+              <p>La web debe ayudarte a verte más profesional, más confiable y más valioso antes de cualquier llamada o mensaje.</p>
+            </article>
+
+            <article class="difference-card reveal" data-reveal>
+              <span>04</span>
+              <h3>Claridad visual y conversión</h3>
+              <p>Ordeno la información para que la experiencia no solo se vea bien, sino que dirija mejor a la acción.</p>
+            </article>
+          </div>
         </div>
-        <button class="chatbot__close" type="button" data-chatbot-close aria-label="Cerrar chat">&times;</button>
       </div>
-      <div class="chatbot__messages" data-chatbot-messages aria-live="polite" aria-atomic="false"></div>
-      <form class="chatbot__composer" data-chatbot-form novalidate>
-        <div class="chatbot__toolbar" aria-label="Accesos rápidos del asistente">
-          <button class="chatbot__shortcut" type="button" data-chatbot-shortcut="Qué web necesito">Qué web necesito</button>
-          <button class="chatbot__shortcut" type="button" data-chatbot-shortcut="Servicios">Servicios</button>
-          <button class="chatbot__shortcut" type="button" data-chatbot-shortcut="Inversión">Inversión</button>
-          <button class="chatbot__shortcut" type="button" data-chatbot-shortcut="Tiempo">Tiempo</button>
-          <button class="chatbot__shortcut chatbot__shortcut--primary" type="button" data-chatbot-shortcut="WhatsApp">WhatsApp</button>
+    </section>
+
+    <section class="section process-section" id="proceso">
+      <div class="shell">
+        <div class="section-head reveal" data-reveal>
+          <p class="eyebrow">Proceso</p>
+          <div class="section-head-grid">
+            <h2>Una forma de trabajo clara para crear una web con dirección, no por improvisación.</h2>
+            <p>
+              El proceso es simple, pero está pensado para que cada decisión tenga sentido visual, comercial y técnico.
+            </p>
+          </div>
         </div>
-        <div class="chatbot__input-row">
-          <input class="chatbot__input" type="text" data-chatbot-input placeholder="Cuéntame sobre tu negocio…" aria-label="Escribe tu mensaje">
-          <button class="chatbot__send" type="submit" aria-label="Enviar mensaje">
-            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none">
-              <path d="M4 12.5 19.2 4l-3.7 16-4.3-5-4.5-2.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-              <path d="M19 4 10.8 14.9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </button>
+
+        <div class="process-grid">
+          <article class="process-card reveal" data-reveal>
+            <span>01</span>
+            <h3>Descubrimiento</h3>
+            <p>Entiendo el negocio, el cliente ideal y la percepción que la marca necesita construir online.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay" data-reveal>
+            <span>02</span>
+            <h3>Estrategia visual</h3>
+            <p>Defino estructura, narrativa y jerarquía para que el sitio se vea elegante y comunique con claridad.</p>
+          </article>
+
+          <article class="process-card reveal reveal-delay-2" data-reveal>
+            <span>03</span>
+            <h3>Diseño y desarrollo</h3>
+            <p>Llevo la propuesta a una experiencia responsiva, limpia y moderna, cuidando cada interacción.</p>
+          </article>
+
+          <article class="process-card reveal" data-reveal>
+            <span>04</span>
+            <h3>Entrega y lanzamiento</h3>
+            <p>Se revisan detalles finales, se publica el sitio y se entrega una presencia digital lista para trabajar a favor del negocio.</p>
+          </article>
         </div>
-        <p class="chatbot__hint">Puedo orientarte sobre tipo de web, inversión, tiempos y siguiente paso.</p>
-      </form>
+      </div>
+    </section>
+
+    <section class="section cta-section" id="contacto">
+      <div class="shell">
+        <div class="cta-panel reveal" data-reveal>
+          <div class="cta-copy">
+            <p class="eyebrow">CTA final</p>
+            <h2>Si tu negocio ya vale, tu web también debería parecerlo.</h2>
+            <p>
+              Si buscas una presencia digital elegante, estratégica y preparada para convertir mejor, este puede ser el momento
+              de construirla con intención.
+            </p>
+          </div>
+
+          <div class="cta-actions-panel">
+            <a class="button button-dark" href="https://wa.me/1809267630" target="_blank" rel="noreferrer">Hablar por WhatsApp</a>
+            <a class="button button-soft" href="#proyectos">Ver portafolio</a>
+
+            <div class="contact-line">
+              <span>Email</span>
+              <a href="mailto:leilanycristaldedios@gmail.com">leilanycristaldedios@gmail.com</a>
+            </div>
+            <div class="contact-line">
+              <span>WhatsApp</span>
+              <a href="https://wa.me/1809267630" target="_blank" rel="noreferrer">809267630</a>
+            </div>
+            <div class="contact-line">
+              <span>Instagram</span>
+              <em>Espacio listo para agregar @usuario</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-shell">
+      <div class="footer-brand">
+        <img src="./assets/images/logo2.png" alt="Wordmark de Moran Studio">
+        <p>Diseño web que convierte.</p>
+      </div>
+      <div class="footer-meta">
+        <a href="mailto:leilanycristaldedios@gmail.com">leilanycristaldedios@gmail.com</a>
+        <a href="https://wa.me/1809267630" target="_blank" rel="noreferrer">WhatsApp</a>
+        <span>Instagram pendiente</span>
+      </div>
     </div>
-    <button class="chatbot__toggle" type="button" data-chatbot-toggle aria-expanded="false" aria-controls="chatbot-panel" aria-label="Abrir asistente de Morán Studio">
-      <span class="chatbot__toggle-shell">
-        <span class="chatbot__toggle-icon-wrap" aria-hidden="true">
-          <svg class="chatbot__toggle-icon" viewBox="0 0 24 24" fill="none">
-            <path d="M6.2 16.8c-1.5-1.4-2.5-3.4-2.5-5.7 0-4.4 3.7-8 8.3-8s8.3 3.6 8.3 8-3.7 8-8.3 8c-1.1 0-2.2-.2-3.1-.6l-4.1 1.4 1.4-3.7Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-          </svg>
-          <span class="chatbot__toggle-close" aria-hidden="true">&times;</span>
-        </span>
-        <span class="chatbot__toggle-copy">
-          <span class="chatbot__toggle-eyebrow">Morán Studio</span>
-          <span class="chatbot__toggle-label">Te ayudo</span>
-        </span>
-      </span>
-    </button>
-  </section>
-  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  </footer>
+
   <script src="./script.js"></script>
-  <script src="./chatbot.js"></script>
 </body>
 </html>
