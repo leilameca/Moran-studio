@@ -12,12 +12,11 @@
   <meta property="og:image" content="./assets/images/hero.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-  <div class="scroll-progress" data-progress aria-hidden="true"></div>
   <div class="noise" aria-hidden="true"></div>
 
   <!-- Social sidebar — visible solo en desktop -->
@@ -74,7 +73,10 @@
       <div class="shell hero-shell">
 
         <div class="hero-copy">
-          <p class="hero-greeting" data-es="¡Hola, soy" data-en="Hi, I'm">¡Hola, soy</p>
+          <div class="hero-badge">
+            <span class="hero-badge-dot" aria-hidden="true"></span>
+            <span data-es="Disponible para nuevos proyectos" data-en="Available for new projects">Disponible para nuevos proyectos</span>
+          </div>
           <h1 class="hero-name">
             <span class="hero-name-first">LEILANY</span>
             <em class="hero-name-last">Morán</em>
@@ -82,12 +84,29 @@
           <div class="hero-role-wrap">
             <span class="hero-role" data-roles-es="Desarrolladora web,Diseñadora digital,Directora de Moran Studio" data-roles-en="Web Developer,Digital Designer,Founder of Moran Studio" aria-live="polite">Desarrolladora web</span>
           </div>
-          <p class="hero-text" data-es="Construyo presencias digitales premium para negocios que quieren verse mejor, vender mejor y generar más confianza." data-en="I build premium digital presences for businesses that want to look better, sell better, and build more trust.">
-            Construyo presencias digitales premium para negocios que quieren verse mejor, vender mejor y generar más confianza.
+          <p class="hero-text" data-es="Tu negocio merece una presencia digital que lo refleje. Diseño y desarrollo webs premium: rápidas, claras y pensadas para convertir." data-en="Your business deserves a digital presence that reflects it. I design and develop premium websites—fast, clear, and built to convert.">
+            Tu negocio merece una presencia digital que lo refleje. Diseño y desarrollo webs premium: rápidas, claras y pensadas para convertir.
           </p>
           <div class="hero-actions">
-            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-es="Escribirme por WhatsApp" data-en="Message me on WhatsApp">Escribirme por WhatsApp</a>
-            <a class="button button-ghost" href="#proyectos" data-es="Ver proyectos" data-en="See projects">Ver proyectos</a>
+            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="hero" data-es="Iniciar proyecto" data-en="Start a project">Iniciar proyecto</a>
+            <a class="button button-ghost" href="#proyectos" data-es="Ver trabajo" data-en="See my work">Ver trabajo</a>
+          </div>
+          <p class="hero-micro" data-es="Te respondo en menos de 24h. Sin compromiso." data-en="Reply within 24h. No pressure.">Te respondo en menos de 24h. Sin compromiso.</p>
+          <div class="hero-strip">
+            <div class="hero-strip-item">
+              <strong>6+</strong>
+              <span data-es="Proyectos entregados" data-en="Projects delivered">Proyectos entregados</span>
+            </div>
+            <div class="hero-strip-divider" aria-hidden="true"></div>
+            <div class="hero-strip-item">
+              <strong data-es="Diseño + Código" data-en="Design + Code">Diseño + Código</strong>
+              <span data-es="Full-stack desde RD 🇩🇴" data-en="Full-stack from DR 🇩🇴">Full-stack desde RD 🇩🇴</span>
+            </div>
+            <div class="hero-strip-divider" aria-hidden="true"></div>
+            <div class="hero-strip-item">
+              <strong data-es="Resultado real" data-en="Real results">Resultado real</strong>
+              <span data-es="Sin plantillas, todo a medida" data-en="No templates, all custom">Sin plantillas, todo a medida</span>
+            </div>
           </div>
         </div>
 
@@ -98,10 +117,10 @@
             <div class="hero-photo-frame">
               <img src="./assets/images/profile-leilany-about.png" alt="Leilany Morán — fundadora de Moran Studio">
             </div>
-            <div class="deco deco-1" aria-hidden="true"></div>
-            <div class="deco deco-2" aria-hidden="true"></div>
-            <div class="deco deco-3" aria-hidden="true"></div>
-            <div class="deco deco-4" aria-hidden="true"></div>
+            <span class="deco deco-1" aria-hidden="true">{ }</span>
+            <span class="deco deco-2" aria-hidden="true">&lt;/&gt;</span>
+            <span class="deco deco-3" aria-hidden="true">npm</span>
+            <span class="deco deco-4" aria-hidden="true">( )</span>
           </div>
         </div>
 
@@ -109,18 +128,18 @@
 
       <div class="hero-marquee" aria-hidden="true">
         <div class="hero-marquee-track">
-          <span>Landing pages</span>
-          <span>Páginas corporativas</span>
-          <span>Tiendas online</span>
-          <span>Sistemas de citas</span>
-          <span>Rediseño web</span>
-          <span>Soluciones personalizadas</span>
-          <span>Landing pages</span>
-          <span>Páginas corporativas</span>
-          <span>Tiendas online</span>
-          <span>Sistemas de citas</span>
-          <span>Rediseño web</span>
-          <span>Soluciones personalizadas</span>
+          <span>Diseño editorial</span>
+          <span>Código limpio</span>
+          <span>Experiencia premium</span>
+          <span>Sin plantillas</span>
+          <span>Resultado real</span>
+          <span>Full-stack desde RD</span>
+          <span>Diseño editorial</span>
+          <span>Código limpio</span>
+          <span>Experiencia premium</span>
+          <span>Sin plantillas</span>
+          <span>Resultado real</span>
+          <span>Full-stack desde RD</span>
         </div>
       </div>
     </section>
@@ -134,11 +153,11 @@
           <div class="about-copy reveal" data-reveal>
             <p class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</p>
             <h2 data-es="Diseño con propósito. Desarrollo con precisión." data-en="Design with purpose. Develop with precision.">Diseño con propósito. Desarrollo con precisión.</h2>
-            <p data-es="Soy Leilany Morán — desarrolladora web dominicana con obsesión por el detalle visual y el resultado real. Creo experiencias digitales que se sienten premium desde el primer scroll." data-en="I'm Leilany Morán — a Dominican web developer with an obsession for visual detail and real results. I create digital experiences that feel premium from the first scroll.">
-              Soy Leilany Morán — desarrolladora web dominicana con obsesión por el detalle visual y el resultado real. Creo experiencias digitales que se sienten premium desde el primer scroll.
+            <p data-es="Soy Leilany Morán — desarrolladora web dominicana con foco en claridad, detalle visual y conversión. Creo experiencias digitales que se sienten premium desde el primer scroll." data-en="I'm Leilany Morán — a Dominican web developer focused on clarity, visual detail, and conversion. I create digital experiences that feel premium from the first scroll.">
+              Soy Leilany Morán — desarrolladora web dominicana con foco en claridad, detalle visual y conversión. Creo experiencias digitales que se sienten premium desde el primer scroll.
             </p>
-            <p data-es="Moran Studio es mi marca, mi visión y mi estándar: diseño que comunica, código que funciona y presencia que convierte." data-en="Moran Studio is my brand, my vision, and my standard: design that communicates, code that works, and presence that converts.">
-              Moran Studio es mi marca, mi visión y mi estándar: diseño que comunica, código que funciona y presencia que convierte.
+            <p data-es="Moran Studio es mi estudio: diseño que comunica, código que funciona y presencia que convierte." data-en="Moran Studio is my studio: design that communicates, code that works, and presence that converts.">
+              Moran Studio es mi estudio: diseño que comunica, código que funciona y presencia que convierte.
             </p>
             <a class="button button-dark" href="#contacto" data-es="Hablemos" data-en="Let's talk">Hablemos</a>
           </div>
@@ -151,10 +170,10 @@
               </div>
               <div class="about-stat">
                 <strong data-counter="8" data-suffix="">8</strong>
-                <span data-es="Tecnologías dominadas" data-en="Technologies mastered">Tecnologías dominadas</span>
+                <span data-es="Herramientas clave" data-en="Key tools">Herramientas clave</span>
               </div>
               <div class="about-stat about-stat--wide">
-                <strong data-es="DOM." data-en="D.O.">DOM.</strong>
+                <strong data-es="RD 🇩🇴" data-en="🇩🇴 RD">RD 🇩🇴</strong>
                 <span data-es="República Dominicana" data-en="Dominican Republic">República Dominicana</span>
               </div>
             </div>
@@ -172,7 +191,7 @@
       <div class="shell">
         <div class="section-head reveal" data-reveal>
           <p class="eyebrow" data-es="Qué hago" data-en="What I do">Qué hago</p>
-          <h2 data-es="Diseño webs que se ven mejor, explican mejor y ayudan a vender mejor." data-en="I design websites that look better, explain better, and help sell better.">Diseño webs que se ven mejor, explican mejor y ayudan a vender mejor.</h2>
+          <h2 data-es="No vendo plantillas. Construyo tu presencia digital desde cero." data-en="I don't sell templates. I build your digital presence from scratch.">No vendo plantillas. Construyo tu presencia digital desde cero.</h2>
         </div>
 
         <div class="services-grid">
@@ -241,6 +260,22 @@
           </article>
 
         </div>
+
+        <div class="services-includes reveal" data-reveal>
+          <div class="services-includes-copy">
+            <p class="eyebrow" data-es="Lo que incluye" data-en="What's included">Lo que incluye</p>
+            <h3 data-es="Una base sólida para vender y generar confianza." data-en="A solid foundation to sell and build trust.">Una base sólida para vender y generar confianza.</h3>
+            <p data-es="Cada proyecto se adapta a tu negocio, pero estas bases siempre están incluidas:" data-en="Every project is tailored, but these essentials are always included:">Cada proyecto se adapta a tu negocio, pero estas bases siempre están incluidas:</p>
+          </div>
+          <ul class="includes-list">
+            <li data-es="Diseño a medida + responsive (móvil primero)" data-en="Custom design + responsive (mobile-first)">Diseño a medida + responsive (móvil primero)</li>
+            <li data-es="Velocidad y experiencia (sin fricción)" data-en="Speed and experience (low friction)">Velocidad y experiencia (sin fricción)</li>
+            <li data-es="SEO base (estructura, metas, indexación)" data-en="SEO essentials (structure, metas, indexability)">SEO base (estructura, metas, indexación)</li>
+            <li data-es="Copy y jerarquía para guiar a tu cliente" data-en="Copy and hierarchy to guide visitors">Copy y jerarquía para guiar a tu cliente</li>
+            <li data-es="CTAs claros + WhatsApp listo para captar clientes potenciales" data-en="Clear CTAs + WhatsApp ready to capture leads">CTAs claros + WhatsApp listo para captar clientes potenciales</li>
+            <li data-es="Entrega ordenada + soporte de lanzamiento" data-en="Clean handoff + launch support">Entrega ordenada + soporte de lanzamiento</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -249,7 +284,7 @@
       <div class="shell">
         <div class="section-head section-head--light reveal" data-reveal>
           <p class="eyebrow" data-es="Stack & herramientas" data-en="Stack & tools">Stack & herramientas</p>
-          <h2 data-es="Las tecnologías con las que construyo." data-en="The technologies I build with.">Las tecnologías con las que construyo.</h2>
+          <h2 data-es="Stack real para construir sitios sólidos." data-en="A real stack to build solid websites.">Stack real para construir sitios sólidos.</h2>
         </div>
 
         <div class="tech-groups">
@@ -420,7 +455,7 @@
             </div>
           </article>
 
-          <article class="project-card project-card--wide reveal reveal-delay-2" data-reveal>
+          <article class="project-card reveal reveal-delay-2" data-reveal>
             <div class="project-card-media project-card-media--art project-card-media--art-olive">
              <img src="./assets/images/project-consultorio-preview.png" alt="Proyecto Consultorio Díaz — odontología" loading="lazy">
               <div class="project-card-overlay">
@@ -440,6 +475,68 @@
             </div>
           </article>
 
+        </div>
+      </div>
+    </section>
+
+    <!-- QUIZ INTERACTIVO -->
+    <section class="section quiz-section" id="quiz">
+      <div class="shell">
+        <div class="quiz-intro reveal" data-reveal>
+          <p class="eyebrow" data-es="¿Trabajamos juntos?" data-en="Work together?">¿Trabajamos juntos?</p>
+          <h2 data-es="En 30 segundos te digo la mejor ruta." data-en="In 30 seconds, I’ll point you to the best path.">En 30 segundos te digo la mejor ruta.</h2>
+        </div>
+
+        <div class="quiz-wrap reveal reveal-delay" data-reveal>
+          <div class="quiz-card" id="quiz-card">
+
+            <div class="quiz-step is-active" data-step="0">
+              <p class="quiz-step-label" data-es="1 / 3 — Situación" data-en="1 / 3 — Situation">1 / 3 — Situación</p>
+              <h3 data-es="¿Tu negocio tiene web actualmente?" data-en="Does your business have a website?">¿Tu negocio tiene web actualmente?</h3>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-next="1" data-es="No, necesito crear una desde cero" data-en="No, I need to build one from scratch">No, necesito crear una desde cero</button>
+                <button class="quiz-opt" data-next="1" data-es="Sí, pero no me representa bien" data-en="Yes, but it doesn't represent me well">Sí, pero no me representa bien</button>
+                <button class="quiz-opt" data-next="1" data-es="Sí, solo quiero optimizarla" data-en="Yes, I just want to optimize it">Sí, solo quiero optimizarla</button>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="1">
+              <p class="quiz-step-label" data-es="2 / 3 — Objetivo" data-en="2 / 3 — Goal">2 / 3 — Objetivo</p>
+              <h3 data-es="¿Qué quieres lograr con tu web?" data-en="What do you want to achieve with your website?">¿Qué quieres lograr con tu web?</h3>
+              <div class="quiz-options">
+                <button class="quiz-opt" data-next="2" data-es="Vender más productos o servicios" data-en="Sell more products or services">Vender más productos o servicios</button>
+                <button class="quiz-opt" data-next="2" data-es="Generar confianza y presencia de marca" data-en="Build trust and brand presence">Generar confianza y presencia de marca</button>
+                <button class="quiz-opt" data-next="2" data-es="Captar clientes sin pagar publicidad" data-en="Get clients without paid ads">Captar clientes sin pagar publicidad</button>
+              </div>
+            </div>
+
+            <div class="quiz-step" data-step="2">
+              <p class="quiz-step-label" data-es="3 / 3 — Tiempo" data-en="3 / 3 — Timeline">3 / 3 — Tiempo</p>
+              <h3 data-es="¿Cuándo quieres tener tu web lista?" data-en="When do you want your website ready?">¿Cuándo quieres tener tu web lista?</h3>
+              <div class="quiz-options">
+                <button class="quiz-opt quiz-opt--final" data-es="Lo antes posible, es urgente" data-en="As soon as possible, it's urgent">Lo antes posible, es urgente</button>
+                <button class="quiz-opt quiz-opt--final" data-es="En el próximo mes" data-en="Within the next month">En el próximo mes</button>
+                <button class="quiz-opt quiz-opt--final" data-es="Sin prisa, lo quiero bien hecho" data-en="No rush, I want it done right">Sin prisa, lo quiero bien hecho</button>
+              </div>
+            </div>
+
+            <div class="quiz-step quiz-result" data-step="result">
+              <div class="quiz-result-check" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <h3 data-es="Listo. Ya tengo el contexto." data-en="Great. I have the context.">Listo. Ya tengo el contexto.</h3>
+              <p data-es="Escríbeme por WhatsApp — en menos de 24h tienes mi respuesta y una propuesta clara para empezar." data-en="Message me on WhatsApp — in less than 24h you'll have my reply and a clear proposal.">Escríbeme por WhatsApp — en menos de 24h tienes mi respuesta y una propuesta clara para empezar.</p>
+              <a class="button button-rose quiz-cta" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="quiz" data-es="Hablar con Leilany" data-en="Talk to Leilany">Hablar con Leilany</a>
+              <button class="quiz-restart" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
+            </div>
+
+          </div>
+
+          <div class="quiz-dots" aria-hidden="true">
+            <span class="quiz-dot is-active"></span>
+            <span class="quiz-dot"></span>
+            <span class="quiz-dot"></span>
+          </div>
         </div>
       </div>
     </section>
@@ -507,12 +604,12 @@
         <div class="contact-layout reveal" data-reveal>
           <div class="contact-copy">
             <p class="eyebrow" data-es="Hablemos" data-en="Let's talk">Hablemos</p>
-            <h2 data-es="Si tu negocio ya vale, tu web también debería parecerlo." data-en="If your business is worth it, your website should look like it.">Si tu negocio ya vale, tu web también debería parecerlo.</h2>
-            <p data-es="Si buscas una presencia digital elegante, estratégica y preparada para convertir, este puede ser el momento de construirla." data-en="If you're looking for an elegant, strategic, and conversion-ready digital presence, this may be the moment to build it.">Si buscas una presencia digital elegante, estratégica y preparada para convertir, este puede ser el momento de construirla.</p>
+            <h2 data-es="Tu negocio tiene nivel. Tu web debería demostrarlo." data-en="Your business has the level. Your website should prove it.">Tu negocio tiene nivel. Tu web debería demostrarlo.</h2>
+            <p data-es="Cuéntame tu proyecto — en menos de 24 horas tienes mi respuesta y una propuesta clara para empezar." data-en="Tell me about your project — you'll have my response and a clear proposal within 24 hours.">Cuéntame tu proyecto — en menos de 24 horas tienes mi respuesta y una propuesta clara para empezar.</p>
           </div>
 
           <div class="contact-panel">
-            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-es="Hablar por WhatsApp" data-en="Talk on WhatsApp">Hablar por WhatsApp</a>
+            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="contact" data-es="Cuéntame tu proyecto" data-en="Tell me about your project">Cuéntame tu proyecto</a>
             <div class="contact-info">
               <div class="contact-line">
                 <span data-es="Email" data-en="Email">Email</span>
@@ -553,6 +650,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- WhatsApp floating button -->
+  <a class="wa-float" href="https://wa.me/18092697630" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp" data-wa-cta="float" title="WhatsApp">
+    <svg class="wa-float-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.05" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M3 21l1.65-5.13A9 9 0 1 1 8.29 19.5L3 21z"/>
+      <path d="M9 10a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5c0 1 .5 2 1.5 3s2 1.5 3 1.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5c-4 0-7-3-7-7z"/>
+    </svg>
+  </a>
 
   <script src="./script.js"></script>
 </body>
