@@ -20,8 +20,9 @@
   --radius-md:         10px;
   --shell:             min(1240px, calc(100vw - 48px));
   --font-title:        "Playfair Display", serif;
-  --font-body:         "Inter", sans-serif;
-  --ease:              360ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  --font-body:         "Outfit", sans-serif;
+  --font-mono:         "JetBrains Mono", monospace;
+  --ease:              360ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -80,7 +81,6 @@ a, button {
   transform-origin: left center;
   transform: scaleX(0);
   background: linear-gradient(90deg, var(--color-rose), var(--color-olive));
-  box-shadow: 0 0 16px rgba(214,164,164,0.5);
 }
 
 /* =============================================
@@ -190,9 +190,10 @@ a, button {
 }
 
 .brand-name {
-  font-size: 0.9rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
 }
 
@@ -336,6 +337,11 @@ a, button {
   transform: translateY(-2px);
 }
 
+.button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: none;
+}
+
 .button-rose {
   background: var(--color-rose);
   color: var(--color-white);
@@ -377,9 +383,10 @@ a, button {
 .eyebrow {
   display: block;
   margin-bottom: 16px;
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.22em;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-olive);
 }
@@ -387,12 +394,12 @@ a, button {
 h1, h2, h3 {
   font-family: var(--font-title);
   font-weight: 700;
-  letter-spacing: -0.035em;
-  line-height: 1.0;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
 }
 
-h2 { max-width: 14ch; font-size: clamp(2.2rem, 4.5vw, 4rem); }
-h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
+h2 { max-width: 14ch; font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.05; }
+h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); line-height: 1.2; }
 
 /* =============================================
    HERO
@@ -441,12 +448,13 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
 /* --- Hero copy --- */
 .hero-greeting {
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-rose);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .hero-name {
@@ -492,11 +500,12 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .hero-role {
-  font-size: 1rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.7);
-  letter-spacing: 0.04em;
-  transition: opacity 300ms ease, transform 300ms ease;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.65);
+  letter-spacing: 0.02em;
+  transition: opacity 300ms cubic-bezier(0.16, 1, 0.3, 1), transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .hero-role.is-fading {
@@ -505,11 +514,12 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .hero-text {
-  max-width: 40ch;
-  color: rgba(255,255,255,0.64);
-  font-size: 1rem;
+  max-width: 44ch;
+  color: rgba(255,255,255,0.62);
+  font-size: 1.05rem;
   line-height: 1.7;
-  margin-bottom: 32px;
+  margin-bottom: 36px;
+  font-weight: 400;
 }
 
 .hero-actions {
@@ -635,11 +645,12 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.36);
 }
 
 .hero-marquee span::after {
@@ -712,7 +723,8 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 .about-copy p {
   color: var(--color-muted);
   font-size: 1rem;
-  max-width: 44ch;
+  max-width: 52ch;
+  line-height: 1.75;
 }
 
 .about-right {
@@ -744,8 +756,8 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .about-stat strong {
-  font-family: var(--font-title);
-  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-family: var(--font-mono);
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
   font-weight: 700;
   color: var(--color-black);
   letter-spacing: -0.04em;
@@ -753,9 +765,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .about-stat span {
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--color-olive);
 }
@@ -782,86 +795,94 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 0;
+  border-top: 1px solid var(--color-line);
 }
 
-/* Tilt card — JS adds inline transform */
 .service-card {
   position: relative;
   display: grid;
-  gap: 14px;
-  padding: 32px 28px;
-  border-radius: 16px;
-  background: var(--color-white);
-  border: 1px solid var(--color-line);
-  overflow: hidden;
+  grid-template-columns: 52px 52px 1fr 1.1fr;
+  grid-template-areas: "num icon title desc";
+  gap: 0 28px;
+  align-items: center;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--color-line);
+  border-radius: 0;
+  background: transparent;
   cursor: default;
-  transform-style: preserve-3d;
   transition:
-    box-shadow 400ms ease,
-    border-color 400ms ease;
+    background var(--ease),
+    padding-left 400ms cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform;
 }
 
-/* Rose gradient reveal on hover — bottom-left corner */
 .service-card::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 0% 100%, rgba(214,164,164,0.18) 0%, transparent 60%);
-  opacity: 0;
-  transition: opacity 400ms ease;
-  pointer-events: none;
+  left: 0; top: 0; bottom: 0;
+  width: 0;
+  background: var(--color-rose);
+  transition: width 300ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .service-card:hover {
-  border-color: rgba(214,164,164,0.4);
-  box-shadow: 0 20px 60px rgba(214,164,164,0.14), 0 4px 16px rgba(0,0,0,0.06);
+  background: rgba(214, 164, 164, 0.04);
+  padding-left: 20px;
 }
 
-.service-card:hover::before { opacity: 1; }
+.service-card:hover::before { width: 2px; }
 
-/* Animated number — grows on hover */
 .service-number {
-  font-size: 0.7rem;
+  grid-area: num;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  letter-spacing: 0.1em;
   color: var(--color-rose);
   transition: letter-spacing var(--ease);
 }
 
-.service-card:hover .service-number { letter-spacing: 0.26em; }
+.service-card:hover .service-number { letter-spacing: 0.18em; }
 
 .service-icon {
+  grid-area: icon;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px; height: 44px;
-  border-radius: 12px;
-  background: rgba(214,164,164,0.1);
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: rgba(214,164,164,0.08);
   color: var(--color-rose);
-  transition: background 400ms ease, transform 400ms cubic-bezier(0.34,1.56,0.64,1);
+  border: 1px solid rgba(214,164,164,0.15);
+  transition: background 300ms ease, transform 400ms cubic-bezier(0.34,1.56,0.64,1);
 }
 
 .service-card:hover .service-icon {
-  background: rgba(214,164,164,0.2);
-  transform: rotate(-6deg) scale(1.12);
+  background: rgba(214,164,164,0.16);
+  transform: rotate(-6deg) scale(1.1);
 }
 
 .service-card h3 {
-  font-size: 1.05rem;
-  line-height: 1.2;
+  grid-area: title;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: var(--font-body);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
   margin: 0;
   transition: color var(--ease);
 }
 
+.service-card:hover h3 { color: var(--color-black); }
+
 .service-card p {
-  font-size: 0.9rem;
+  grid-area: desc;
+  font-size: 0.875rem;
   color: var(--color-muted);
   line-height: 1.65;
   margin: 0;
+  max-width: 46ch;
 }
 
 /* =============================================
@@ -882,8 +903,24 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+}
+
+/* First card: full-width editorial hero */
+.project-card--featured {
+  grid-column: 1 / -1;
+}
+.project-card--featured .project-card-media {
+  aspect-ratio: 21/9;
+}
+
+/* Last card: full-width cinematic closer */
+.project-card--wide {
+  grid-column: 1 / -1;
+}
+.project-card--wide .project-card-media {
+  aspect-ratio: 21/9;
 }
 
 .project-card {
@@ -995,10 +1032,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .project-index {
-  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--color-rose);
 }
 
@@ -1036,9 +1073,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .tech-group-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-olive);
   margin-bottom: 20px;
@@ -1080,9 +1118,9 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
 /* Magnetic hover — JS moves individual pills */
 .tech-pill:hover {
-  border-color: var(--color-rose);
-  background: rgba(214,164,164,0.1);
-  box-shadow: 0 0 28px rgba(214,164,164,0.2), inset 0 0 16px rgba(214,164,164,0.06);
+  border-color: rgba(214,164,164,0.5);
+  background: rgba(214,164,164,0.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 0 16px rgba(214,164,164,0.06);
   color: var(--color-white);
 }
 
@@ -1152,9 +1190,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .process-step-node span {
-  font-size: 0.72rem;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.08em;
   color: var(--color-rose);
 }
 
@@ -1243,9 +1282,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 }
 
 .contact-line span {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-olive);
 }
@@ -1325,10 +1365,10 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
    ============================================= */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
+  transform: translateY(24px);
   transition:
-    opacity 680ms ease,
-    transform 680ms cubic-bezier(0.16,1,0.3,1);
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.is-visible {
@@ -1336,8 +1376,9 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
   transform: translateY(0);
 }
 
-.reveal-delay   { transition-delay: 110ms; }
-.reveal-delay-2 { transition-delay: 210ms; }
+.reveal-delay   { transition-delay: 90ms; }
+.reveal-delay-2 { transition-delay: 170ms; }
+.reveal-delay-3 { transition-delay: 250ms; }
 
 /* =============================================
    KEYFRAMES
@@ -1414,7 +1455,15 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
   .about-layout { grid-template-columns: 1fr; gap: 40px; }
 
-  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-card {
+    grid-template-columns: 44px 44px 1fr;
+    grid-template-areas:
+      "num icon title"
+      ". . desc";
+    gap: 10px 20px;
+    align-items: start;
+  }
+  .service-card p { grid-area: desc; max-width: none; }
 
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 
@@ -1494,8 +1543,21 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
   .menu-toggle { display: inline-flex; }
 
   /* ---- Sections ---- */
-  .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .service-card {
+    grid-template-columns: 40px 40px 1fr;
+    grid-template-areas:
+      "num icon title"
+      ". . desc";
+    gap: 8px 16px;
+    align-items: start;
+  }
+  .service-card p { grid-area: desc; max-width: none; }
+
   .projects-grid { grid-template-columns: 1fr; }
+  .project-card--featured,
+  .project-card--wide { grid-column: 1; }
+  .project-card--featured .project-card-media,
+  .project-card--wide .project-card-media { aspect-ratio: 16/9; }
 }
 
 /* =============================================
@@ -1511,13 +1573,25 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
   .hero-name-first { font-size: clamp(3.4rem, 16vw, 5rem); }
   .hero-name-last  { font-size: clamp(2rem, 10vw, 3rem); }
 
-  .hero-actions { flex-direction: column; }
+  /* left-align hero copy on phone — más editorial */
+  .hero-shell { text-align: left; }
+  .hero-role-wrap { justify-content: flex-start; }
+  .hero-text { margin-left: 0; margin-right: 0; }
+  .hero-actions { justify-content: flex-start; flex-direction: column; }
   .button { width: 100%; text-align: center; justify-content: center; }
 
   .about-stats { grid-template-columns: 1fr 1fr; }
 
-  .services-grid { grid-template-columns: 1fr; gap: 10px; }
-  .service-card { padding: 24px 20px; }
+  .service-card {
+    grid-template-columns: 36px 40px 1fr;
+    grid-template-areas:
+      "num icon title"
+      ". . desc";
+    gap: 8px 12px;
+    padding: 24px 0;
+    align-items: start;
+  }
+  .service-card p { grid-area: desc; max-width: none; }
 
   .projects-grid { grid-template-columns: 1fr; }
 
