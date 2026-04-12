@@ -130,15 +130,17 @@ a, button {
    ============================================= */
 .site-header {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 100;
-  padding: 18px 0;
-  transition: padding var(--ease);
+  padding: 0;
+  transition: background-color var(--ease);
 }
 
 .site-header.is-scrolled {
-  padding: 10px 0;
+  padding: 0;
 }
 
 .nav-shell {
@@ -147,9 +149,11 @@ a, button {
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 24px;
+  width: 100%;
+  margin: 0;
   padding: 14px 24px;
   border: 1px solid var(--color-line-light);
-  border-radius: 14px;
+  border-radius: 0;
   background: rgba(10,10,10,0.54);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -1250,7 +1254,7 @@ h3 { font-size: clamp(1.3rem, 2vw, 1.8rem); }
 
   .social-sidebar { display: none; }
 
-  .site-header { padding: 12px 0; }
+  .site-header { padding: 0; }
 
   .nav-shell {
     grid-template-columns: auto auto;
