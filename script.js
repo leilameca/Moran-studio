@@ -377,9 +377,9 @@ if (quizCard) {
 }
 
 /* ---- LANGUAGE TOGGLE ---- */
-const langToggle = document.querySelector("[data-lang-toggle]");
+const langToggles = document.querySelectorAll("[data-lang-toggle]");
 
-if (langToggle) {
+if (langToggles.length) {
   const i18nEls = document.querySelectorAll("[data-es], [data-en]");
 
   const applyLang = (lang) => {
@@ -403,8 +403,10 @@ if (langToggle) {
     localStorage.setItem("ms-lang", lang);
   };
 
-  langToggle.addEventListener("click", () => {
-    applyLang(document.documentElement.classList.contains("lang-en") ? "es" : "en");
+  langToggles.forEach(btn => {
+    btn.addEventListener("click", () => {
+      applyLang(document.documentElement.classList.contains("lang-en") ? "es" : "en");
+    });
   });
 
   applyLang(localStorage.getItem("ms-lang") === "es" ? "es" : "en");

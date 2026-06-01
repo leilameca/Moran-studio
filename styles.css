@@ -260,6 +260,9 @@ a, button {
 
 .lang-sep { opacity: 0.3; }
 
+/* Mobile-only lang toggle — hidden on desktop */
+.lang-toggle--mobile { display: none; }
+
 [data-lang-es],
 [data-lang-en] {
   transition: color var(--ease);
@@ -1915,6 +1918,7 @@ h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
 
   .nav-end { display: none; }
   .menu-toggle { display: inline-flex; }
+  .lang-toggle--mobile { display: flex; margin-top: 8px; align-self: center; }
 
   /* ---- Sections ---- */
   .services-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
