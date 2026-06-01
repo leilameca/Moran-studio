@@ -1,15 +1,24 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moran Studio | Diseño web que convierte</title>
-  <meta name="description" content="Moran Studio — diseño y desarrollo web premium para negocios que quieren verse mejor, vender mejor y generar más confianza digital.">
+  <title>Moran Studio | Web design that converts</title>
+  <meta name="description" content="Moran Studio — premium web design and development for businesses that want to look better, sell better, and build more digital trust.">
   <meta name="theme-color" content="#0F0F0F">
-  <meta property="og:title" content="Moran Studio | Diseño web que convierte">
-  <meta property="og:description" content="Portafolio de diseño y desarrollo web premium. Leilany Morán — Moran Studio.">
+  <meta property="og:title" content="Moran Studio | Web design that converts">
+  <meta property="og:description" content="Premium web design and development portfolio. Leilany Morán — Moran Studio.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./assets/images/hero.png">
+  <script>
+    (function(){
+      var lang = localStorage.getItem("ms-lang") === "es" ? "es" : "en";
+      document.documentElement.className += " lang-" + lang;
+      document.documentElement.lang = lang;
+      /* hide body until JS swaps text to avoid Spanish flash */
+      document.write('<style>body{visibility:hidden}</style>');
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">

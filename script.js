@@ -386,6 +386,7 @@ if (langToggle) {
     document.documentElement.classList.toggle("lang-en", lang === "en");
     document.documentElement.classList.toggle("lang-es", lang !== "en");
     document.documentElement.lang = lang === "en" ? "en" : "es";
+    document.body.style.visibility = "";
 
     i18nEls.forEach((el) => {
       const text = lang === "en" ? el.dataset.en : el.dataset.es;
@@ -407,7 +408,7 @@ if (langToggle) {
     applyLang(document.documentElement.classList.contains("lang-en") ? "es" : "en");
   });
 
-  applyLang(localStorage.getItem("ms-lang") === "en" ? "en" : "es");
+  applyLang(localStorage.getItem("ms-lang") === "es" ? "es" : "en");
 }
 
 // Ensure WA CTAs are populated even if language toggle is removed.
