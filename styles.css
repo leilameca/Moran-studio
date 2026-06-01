@@ -1528,10 +1528,10 @@ h3 { font-size: clamp(1.1rem, 1.8vw, 1.5rem); }
 }
 
 .wa-float-icon {
-  width: 24px;
-  height: 24px;
+  width: 26px;
+  height: 26px;
   flex-shrink: 0;
-  transform: translateY(0.3px);
+  transform: translateY(0);
   position: relative;
   z-index: 1;
 }
