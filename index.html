@@ -15,8 +15,6 @@
       var lang = localStorage.getItem("ms-lang") === "es" ? "es" : "en";
       document.documentElement.className += " lang-" + lang;
       document.documentElement.lang = lang;
-      /* hide body until JS swaps text to avoid Spanish flash */
-      document.write('<style>body{visibility:hidden}</style>');
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">

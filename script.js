@@ -386,7 +386,6 @@ if (langToggle) {
     document.documentElement.classList.toggle("lang-en", lang === "en");
     document.documentElement.classList.toggle("lang-es", lang !== "en");
     document.documentElement.lang = lang === "en" ? "en" : "es";
-    document.body.style.visibility = "";
 
     i18nEls.forEach((el) => {
       const text = lang === "en" ? el.dataset.en : el.dataset.es;
