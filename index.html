@@ -1,677 +1,188 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moran Studio | Web design that converts</title>
-  <meta name="description" content="Moran Studio — premium web design and development for businesses that want to look better, sell better, and build more digital trust.">
-  <meta name="theme-color" content="#0F0F0F">
-  <meta property="og:title" content="Moran Studio | Web design that converts">
-  <meta property="og:description" content="Premium web design and development portfolio. Leilany Morán — Moran Studio.">
+  <title>Morán Studio — Software, Design & 3D Solar Engineering</title>
+  <meta name="description" content="Technology and design studio led by Leilany Morán. SaaS products, industrial ERPs, web experiences, and 3D photovoltaic design.">
+  <meta name="theme-color" content="#07080c">
+  <meta property="og:title" content="Morán Studio — Technology designed with intention">
+  <meta property="og:description" content="Scalable software, digital design, and 3D spatial systems.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="./assets/images/hero.png">
-  <script>
-    (function(){
-      var lang = localStorage.getItem("ms-lang") === "es" ? "es" : "en";
-      document.documentElement.className += " lang-" + lang;
-      document.documentElement.lang = lang;
-    })();
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="./assets/images/logo.png">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./script.js" defer></script>
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <div class="page-noise" aria-hidden="true"></div>
 
-  <!-- Social sidebar — visible solo en desktop -->
-  <aside class="social-sidebar" aria-label="Redes sociales">
-    <a href="https://instagram.com/moranstudiord" target="_blank" rel="noreferrer" aria-label="Instagram @moranstudiord">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
-    </a>
-    <a href="https://github.com/leilameca" target="_blank" rel="noreferrer" aria-label="GitHub">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-    </a>
-    <a href="https://linkedin.com/in/leilany-moran" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    </a>
-    <div class="social-sidebar-line" aria-hidden="true"></div>
-  </aside>
-
-  <!-- NAVBAR -->
   <header class="site-header" data-header>
-    <div class="shell nav-shell">
-      <a class="brand" href="#inicio" aria-label="Moran Studio — inicio">
-        <img class="brand-logo" src="./assets/images/logo.png" alt="Logo Moran Studio">
-        <strong class="brand-name">Moran Studio</strong>
+    <div class="shell nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Morán Studio, inicio">
+        <img src="./assets/images/logo.png" alt="">
+        <span><strong>MORÁN STUDIO</strong><small>TECHNOLOGY · DESIGN · 3D</small></span>
       </a>
-
-      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="site-nav" data-menu-toggle>
-        <span></span>
-        <span></span>
-      </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Navegación principal" data-nav>
-        <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
-        <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
-        <a href="#tecnologias" data-es="Skills" data-en="Skills">Skills</a>
-        <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
-        <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
-        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-        <button class="lang-toggle lang-toggle--mobile" data-lang-toggle aria-label="Cambiar idioma">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span data-lang-es>ES</span>
-          <span class="lang-sep">|</span>
-          <span data-lang-en>EN</span>
-        </button>
+      <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav" data-menu-toggle><span></span><span></span></button>
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal" data-nav>
+        <a href="#capacidades">Capacidades</a>
+        <a href="#proyectos">Sistemas</a>
+        <a href="#webs">Webs</a>
+        <a href="#herramientas">Herramientas</a>
+        <a href="#contacto">Contacto</a>
       </nav>
-
-      <div class="nav-end">
-        <a class="nav-email" href="mailto:leiladev20@gmail.com" aria-label="Enviar email">leiladev20@gmail.com</a>
-        <button class="lang-toggle" data-lang-toggle aria-label="Cambiar idioma">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          <span data-lang-es>ES</span>
-          <span class="lang-sep">|</span>
-          <span data-lang-en>EN</span>
-        </button>
-      </div>
+      <button class="language-toggle" type="button" aria-label="Change language to Spanish" data-lang-toggle><span data-lang-en>EN</span><i></i><span data-lang-es>ES</span></button>
+      <a class="nav-cta" href="#quiz">Cuéntame tu idea <span>↗</span></a>
     </div>
   </header>
 
-  <main>
-
-    <!-- HERO -->
+  <main id="contenido">
     <section class="hero" id="inicio">
-      <div class="shell hero-shell">
-
-        <div class="hero-copy">
-          <div class="hero-badge">
-            <span class="hero-badge-dot" aria-hidden="true"></span>
-            <span data-es="Disponible para nuevos proyectos" data-en="Available for new projects">Disponible para nuevos proyectos</span>
-          </div>
-          <h1 class="hero-name">
-            <span class="hero-name-first">LEILANY</span>
-            <em class="hero-name-last">Morán</em>
-          </h1>
-          <div class="hero-role-wrap">
-            <span class="hero-role" data-roles-es="Desarrolladora web,Diseñadora digital,Directora de Moran Studio" data-roles-en="Web Developer,Digital Designer,Founder of Moran Studio" aria-live="polite">Desarrolladora web</span>
-          </div>
-          <p class="hero-text" data-es="Tu negocio merece una presencia digital que lo refleje. Diseño y desarrollo webs premium: rápidas, claras y pensadas para convertir." data-en="Your business deserves a digital presence that reflects it. I design and develop premium websites—fast, clear, and built to convert.">
-            Tu negocio merece una presencia digital que lo refleje. Diseño y desarrollo webs premium: rápidas, claras y pensadas para convertir.
-          </p>
+      <div class="hero-glow hero-glow--rose" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--olive" aria-hidden="true"></div>
+      <div class="shell hero-grid">
+        <div class="hero-copy" data-reveal>
+          <p class="hero-kicker">MORÁN STUDIO · REPÚBLICA DOMINICANA</p>
+          <h1>Engineering scalable systems. <em>Designing human experiences.</em></h1>
+          <p class="hero-lead">Diseñamos e implementamos productos SaaS, plataformas ERP, experiencias web y soluciones 3D fotovoltaicas con precisión técnica y sensibilidad visual.</p>
           <div class="hero-actions">
-            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="hero" data-es="Iniciar proyecto" data-en="Start a project">Iniciar proyecto</a>
-            <a class="button button-ghost" href="#proyectos" data-es="Ver trabajo" data-en="See my work">Ver trabajo</a>
+            <a class="button button--rose" href="#proyectos">Ver proyectos destacados <span>↓</span></a>
+            <a class="button button--ghost" href="#contacto">Iniciar proyecto</a>
           </div>
-          <p class="hero-micro" data-es="Te respondo en menos de 24h. Sin compromiso." data-en="Reply within 24h. No pressure.">Te respondo en menos de 24h. Sin compromiso.</p>
-          <div class="hero-strip">
-            <div class="hero-strip-item">
-              <strong>6+</strong>
-              <span data-es="Proyectos entregados" data-en="Projects delivered">Proyectos entregados</span>
-            </div>
-            <div class="hero-strip-divider" aria-hidden="true"></div>
-            <div class="hero-strip-item">
-              <strong data-es="Diseño + Código" data-en="Design + Code">Diseño + Código</strong>
-              <span data-es="Full-stack desde RD 🇩🇴" data-en="Full-stack from DR 🇩🇴">Full-stack desde RD 🇩🇴</span>
-            </div>
-            <div class="hero-strip-divider" aria-hidden="true"></div>
-            <div class="hero-strip-item">
-              <strong data-es="Resultado real" data-en="Real results">Resultado real</strong>
-              <span data-es="Sin plantillas, todo a medida" data-en="No templates, all custom">Sin plantillas, todo a medida</span>
-            </div>
+          <div class="hero-proof">
+            <span><strong>Software</strong>Arquitectura & producto</span>
+            <span><strong>Design</strong>UI/UX & dirección visual</span>
+            <span><strong>Spatial</strong>Fotogrametría & solar 3D</span>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-photo-area" data-parallax>
-            <div class="hero-photo-glow" aria-hidden="true"></div>
-            <div class="hero-photo-ring" aria-hidden="true"></div>
-            <div class="hero-photo-frame">
-              <img src="./assets/images/profile-leilany-about.png" alt="Leilany Morán — fundadora de Moran Studio">
+        <div class="hero-person" data-reveal data-delay="1">
+          <div class="portrait-stage">
+            <div class="portrait-orbit" aria-hidden="true"></div>
+            <div class="portrait-card">
+              <img src="./assets/images/profile-leilany-about.png" alt="Leilany Morán, fundadora y directora de Morán Studio">
+              <div class="portrait-caption"><span>FOUNDER / ENGINEER / DESIGNER</span><strong>Leilany Morán</strong></div>
             </div>
-            <span class="deco deco-1" aria-hidden="true">{ }</span>
-            <span class="deco deco-2" aria-hidden="true">&lt;/&gt;</span>
-            <span class="deco deco-3" aria-hidden="true">npm</span>
-            <span class="deco deco-4" aria-hidden="true">( )</span>
+            <div class="floating-note floating-note--one"><span>BUILDING</span><strong>CartaYa SaaS</strong></div>
+            <div class="floating-note floating-note--two"><span>FOCUS</span><strong>Systems + people</strong></div>
+            <div class="floating-code" aria-hidden="true"><span>01</span><b>form</b> follows <em>function</em><i></i></div>
           </div>
         </div>
-
       </div>
+      <div class="hero-ticker" aria-hidden="true"><div><span>SOFTWARE ENGINEERING</span><i></i><span>PRODUCT DESIGN</span><i></i><span>INDUSTRIAL ERP</span><i></i><span>WEB EXPERIENCES</span><i></i><span>3D SOLAR ENGINEERING</span><i></i><span>SOFTWARE ENGINEERING</span><i></i><span>PRODUCT DESIGN</span><i></i></div></div>
+    </section>
 
-      <div class="hero-marquee" aria-hidden="true">
-        <div class="hero-marquee-track">
-          <span>Diseño editorial</span>
-          <span>Código limpio</span>
-          <span>Experiencia premium</span>
-          <span>Sin plantillas</span>
-          <span>Resultado real</span>
-          <span>Full-stack desde RD</span>
-          <span>Diseño editorial</span>
-          <span>Código limpio</span>
-          <span>Experiencia premium</span>
-          <span>Sin plantillas</span>
-          <span>Resultado real</span>
-          <span>Full-stack desde RD</span>
+    <section class="founder section" id="estudio">
+      <div class="shell founder-grid">
+        <div class="section-label" data-reveal><span>00</span> EL ESTUDIO</div>
+        <div class="founder-copy" data-reveal>
+          <h2>Tecnología con criterio.<br><em>Diseño con personalidad.</em></h2>
+          <div class="founder-text">
+            <p>Soy Leilany Morán, desarrolladora y diseñadora dominicana. Morán Studio nace de unir dos formas de pensar que para mí nunca debieron estar separadas: la lógica de un sistema sólido y la sensibilidad de una experiencia bien diseñada.</p>
+            <p>No construyo productos para llenar un portafolio. Me involucro en el problema, entiendo la operación y convierto esa complejidad en herramientas claras, útiles y visualmente cuidadas.</p>
+          </div>
         </div>
+        <aside class="founder-quote" data-reveal data-delay="1"><span>“</span><p>La forma importa cuando trabaja a favor de las personas y del negocio.</p><small>LEILANY MORÁN · DIRECTORA</small></aside>
       </div>
     </section>
 
-    <!-- SOBRE MÍ -->
-    <section class="section about-section" id="sobre-mi">
-      <div class="about-deco-text" aria-hidden="true">LEILANY</div>
+    <section class="services section" id="capacidades">
       <div class="shell">
-        <div class="about-layout">
-
-          <div class="about-copy reveal" data-reveal>
-            <p class="eyebrow" data-es="Sobre mí" data-en="About me">Sobre mí</p>
-            <h2 data-es="Diseño con propósito. Desarrollo con precisión." data-en="Design with purpose. Develop with precision.">Diseño con propósito. Desarrollo con precisión.</h2>
-            <p data-es="Soy Leilany Morán — desarrolladora web dominicana con foco en claridad, detalle visual y conversión. Creo experiencias digitales que se sienten premium desde el primer scroll." data-en="I'm Leilany Morán — a Dominican web developer focused on clarity, visual detail, and conversion. I create digital experiences that feel premium from the first scroll.">
-              Soy Leilany Morán — desarrolladora web dominicana con foco en claridad, detalle visual y conversión. Creo experiencias digitales que se sienten premium desde el primer scroll.
-            </p>
-            <p data-es="Moran Studio es mi estudio: diseño que comunica, código que funciona y presencia que convierte." data-en="Moran Studio is my studio: design that communicates, code that works, and presence that converts.">
-              Moran Studio es mi estudio: diseño que comunica, código que funciona y presencia que convierte.
-            </p>
-            <a class="button button-dark" href="#contacto" data-es="Hablemos" data-en="Let's talk">Hablemos</a>
-          </div>
-
-          <div class="about-right reveal reveal-delay" data-reveal>
-            <div class="about-stats">
-              <div class="about-stat">
-                <strong data-counter="6" data-suffix="+">6+</strong>
-                <span data-es="Proyectos entregados" data-en="Projects delivered">Proyectos entregados</span>
-              </div>
-              <div class="about-stat">
-                <strong data-counter="8" data-suffix="">8</strong>
-                <span data-es="Herramientas clave" data-en="Key tools">Herramientas clave</span>
-              </div>
-              <div class="about-stat about-stat--wide">
-                <strong data-es="RD 🇩🇴" data-en="🇩🇴 RD">RD 🇩🇴</strong>
-                <span data-es="República Dominicana" data-en="Dominican Republic">República Dominicana</span>
-              </div>
-            </div>
-            <blockquote class="about-quote">
-              <span data-es="&ldquo;La forma importa cuando trabaja a favor del negocio.&rdquo;" data-en="&ldquo;Form matters when it works for the business.&rdquo;">&ldquo;La forma importa cuando trabaja a favor del negocio.&rdquo;</span>
-            </blockquote>
-          </div>
-
+        <header class="section-head" data-reveal><div><span class="section-index">01 / CAPACIDADES</span><h2>Construimos donde convergen<br><em>tecnología, operación y diseño.</em></h2></div><p>Desde un producto digital hasta un entorno físico modelado: cada decisión parte del contexto real y termina en una solución que se puede usar, medir y hacer crecer.</p></header>
+        <div class="service-grid">
+          <article class="service-card service-card--rose" data-reveal><div class="service-number">01</div><div class="service-icon">&lt;/&gt;</div><h3>SaaS & Web Applications</h3><p>Productos multi-tenant, portales y aplicaciones con una experiencia coherente desde la arquitectura hasta el último estado de interfaz.</p><ul><li>Arquitectura de producto</li><li>UX & design systems</li><li>Cloud & APIs</li></ul></article>
+          <article class="service-card service-card--olive" data-reveal data-delay="1"><div class="service-number">02</div><div class="service-icon">ERP</div><h3>Enterprise & Industrial ERPs</h3><p>Sistemas a medida para convertir procesos dispersos en una operación trazable: inventario, producción, finanzas y decisiones.</p><ul><li>Mapeo de procesos</li><li>Control operativo</li><li>Business intelligence</li></ul></article>
+          <article class="service-card service-card--amber" data-reveal data-delay="2"><div class="service-number">03</div><div class="service-icon">3D</div><h3>3D Solar Engineering</h3><p>Levantamientos, fotogrametría y modelado técnico para validar instalaciones fotovoltaicas dentro de su contexto espacial.</p><ul><li>Captura con drone</li><li>Modelado espacial</li><li>Simulación fotovoltaica</li></ul></article>
         </div>
       </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="section services-section" id="servicios">
+    <section class="featured section" id="proyectos">
       <div class="shell">
-        <div class="section-head reveal" data-reveal>
-          <p class="eyebrow" data-es="Qué hago" data-en="What I do">Qué hago</p>
-          <h2 data-es="No vendo plantillas. Construyo tu presencia digital desde cero." data-en="I don't sell templates. I build your digital presence from scratch.">No vendo plantillas. Construyo tu presencia digital desde cero.</h2>
-        </div>
-
-        <div class="services-grid">
-
-          <article class="service-card reveal" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
-            </div>
-            <span class="service-number">01</span>
-            <h3 data-es="Páginas corporativas" data-en="Corporate websites">Páginas corporativas</h3>
-            <p data-es="Para empresas que necesitan una imagen digital más sólida, clara y profesional." data-en="For businesses that need a stronger, clearer, more professional digital presence.">Para empresas que necesitan una imagen digital más sólida, clara y profesional.</p>
+        <header class="section-head" data-reveal><div><span class="section-index">02 / SISTEMAS DESTACADOS</span><h2>Productos reales para<br><em>problemas reales.</em></h2></div><p>Software, accesibilidad e ingeniería espacial. Cuatro proyectos distintos unidos por el mismo principio: que la tecnología se sienta clara.</p></header>
+        <p class="mobile-swipe">Desliza para explorar los proyectos →</p>
+        <div class="featured-grid">
+          <article class="case case--wide" data-reveal>
+            <div class="case-top"><span>SaaS / HOSPITALITY</span><b>01</b></div>
+            <div class="case-media case-media--cartaya"><img class="case-screen" src="./assets/projects/cartaya-dashboard.png" alt="Panel de gestión de CartaYa"><img class="case-phone" src="./assets/projects/cartaya-customer-menu.png" alt="Menú cliente de CartaYa"><span class="case-status">PRODUCTO REAL</span></div>
+            <div class="case-copy"><div><h3>CartaYa</h3><p>Plataforma multi-tenant para restaurantes con menú digital, pedidos, cocina, códigos QR, equipos y personalización.</p></div><a href="https://tucartaya.com" target="_blank" rel="noreferrer">tucartaya.com ↗</a></div>
           </article>
-
-          <article class="service-card reveal reveal-delay" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
-            </div>
-            <span class="service-number">02</span>
-            <h3 data-es="Landing pages" data-en="Landing pages">Landing pages</h3>
-            <p data-es="Páginas de conversión para campañas, servicios concretos o lanzamientos que necesitan respuesta rápida." data-en="Conversion-focused pages for campaigns, specific services, or launches that need fast results.">Páginas de conversión para campañas, servicios concretos o lanzamientos que necesitan respuesta rápida.</p>
+          <article class="case" data-reveal data-delay="1">
+            <div class="case-top"><span>ERP / INDUSTRIAL OPERATIONS</span><b>02</b></div>
+            <div class="case-media case-media--erp"><img src="./assets/projects/mash-factura-dashboard.png" alt="Dashboard del ERP Mash Factura"><span class="case-status">SISTEMA OPERATIVO</span></div>
+            <div class="case-copy"><div><h3>Mash Factura</h3><p>ERP para centralizar el ciclo comercial, inventario, operación y control financiero de manufactura.</p></div><a href="#contacto">Solicitar caso →</a></div>
           </article>
-
-          <article class="service-card reveal reveal-delay-2" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
-            </div>
-            <span class="service-number">03</span>
-            <h3 data-es="Tiendas online" data-en="Online stores">Tiendas online</h3>
-            <p data-es="Experiencias visuales limpias para vender productos con más orden, mejor percepción y menos fricción." data-en="Clean visual experiences to sell products with more order, better perception, and less friction.">Experiencias visuales limpias para vender productos con más orden, mejor percepción y menos fricción.</p>
+          <article class="case" data-reveal>
+            <div class="case-top"><span>COMPUTER VISION / ACCESSIBILITY</span><b>03</b></div>
+            <div class="case-media case-media--sing"><img class="case-screen" src="./assets/projects/singtalk-login.png" alt="Inicio de sesión de Sing Talk"><img class="case-phone" src="./assets/projects/singtalk-live-translation.jpg" alt="Sing Talk traduciendo una seña en tiempo real"><span class="case-status">DETECCIÓN LOCAL</span></div>
+            <div class="case-copy"><div><h3>Sing Talk</h3><p>Traductor de lengua de señas con visión por computadora, audio e historial privado.</p></div><a href="#contacto">Explorar producto →</a></div>
           </article>
-
-          <article class="service-card reveal" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
-            </div>
-            <span class="service-number">04</span>
-            <h3 data-es="Rediseño web" data-en="Website redesign">Rediseño web</h3>
-            <p data-es="Para marcas que ya tienen sitio, pero necesitan una presencia digital al nivel real de su negocio." data-en="For brands that have a site, but need a digital presence that matches the real level of their business.">Para marcas que ya tienen sitio, pero necesitan una presencia digital al nivel real de su negocio.</p>
+          <article class="case case--wide" data-reveal data-delay="1">
+            <div class="case-top"><span>SPATIAL / RENEWABLE ENERGY</span><b>04</b></div>
+            <div class="case-media case-media--solar"><img src="./assets/projects/solar-aerial-layout.jpg" alt="Diseño fotovoltaico sobre captura aérea"><div class="solar-hud"><span>ARRAY LAYOUT</span><strong>41.3 m</strong><small>Levantamiento y disposición espacial</small></div><span class="case-status case-status--amber">INGENIERÍA ESPACIAL</span></div>
+            <div class="case-copy"><div><h3>Solar 3D & Photogrammetry Lab</h3><p>Levantamiento aéreo, disposición de módulos y validación espacial para diseño fotovoltaico.</p></div><a href="#contacto">Explorar capacidad →</a></div>
           </article>
-
-          <article class="service-card reveal reveal-delay" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-            </div>
-            <span class="service-number">05</span>
-            <h3 data-es="Sistemas de citas" data-en="Appointment systems">Sistemas de citas</h3>
-            <p data-es="Soluciones para clínicas, consultorios y servicios que necesitan agendar con más claridad y orden." data-en="Solutions for clinics, offices, and services that need to schedule with more clarity and order.">Soluciones para clínicas, consultorios y servicios que necesitan agendar con más claridad y orden.</p>
-          </article>
-
-          <article class="service-card reveal reveal-delay-2" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
-            </div>
-            <span class="service-number">06</span>
-            <h3 data-es="Sistemas web para negocios" data-en="Business web systems">Sistemas web para negocios</h3>
-            <p data-es="Plataformas personalizadas para resolver procesos, reservas, formularios o flujos internos." data-en="Custom platforms to solve processes, bookings, forms, or internal workflows.">Plataformas personalizadas para resolver procesos, reservas, formularios o flujos internos.</p>
-          </article>
-
-          <article class="service-card reveal" data-reveal>
-            <div class="service-icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            </div>
-            <span class="service-number">07</span>
-            <h3 data-es="Soluciones personalizadas" data-en="Custom solutions">Soluciones personalizadas</h3>
-            <p data-es="Cuando el negocio necesita una estructura propia y no un formato estándar disfrazado de diseño a medida." data-en="When the business needs its own structure, not a standard template disguised as custom design.">Cuando el negocio necesita una estructura propia y no un formato estándar disfrazado de diseño a medida.</p>
-          </article>
-
-        </div>
-
-        <div class="services-includes reveal" data-reveal>
-          <div class="services-includes-copy">
-            <p class="eyebrow" data-es="Lo que incluye" data-en="What's included">Lo que incluye</p>
-            <h3 data-es="Una base sólida para vender y generar confianza." data-en="A solid foundation to sell and build trust.">Una base sólida para vender y generar confianza.</h3>
-            <p data-es="Cada proyecto se adapta a tu negocio, pero estas bases siempre están incluidas:" data-en="Every project is tailored, but these essentials are always included:">Cada proyecto se adapta a tu negocio, pero estas bases siempre están incluidas:</p>
-          </div>
-          <ul class="includes-list">
-            <li data-es="Diseño a medida + responsive (móvil primero)" data-en="Custom design + responsive (mobile-first)">Diseño a medida + responsive (móvil primero)</li>
-            <li data-es="Velocidad y experiencia (sin fricción)" data-en="Speed and experience (low friction)">Velocidad y experiencia (sin fricción)</li>
-            <li data-es="SEO base (estructura, metas, indexación)" data-en="SEO essentials (structure, metas, indexability)">SEO base (estructura, metas, indexación)</li>
-            <li data-es="Copy y jerarquía para guiar a tu cliente" data-en="Copy and hierarchy to guide visitors">Copy y jerarquía para guiar a tu cliente</li>
-            <li data-es="CTAs claros + WhatsApp listo para captar clientes potenciales" data-en="Clear CTAs + WhatsApp ready to capture leads">CTAs claros + WhatsApp listo para captar clientes potenciales</li>
-            <li data-es="Entrega ordenada + soporte de lanzamiento" data-en="Clean handoff + launch support">Entrega ordenada + soporte de lanzamiento</li>
-          </ul>
         </div>
       </div>
     </section>
 
-    <!-- TECNOLOGÍAS -->
-    <section class="section tech-section" id="tecnologias">
+    <section class="web-work section" id="webs">
       <div class="shell">
-        <div class="section-head section-head--light reveal" data-reveal>
-          <p class="eyebrow" data-es="Stack & herramientas" data-en="Stack & tools">Stack & herramientas</p>
-          <h2 data-es="Stack real para construir sitios sólidos." data-en="A real stack to build solid websites.">Stack real para construir sitios sólidos.</h2>
-        </div>
-
-        <div class="tech-groups">
-
-          <div class="tech-group reveal" data-reveal>
-            <p class="tech-group-label" data-es="Desarrollo" data-en="Development">Desarrollo</p>
-            <div class="tech-pills">
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.902 27.201L0 0h32l-5.898 27.197L15.985 30z" fill="#E44D26"/><path d="M16 27.858l10.17-2.821L30.16 3H16z" fill="#F16529"/><path d="M16 13.407h-4.573l-.316-3.544H16V6.355H7.544l.083.94.853 9.577H16zm0 8.75l-.014.004-3.832-1.035-.245-2.75H8.39l.482 5.396 7.124 1.979.004-.001z" fill="#EBEBEB"/><path d="M15.989 13.407v3.525h4.247l-.4 4.471-3.847 1.038v3.663l7.129-1.977.052-.581.818-9.17.085-.969zm0-7.052v3.508h8.323l.069-.772.158-1.767.083-.969z" fill="#fff"/></svg>
-                <span>HTML5</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M5.902 27.201L0 0h32l-5.898 27.197L15.985 30z" fill="#1572B6"/><path d="M16 27.858l10.17-2.821L30.16 3H16z" fill="#33A9DC"/><path d="M16 13.574h-4.573l-.316-3.544H16V6.522H7.543l.083.941.853 9.576H16zm0 8.749l-.015.004-3.831-1.034-.246-2.75H8.39l.482 5.396 7.123 1.978.005-.002z" fill="#EBEBEB"/><path d="M15.989 13.574v3.525h4.247l-.4 4.471-3.847 1.038v3.664l7.129-1.978.052-.58.818-9.17.085-.97zm0-7.052v3.508h8.324l.069-.772.157-1.767.084-.969z" fill="#fff"/></svg>
-                <span>CSS3</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M0 0h32v32H0z" fill="#F7DF1E"/><path d="M9.873 23.453l1.919-1.16c.37.655.707 1.21 1.518 1.21.776 0 1.267-.303 1.267-1.48V13.57h2.36v8.49c0 2.437-1.428 3.545-3.514 3.545-1.885 0-2.978-.977-3.55-2.152M19.315 23.218l1.919-1.126c.505.824 1.16 1.43 2.319 1.43 1.008 0 1.648-.504 1.648-1.194 0-.83-.657-1.126-1.766-1.614l-.606-.26c-1.75-.745-2.912-1.68-2.912-3.658 0-1.818 1.378-3.208 3.532-3.208 1.532 0 2.637.536 3.43 1.936l-1.835 1.176c-.42-.743-.87-1.03-1.57-1.03-.713 0-1.167.454-1.167 1.03 0 .72.454 1.013 1.513 1.46l.603.259c2.065.885 3.23 1.787 3.23 3.815 0 2.185-1.717 3.38-4.02 3.38-2.25 0-3.7-1.07-4.418-2.396"/></svg>
-                <span>JavaScript</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M14.985 1.587L1.487 8.2l13.498 6.618L28.48 8.2z" fill="#61DAFB"/><path d="M1.487 8.2v15.6l13.498 6.613V14.818z" fill="#61DAFB" opacity=".7"/><path d="M28.48 8.2v15.6l-13.498 6.613V14.818z" fill="#61DAFB" opacity=".5"/><circle cx="14.985" cy="14.818" r="3.2" fill="#fff"/></svg>
-                <span>React</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M15.9.7C7.6.7.9 7.4.9 15.7c0 6.6 4.3 12.3 10.2 14.3.7.1 1-.3 1-.7v-2.5c-4 .9-4.9-1.9-4.9-1.9-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.2 1.5 2.2 1.5 1.3 2.2 3.4 1.6 4.2 1.2.1-.9.5-1.6.9-1.9-3.2-.4-6.5-1.6-6.5-7 0-1.6.6-2.8 1.5-3.8-.1-.4-.6-1.8.1-3.7 0 0 1.2-.4 4.1 1.5 1.2-.3 2.5-.5 3.7-.5 1.3 0 2.5.2 3.7.5 2.9-1.9 4.1-1.5 4.1-1.5.8 1.9.3 3.3.1 3.7.9 1 1.5 2.3 1.5 3.8 0 5.4-3.3 6.6-6.5 7 .5.4 1 1.3 1 2.6v3.8c0 .4.3.8 1 .7 6-2 10.2-7.7 10.2-14.3C31 7.4 24.3.7 15.9.7z" fill="#24292F"/></svg>
-                <span>TypeScript</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.8C9.3 3.8 3.8 9.3 3.8 16S9.3 28.2 16 28.2 28.2 22.7 28.2 16 22.7 3.8 16 3.8zm0 21.9c-5.4 0-9.7-4.4-9.7-9.7S10.6 6.3 16 6.3s9.7 4.4 9.7 9.7-4.3 9.7-9.7 9.7z" fill="#777BB3"/><path d="M16 9.4c-3.6 0-6.6 3-6.6 6.6s3 6.6 6.6 6.6 6.6-3 6.6-6.6-3-6.6-6.6-6.6zm0 10.4c-2.1 0-3.8-1.7-3.8-3.8S13.9 12.2 16 12.2s3.8 1.7 3.8 3.8-1.7 3.8-3.8 3.8z" fill="#777BB3"/></svg>
-                <span>PHP</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M9.8 24.9c-.3 0-.5-.1-.7-.3L3 18.5c-.4-.4-.4-1 0-1.4l6.1-6.1c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4L5.1 17.8l5.4 5.4c.4.4.4 1 0 1.4-.2.2-.4.3-.7.3z" fill="#3776AB"/><path d="M22.2 24.9c-.3 0-.5-.1-.7-.3-.4-.4-.4-1 0-1.4l5.4-5.4-5.4-5.4c-.4-.4-.4-1 0-1.4.4-.4 1-.4 1.4 0l6.1 6.1c.4.4.4 1 0 1.4l-6.1 6.1c-.2.2-.4.3-.7.3z" fill="#FFD43B"/><path d="M14.6 27.1c-.1 0-.3 0-.4-.1-.5-.2-.8-.8-.6-1.3l4.8-14.3c.2-.5.8-.8 1.3-.6.5.2.8.8.6 1.3l-4.8 14.3c-.2.4-.6.7-.9.7z" fill="#3776AB"/></svg>
-                <span>Python</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="tech-group reveal reveal-delay" data-reveal>
-            <p class="tech-group-label" data-es="Diseño & 3D" data-en="Design & 3D">Diseño & 3D</p>
-            <div class="tech-pills">
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M12.5 4A4.5 4.5 0 0 0 8 8.5v.025A4.5 4.5 0 0 0 12.5 13H16V8.5A4.5 4.5 0 0 0 12.5 4z" fill="#F24E1E"/><path d="M16 13h-3.5a4.5 4.5 0 1 0 0 9H16v-9z" fill="#FF7262"/><path d="M16 4h3.5A4.5 4.5 0 0 1 23.5 8.5 4.5 4.5 0 0 1 19.5 13H16V4z" fill="#FF7262"/><path d="M16 22a4.5 4.5 0 1 0 9 0 4.5 4.5 0 0 0-9 0z" fill="#1ABCFE"/><path d="M16 13h3.5A4.5 4.5 0 0 1 23.5 17.5 4.5 4.5 0 0 1 19.5 22H16v-9z" fill="#0ACF83"/></svg>
-                <span>Figma</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="#EA7600"/><path d="M16 5.5L8 20h3.5l4.5-8.5 4.5 8.5H24z" fill="#fff"/></svg>
-                <span>Blender</span>
-              </div>
-              <div class="tech-pill">
-                <svg class="tech-icon" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="6" fill="#005F9E"/><path d="M8 24V8l8 8 8-8v16" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                <span>SketchUp</span>
-              </div>
-            </div>
-          </div>
-
+        <header class="section-head section-head--compact" data-reveal><div><span class="section-index">03 / EXPERIENCIAS WEB</span><h2>También construimos presencia,<br><em>marca y conversión.</em></h2></div><p>Una selección de páginas desarrolladas para negocios que necesitaban comunicar mejor y verse a la altura de su trabajo.</p></header>
+        <p class="mobile-swipe">Desliza para ver más trabajos →</p>
+        <div class="web-grid">
+          <article class="web-card web-card--large" data-reveal><a href="https://mashoficial.com" target="_blank" rel="noreferrer"><div class="web-image"><img src="./assets/images/project-mash-home.png" alt="Sitio web MASH" loading="lazy"><span>Ver sitio ↗</span></div><div class="web-info"><b>01</b><h3>MASH</h3><p>Mobiliario exterior · Catálogo digital</p></div></a></article>
+          <article class="web-card" data-reveal data-delay="1"><a href="https://leilameca.github.io/lujan-smile-journey/" target="_blank" rel="noreferrer"><div class="web-image"><img src="./assets/images/project-lujan-preview.png" alt="Sitio web Lujan Smile Journey" loading="lazy"><span>Ver sitio ↗</span></div><div class="web-info"><b>02</b><h3>Lujan Smile Journey</h3><p>Salud dental · Experiencia de marca</p></div></a></article>
+          <article class="web-card" data-reveal><a href="https://solarysrd.com" target="_blank" rel="noreferrer"><div class="web-image"><img src="./assets/images/project-solarys-preview.png" alt="Sitio web Solarys Ingeniería" loading="lazy"><span>Ver sitio ↗</span></div><div class="web-info"><b>03</b><h3>Solarys Ingeniería</h3><p>Energía · Presencia corporativa</p></div></a></article>
+          <article class="web-card" data-reveal data-delay="1"><a href="https://leilameca.github.io/fitappetitrd/" target="_blank" rel="noreferrer"><div class="web-image"><img src="./assets/images/project-fitappetit-preview.png" alt="Sitio web FitAppetit" loading="lazy"><span>Ver sitio ↗</span></div><div class="web-info"><b>04</b><h3>FitAppetit</h3><p>Alimentos · Marca y conversión</p></div></a></article>
+          <article class="web-card web-card--wide" data-reveal><a href="https://nuvingenieria.com/" target="_blank" rel="noreferrer"><div class="web-image"><img src="./assets/images/project-nuvi-preview.png" alt="Sitio web Nuvi Ingeniería" loading="lazy"><span>Ver sitio ↗</span></div><div class="web-info"><b>05</b><h3>Nuvi Ingeniería</h3><p>Ingeniería eléctrica · Confianza técnica</p></div></a></article>
         </div>
       </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section class="section projects-section" id="proyectos">
+    <section class="tools section" id="herramientas">
       <div class="shell">
-        <div class="section-head section-head--light reveal" data-reveal>
-          <p class="eyebrow" data-es="Proyectos" data-en="Projects">Proyectos</p>
-          <h2 data-es="Trabajo real para marcas que necesitaban verse con más nivel y más intención." data-en="Real work for brands that needed to look more elevated and intentional.">Trabajo real para marcas que necesitaban verse con más nivel y más intención.</h2>
-        </div>
-
-        <div class="projects-grid">
-
-          <article class="project-card project-card--featured reveal" data-reveal>
-            <div class="project-card-media">
-              <img src="./assets/images/project-mash-home.png" alt="Proyecto MASH — marca de mobiliario exterior" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Marca comercial" data-en="Commercial brand">Marca comercial</span>
-                  <h3>MASH</h3>
-                  <a class="button button-light" href="https://mashoficial.com" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">01</span>
-              <div>
-                <strong>MASH</strong>
-                <span data-es="Marca comercial / catálogo" data-en="Commercial brand / catalogue">Marca comercial / catálogo</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal-delay" data-reveal>
-            <div class="project-card-media">
-              <img src="./assets/images/project-visage-preview.png" alt="Proyecto Visage Studio — belleza y estética premium" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Belleza premium" data-en="Premium beauty">Belleza premium</span>
-                  <h3>Visage Studio</h3>
-                  <a class="button button-light" href="https://leilameca.github.io/propuesta-visage-studio-web/" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">02</span>
-              <div>
-                <strong>Visage Studio</strong>
-                <span data-es="Belleza y experiencia premium" data-en="Beauty and premium experience">Belleza y experiencia premium</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal-delay-2" data-reveal>
-            <div class="project-card-media project-card-media--art">
-            <img src="./assets/images/project-lujan-preview.png" alt="Proyecto Lujan Smile Journey — salud dental" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Salud dental" data-en="Dental health">Salud dental</span>
-                  <h3>Lujan Smile Journey</h3>
-                  <a class="button button-light" href="https://leilameca.github.io/lujan-smile-journey/" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">03</span>
-              <div>
-                <strong>Lujan Smile Journey</strong>
-                <span data-es="Salud dental" data-en="Dental health">Salud dental</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal" data-reveal>
-            <div class="project-card-media">
-              <img src="./assets/images/project-solarys-preview.png" alt="Proyecto SOLARYS Ingeniería — corporativo" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Ingeniería / corporativo" data-en="Engineering / corporate">Ingeniería / corporativo</span>
-                  <h3>SOLARYS</h3>
-                  <a class="button button-light" href="https://solarysrd.com" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">04</span>
-              <div>
-                <strong>SOLARYS Ingeniería</strong>
-                <span data-es="Corporativo e ingeniería" data-en="Corporate and engineering">Corporativo e ingeniería</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal-delay" data-reveal>
-            <div class="project-card-media">
-              <img src="./assets/images/project-fitappetit-preview.png" alt="Proyecto FitAppetit — alimentos y conversión" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Alimentos / conversión" data-en="Food / conversion">Alimentos / conversión</span>
-                  <h3>FitAppetit</h3>
-                  <a class="button button-light" href="https://leilameca.github.io/fitappetitrd/" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">05</span>
-              <div>
-                <strong>FitAppetit</strong>
-                <span data-es="Marca comercial" data-en="Commercial brand">Marca comercial</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="project-card reveal reveal-delay-2" data-reveal>
-            <div class="project-card-media project-card-media--art project-card-media--art-olive">
-             <img src="./assets/images/project-nuvi-preview.png" alt="Proyecto Nuvi — diseño" loading="lazy">
-              <div class="project-card-overlay">
-                <div class="project-card-overlay-content">
-                  <span class="project-card-tag" data-es="Ingeniería" data-en="Dentistry">Odontología</span>
-                  <h3>Nuvi</h3>
-                  <a class="button button-light" href="https://nuvingenieria.com/" target="_blank" rel="noreferrer" data-es="Ver demo" data-en="View demo">Ver demo</a>
-                </div>
-              </div>
-            </div>
-            <div class="project-card-foot">
-              <span class="project-index">06</span>
-              <div>
-                <strong>Nuvi Ingeniería</strong>
-                <span data-es="Servicios de electricidad" data-en="Health and trust">Salud y confianza</span>
-              </div>
-            </div>
-          </article>
-
+        <header class="section-head" data-reveal><div><span class="section-index">04 / STACK & HERRAMIENTAS</span><h2>Herramientas reales para<br><em>construir de principio a fin.</em></h2></div><p>El stack cambia según el problema. La intención se mantiene: elegir tecnología útil, mantenible y apropiada para cada producto.</p></header>
+        <div class="tool-groups">
+          <article class="tool-group" data-reveal><div class="tool-group-title"><span>01</span><h3>Desarrollo</h3></div><div class="tool-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Tailwind CSS</span><span>Node.js</span><span>PHP</span><span>Python</span><span>Supabase</span></div></article>
+          <article class="tool-group" data-reveal><div class="tool-group-title"><span>02</span><h3>Diseño & producto</h3></div><div class="tool-list tool-list--rose"><span>Figma</span><span>UI/UX Design</span><span>Design Systems</span><span>Prototyping</span><span>Brand Direction</span><span>Responsive Design</span></div></article>
+          <article class="tool-group" data-reveal><div class="tool-group-title"><span>03</span><h3>3D & espacial</h3></div><div class="tool-list tool-list--amber"><span>SketchUp</span><span>Blender</span><span>D5 Render</span><span>DroneDeploy</span><span>Photogrammetry</span><span>PV Layout</span></div></article>
+          <article class="tool-group" data-reveal><div class="tool-group-title"><span>04</span><h3>Workflow</h3></div><div class="tool-list tool-list--olive"><span>Git</span><span>GitHub</span><span>API Integration</span><span>Cloud Deploy</span><span>Technical Documentation</span></div></article>
         </div>
       </div>
     </section>
 
-    <!-- QUIZ INTERACTIVO -->
-    <section class="section quiz-section" id="quiz">
-      <div class="shell">
-        <div class="quiz-intro reveal" data-reveal>
-          <p class="eyebrow" data-es="¿Trabajamos juntos?" data-en="Work together?">¿Trabajamos juntos?</p>
-          <h2 data-es="En 30 segundos te digo la mejor ruta." data-en="In 30 seconds, I’ll point you to the best path.">En 30 segundos te digo la mejor ruta.</h2>
-        </div>
+    <section class="method section" id="metodologia">
+      <div class="shell method-grid">
+        <header data-reveal><span class="section-index">05 / MÉTODO</span><h2>De una conversación<br><em>a un sistema útil.</em></h2><p>El proceso es técnico, pero nunca impersonal. Trabajamos con claridad, entregables visibles y decisiones explicadas.</p></header>
+        <div class="method-steps" data-reveal data-delay="1"><article><span>01</span><div><h3>Entender</h3><p>Objetivos, usuarios, operación y restricciones reales.</p></div></article><article><span>02</span><div><h3>Diseñar</h3><p>Arquitectura, flujos y prototipos antes de construir.</p></div></article><article><span>03</span><div><h3>Desarrollar</h3><p>Implementación por capas, integraciones y control de calidad.</p></div></article><article><span>04</span><div><h3>Entregar & evolucionar</h3><p>Despliegue, documentación y siguientes mejoras.</p></div></article></div>
+      </div>
+    </section>
 
-        <div class="quiz-wrap reveal reveal-delay" data-reveal>
-          <div class="quiz-card" id="quiz-card">
-
-            <div class="quiz-step is-active" data-step="0">
-              <p class="quiz-step-label" data-es="1 / 3 — Situación" data-en="1 / 3 — Situation">1 / 3 — Situación</p>
-              <h3 data-es="¿Tu negocio tiene web actualmente?" data-en="Does your business have a website?">¿Tu negocio tiene web actualmente?</h3>
-              <div class="quiz-options">
-                <button class="quiz-opt" data-next="1" data-es="No, necesito crear una desde cero" data-en="No, I need to build one from scratch">No, necesito crear una desde cero</button>
-                <button class="quiz-opt" data-next="1" data-es="Sí, pero no me representa bien" data-en="Yes, but it doesn't represent me well">Sí, pero no me representa bien</button>
-                <button class="quiz-opt" data-next="1" data-es="Sí, solo quiero optimizarla" data-en="Yes, I just want to optimize it">Sí, solo quiero optimizarla</button>
-              </div>
-            </div>
-
-            <div class="quiz-step" data-step="1">
-              <p class="quiz-step-label" data-es="2 / 3 — Objetivo" data-en="2 / 3 — Goal">2 / 3 — Objetivo</p>
-              <h3 data-es="¿Qué quieres lograr con tu web?" data-en="What do you want to achieve with your website?">¿Qué quieres lograr con tu web?</h3>
-              <div class="quiz-options">
-                <button class="quiz-opt" data-next="2" data-es="Vender más productos o servicios" data-en="Sell more products or services">Vender más productos o servicios</button>
-                <button class="quiz-opt" data-next="2" data-es="Generar confianza y presencia de marca" data-en="Build trust and brand presence">Generar confianza y presencia de marca</button>
-                <button class="quiz-opt" data-next="2" data-es="Captar clientes sin pagar publicidad" data-en="Get clients without paid ads">Captar clientes sin pagar publicidad</button>
-              </div>
-            </div>
-
-            <div class="quiz-step" data-step="2">
-              <p class="quiz-step-label" data-es="3 / 3 — Tiempo" data-en="3 / 3 — Timeline">3 / 3 — Tiempo</p>
-              <h3 data-es="¿Cuándo quieres tener tu web lista?" data-en="When do you want your website ready?">¿Cuándo quieres tener tu web lista?</h3>
-              <div class="quiz-options">
-                <button class="quiz-opt quiz-opt--final" data-es="Lo antes posible, es urgente" data-en="As soon as possible, it's urgent">Lo antes posible, es urgente</button>
-                <button class="quiz-opt quiz-opt--final" data-es="En el próximo mes" data-en="Within the next month">En el próximo mes</button>
-                <button class="quiz-opt quiz-opt--final" data-es="Sin prisa, lo quiero bien hecho" data-en="No rush, I want it done right">Sin prisa, lo quiero bien hecho</button>
-              </div>
-            </div>
-
-            <div class="quiz-step quiz-result" data-step="result">
-              <div class="quiz-result-check" aria-hidden="true">
-                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-              </div>
-              <h3 data-es="Listo. Ya tengo el contexto." data-en="Great. I have the context.">Listo. Ya tengo el contexto.</h3>
-              <p data-es="Escríbeme por WhatsApp — en menos de 24h tienes mi respuesta y una propuesta clara para empezar." data-en="Message me on WhatsApp — in less than 24h you'll have my reply and a clear proposal.">Escríbeme por WhatsApp — en menos de 24h tienes mi respuesta y una propuesta clara para empezar.</p>
-              <a class="button button-rose quiz-cta" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="quiz" data-es="Hablar con Leilany" data-en="Talk to Leilany">Hablar con Leilany</a>
-              <button class="quiz-restart" data-es="Volver a empezar" data-en="Start over">Volver a empezar</button>
-            </div>
-
-          </div>
-
-          <div class="quiz-dots" aria-hidden="true">
-            <span class="quiz-dot is-active"></span>
-            <span class="quiz-dot"></span>
-            <span class="quiz-dot"></span>
-          </div>
+    <section class="quiz section" id="quiz">
+      <div class="shell quiz-grid">
+        <div class="quiz-intro" data-reveal><span class="section-index">06 / ¿TRABAJAMOS JUNTOS?</span><h2>En 30 segundos te digo <em>la mejor ruta.</em></h2><p>Responde tres preguntas. Al final prepararé un mensaje con tu contexto para que podamos empezar la conversación sin formularios eternos.</p><div class="quiz-progress" aria-label="Progreso"><i class="is-active"></i><i></i><i></i></div></div>
+        <div class="quiz-card" id="quiz-card" data-reveal data-delay="1">
+          <div class="quiz-step is-active" data-step="0"><span>1 / 3 · SITUACIÓN</span><h3>¿Tu negocio tiene web actualmente?</h3><div class="quiz-options"><button type="button" data-next="1">No, necesito crear una desde cero</button><button type="button" data-next="1">Sí, pero no me representa bien</button><button type="button" data-next="1">Sí, solo quiero optimizarla</button></div></div>
+          <div class="quiz-step" data-step="1"><span>2 / 3 · OBJETIVO</span><h3>¿Qué quieres lograr con tu web?</h3><div class="quiz-options"><button type="button" data-next="2">Vender más productos o servicios</button><button type="button" data-next="2">Generar confianza y presencia de marca</button><button type="button" data-next="2">Captar clientes sin pagar publicidad</button></div></div>
+          <div class="quiz-step" data-step="2"><span>3 / 3 · TIEMPO</span><h3>¿Cuándo quieres tener tu web lista?</h3><div class="quiz-options"><button type="button">Lo antes posible, es urgente</button><button type="button">En el próximo mes</button><button type="button">Sin prisa, lo quiero bien hecho</button></div></div>
+          <div class="quiz-step quiz-result" data-step="result"><div class="result-check">✓</div><span>CONTEXTO COMPLETO</span><h3>Listo. Ya sé por dónde empezar.</h3><p>Tu mensaje incluirá las respuestas para que podamos ir directo a lo importante.</p><a class="button button--rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-quiz-whatsapp>Hablar con Leilany ↗</a><button class="quiz-restart" type="button" data-quiz-restart>Volver a empezar</button></div>
         </div>
       </div>
     </section>
 
-    <!-- PROCESO -->
-    <section class="section process-section" id="proceso">
-      <div class="shell">
-        <div class="section-head reveal" data-reveal>
-          <p class="eyebrow" data-es="Proceso" data-en="Process">Proceso</p>
-          <h2 data-es="Una forma de trabajo clara, sin improvisación." data-en="A clear way of working, no improvisation.">Una forma de trabajo clara, sin improvisación.</h2>
-        </div>
-
-        <div class="process-timeline">
-          <div class="process-timeline-line" aria-hidden="true">
-            <div class="process-timeline-fill" data-timeline-fill></div>
-          </div>
-
-          <article class="process-step reveal" data-reveal>
-            <div class="process-step-node" aria-hidden="true">
-              <span>01</span>
-            </div>
-            <div class="process-step-body">
-              <h3 data-es="Descubrimiento" data-en="Discovery">Descubrimiento</h3>
-              <p data-es="Entiendo el negocio, el cliente ideal y la percepción que la marca necesita construir online." data-en="I understand the business, the ideal client, and the perception the brand needs to build online.">Entiendo el negocio, el cliente ideal y la percepción que la marca necesita construir online.</p>
-            </div>
-          </article>
-
-          <article class="process-step reveal reveal-delay" data-reveal>
-            <div class="process-step-node" aria-hidden="true">
-              <span>02</span>
-            </div>
-            <div class="process-step-body">
-              <h3 data-es="Estrategia visual" data-en="Visual strategy">Estrategia visual</h3>
-              <p data-es="Defino estructura, narrativa y jerarquía para que el sitio se vea elegante y comunique con claridad." data-en="I define structure, narrative, and hierarchy so the site looks elegant and communicates clearly.">Defino estructura, narrativa y jerarquía para que el sitio se vea elegante y comunique con claridad.</p>
-            </div>
-          </article>
-
-          <article class="process-step reveal reveal-delay-2" data-reveal>
-            <div class="process-step-node" aria-hidden="true">
-              <span>03</span>
-            </div>
-            <div class="process-step-body">
-              <h3 data-es="Diseño y desarrollo" data-en="Design & development">Diseño y desarrollo</h3>
-              <p data-es="Llevo la propuesta a una experiencia responsiva, limpia y moderna, cuidando cada interacción." data-en="I take the proposal to a responsive, clean, and modern experience, caring for every interaction.">Llevo la propuesta a una experiencia responsiva, limpia y moderna, cuidando cada interacción.</p>
-            </div>
-          </article>
-
-          <article class="process-step reveal" data-reveal>
-            <div class="process-step-node" aria-hidden="true">
-              <span>04</span>
-            </div>
-            <div class="process-step-body">
-              <h3 data-es="Entrega y lanzamiento" data-en="Delivery & launch">Entrega y lanzamiento</h3>
-              <p data-es="Se revisan detalles finales, se publica el sitio y se entrega una presencia digital lista para trabajar." data-en="Final details are reviewed, the site is published, and a digital presence ready to work is delivered.">Se revisan detalles finales, se publica el sitio y se entrega una presencia digital lista para trabajar.</p>
-            </div>
-          </article>
-        </div>
+    <section class="contact section" id="contacto">
+      <div class="shell contact-grid">
+        <div class="contact-copy" data-reveal><span class="section-index">07 / INICIAR PROYECTO</span><h2>Hagamos algo sólido,<br><em>útil y muy tuyo.</em></h2><p>Cuéntame dónde estás, qué necesitas resolver y qué resultado buscas. Te responderé personalmente con próximos pasos claros.</p><div class="contact-person"><img src="./assets/images/profile-leilany-about.png" alt="Leilany Morán"><div><strong>Leilany Morán</strong><span>Fundadora · Morán Studio</span></div></div><div class="contact-links"><a href="mailto:leiladev20@gmail.com"><span>Email</span><b>leiladev20@gmail.com</b></a><a href="https://wa.me/18092697630" target="_blank" rel="noreferrer"><span>WhatsApp</span><b>+1 809 269 7630</b></a></div></div>
+        <form class="quote-form" data-quote-form data-reveal data-delay="1"><div class="form-head"><span>Cuéntame tu proyecto</span><b>RESPUESTA PERSONAL</b></div><fieldset><legend>¿Qué necesitas construir?</legend><div class="service-options"><label><input type="radio" name="service" value="SaaS / Aplicación web" checked><span>SaaS / Web App</span></label><label><input type="radio" name="service" value="ERP industrial"><span>ERP Industrial</span></label><label><input type="radio" name="service" value="Diseño 3D Solar"><span>Diseño 3D Solar</span></label><label><input type="radio" name="service" value="Página web"><span>Página web</span></label></div></fieldset><div class="field-row"><label>Nombre / Empresa<input name="name" type="text" placeholder="Tu nombre o empresa" autocomplete="name" required></label><label>Email<input name="email" type="email" placeholder="nombre@empresa.com" autocomplete="email" required></label></div><label>Contexto del proyecto<textarea name="message" rows="4" placeholder="¿Qué necesitas transformar o construir?" required></textarea></label><div class="form-submit"><button class="button button--rose" type="submit">Preparar solicitud ↗</button><small>Se abrirá WhatsApp para que revises el mensaje antes de enviarlo.</small></div></form>
       </div>
     </section>
-
-    <!-- CONTACTO -->
-    <section class="section contact-section" id="contacto">
-      <div class="contact-bg-text" aria-hidden="true" data-es="HABLEMOS" data-en="LET'S TALK">HABLEMOS</div>
-      <div class="shell">
-        <div class="contact-layout reveal" data-reveal>
-          <div class="contact-copy">
-            <p class="eyebrow" data-es="Hablemos" data-en="Let's talk">Hablemos</p>
-            <h2 data-es="Tu negocio tiene nivel. Tu web debería demostrarlo." data-en="Your business has the level. Your website should prove it.">Tu negocio tiene nivel. Tu web debería demostrarlo.</h2>
-            <p data-es="Cuéntame tu proyecto — en menos de 24 horas tienes mi respuesta y una propuesta clara para empezar." data-en="Tell me about your project — you'll have my response and a clear proposal within 24 hours.">Cuéntame tu proyecto — en menos de 24 horas tienes mi respuesta y una propuesta clara para empezar.</p>
-          </div>
-
-          <div class="contact-panel">
-            <a class="button button-rose" href="https://wa.me/18092697630" target="_blank" rel="noreferrer" data-wa-cta="contact" data-es="Cuéntame tu proyecto" data-en="Tell me about your project">Cuéntame tu proyecto</a>
-            <div class="contact-info">
-              <div class="contact-line">
-                <span data-es="Email" data-en="Email">Email</span>
-                <a href="mailto:leiladev20@gmail.com">leiladev20@gmail.com</a>
-              </div>
-              <div class="contact-line">
-                <span>WhatsApp</span>
-                <a href="https://wa.me/18092697630" target="_blank" rel="noreferrer">+1 (809) 269-7630</a>
-              </div>
-              <div class="contact-line">
-                <span>Instagram</span>
-                <a href="https://instagram.com/moranstudiord" target="_blank" rel="noreferrer">@moranstudiord</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="shell footer-shell">
-      <div class="footer-brand">
-        <img src="./assets/images/logo2.png" alt="Moran Studio wordmark">
-        <p data-es="Diseño web que convierte." data-en="Web design that converts.">Diseño web que convierte.</p>
-      </div>
-      <div class="footer-nav">
-        <a href="#sobre-mi" data-es="Sobre mí" data-en="About">Sobre mí</a>
-        <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
-        <a href="#contacto" data-es="Contacto" data-en="Contact">Contacto</a>
-      </div>
-      <div class="footer-meta">
-        <a href="https://instagram.com/moranstudiord" target="_blank" rel="noreferrer">@moranstudiord</a>
-        <a href="mailto:leiladev20@gmail.com">leiladev20@gmail.com</a>
-        <span data-es="© 2026 Moran Studio" data-en="© 2026 Moran Studio">© 2026 Moran Studio</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- WhatsApp floating button -->
-  <a class="wa-float" href="https://wa.me/18092697630" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp" data-wa-cta="float" title="WhatsApp">
-    <svg class="wa-float-icon" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-      <path d="M16 1C7.73 1 1 7.73 1 16c0 2.63.68 5.1 1.87 7.25L1 31l8-1.84A14.93 14.93 0 0 0 16 31c8.27 0 15-6.73 15-15S24.27 1 16 1zm0 27.25c-2.3 0-4.46-.6-6.33-1.66l-.45-.27-4.75 1.09 1.12-4.62-.3-.48A12.22 12.22 0 0 1 3.75 16C3.75 9.24 9.24 3.75 16 3.75S28.25 9.24 28.25 16 22.76 28.25 16 28.25zM22.4 19.1c-.34-.17-2-.99-2.31-1.1-.31-.11-.54-.17-.77.17s-.88 1.1-1.08 1.33c-.2.23-.4.26-.74.09-.34-.17-1.44-.53-2.74-1.69-1.01-.9-1.7-2.01-1.9-2.35-.2-.34-.02-.52.15-.69.15-.15.34-.4.51-.6.17-.2.23-.34.34-.57.11-.23.06-.43-.03-.6-.09-.17-.77-1.86-1.06-2.55-.28-.67-.56-.58-.77-.59l-.66-.01c-.23 0-.6.09-.91.43-.31.34-1.2 1.17-1.2 2.86s1.23 3.32 1.4 3.55c.17.23 2.42 3.69 5.86 5.18.82.35 1.46.56 1.96.72.82.26 1.57.22 2.16.13.66-.1 2.03-.83 2.32-1.63.29-.8.29-1.49.2-1.63-.08-.14-.31-.23-.65-.4z"/>
-    </svg>
-  </a>
-
-  <script src="./script.js"></script>
+  <footer class="site-footer"><div class="shell"><a class="brand" href="#inicio"><img src="./assets/images/logo.png" alt=""><span><strong>MORÁN STUDIO</strong><small>TECHNOLOGY · DESIGN · 3D</small></span></a><p>Software con precisión. Diseño con intención.</p><nav><a href="https://instagram.com/moranstudiord" target="_blank" rel="noreferrer">Instagram</a><a href="https://github.com/leilameca" target="_blank" rel="noreferrer">GitHub</a><a href="https://linkedin.com/in/leilany-moran" target="_blank" rel="noreferrer">LinkedIn</a></nav><small>© 2026 Morán Studio · República Dominicana</small></div></footer>
 </body>
 </html>

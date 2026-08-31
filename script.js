@@ -1,416 +1,216 @@
-/* ---- capability flags ---- */
-const canHover     = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-/* ---- unified scroll dispatcher ---- */
-const scrollCbs = [];
-window.addEventListener("scroll", () => { scrollCbs.forEach(fn => fn()); }, { passive: true });
-
-/* ---- onceVisible factory ---- */
-const onceVisible = (el, cb, options = {}) => {
-  const obs = new IntersectionObserver((entries, o) => {
-    entries.forEach(entry => {
-      if (!entry.isIntersecting) return;
-      cb(entry);
-      o.unobserve(entry.target);
-    });
-  }, options);
-  obs.observe(el);
+const ES_TO_EN = {
+  "Saltar al contenido": "Skip to content", "Morán Studio, inicio": "Morán Studio, home", "Navegación principal": "Primary navigation", "Abrir menú": "Open menu", "Cerrar menú": "Close menu", "Progreso": "Progress",
+  "Capacidades": "Capabilities", "Sistemas": "Systems", "Herramientas": "Tools", "Contacto": "Contact",
+  "Cuéntame tu idea": "Tell me about your idea",
+  "MORÁN STUDIO · REPÚBLICA DOMINICANA": "MORÁN STUDIO · DOMINICAN REPUBLIC",
+  "Diseñamos e implementamos productos SaaS, plataformas ERP, experiencias web y soluciones 3D fotovoltaicas con precisión técnica y sensibilidad visual.": "We design and build SaaS products, ERP platforms, web experiences, and 3D photovoltaic solutions with technical precision and visual sensitivity.",
+  "Ver proyectos destacados": "View featured projects", "Iniciar proyecto": "Start a project",
+  "Arquitectura & producto": "Architecture & product", "UI/UX & dirección visual": "UI/UX & visual direction", "Fotogrametría & solar 3D": "Photogrammetry & 3D solar",
+  "EL ESTUDIO": "THE STUDIO", "Tecnología con criterio.": "Technology with judgment.", "Diseño con personalidad.": "Design with personality.",
+  "Soy Leilany Morán, desarrolladora y diseñadora dominicana. Morán Studio nace de unir dos formas de pensar que para mí nunca debieron estar separadas: la lógica de un sistema sólido y la sensibilidad de una experiencia bien diseñada.": "I’m Leilany Morán, a Dominican developer and designer. Morán Studio was born from bringing together two ways of thinking that, to me, should never have been separate: the logic of a solid system and the sensitivity of a well-designed experience.",
+  "No construyo productos para llenar un portafolio. Me involucro en el problema, entiendo la operación y convierto esa complejidad en herramientas claras, útiles y visualmente cuidadas.": "I don’t build products just to fill a portfolio. I get involved in the problem, understand the operation, and turn that complexity into tools that are clear, useful, and visually considered.",
+  "La forma importa cuando trabaja a favor de las personas y del negocio.": "Form matters when it works for people and for the business.", "LEILANY MORÁN · DIRECTORA": "LEILANY MORÁN · DIRECTOR",
+  "01 / CAPACIDADES": "01 / CAPABILITIES", "Construimos donde convergen": "We build where", "tecnología, operación y diseño.": "technology, operations, and design converge.",
+  "Desde un producto digital hasta un entorno físico modelado: cada decisión parte del contexto real y termina en una solución que se puede usar, medir y hacer crecer.": "From a digital product to a modeled physical environment, every decision starts with real context and ends in a solution that can be used, measured, and scaled.",
+  "Productos multi-tenant, portales y aplicaciones con una experiencia coherente desde la arquitectura hasta el último estado de interfaz.": "Multi-tenant products, portals, and applications with a coherent experience from architecture to the final interface state.",
+  "Arquitectura de producto": "Product architecture", "Sistemas a medida para convertir procesos dispersos en una operación trazable: inventario, producción, finanzas y decisiones.": "Custom systems that turn fragmented processes into traceable operations across inventory, production, finance, and decision-making.",
+  "Mapeo de procesos": "Process mapping", "Control operativo": "Operations control",
+  "Levantamientos, fotogrametría y modelado técnico para validar instalaciones fotovoltaicas dentro de su contexto espacial.": "Surveying, photogrammetry, and technical modeling to validate photovoltaic installations within their spatial context.",
+  "Captura con drone": "Drone capture", "Modelado espacial": "Spatial modeling", "Simulación fotovoltaica": "PV simulation",
+  "02 / SISTEMAS DESTACADOS": "02 / FEATURED SYSTEMS", "Productos reales para": "Real products for", "problemas reales.": "real problems.",
+  "Software, accesibilidad e ingeniería espacial. Cuatro proyectos distintos unidos por el mismo principio: que la tecnología se sienta clara.": "Software, accessibility, and spatial engineering. Four different projects connected by the same principle: technology should feel clear.",
+  "PRODUCTO REAL": "REAL PRODUCT", "Panel de gestión de CartaYa": "CartaYa management dashboard", "Menú cliente de CartaYa": "CartaYa customer menu",
+  "Plataforma multi-tenant para restaurantes con menú digital, pedidos, cocina, códigos QR, equipos y personalización.": "A multi-tenant restaurant platform with digital menus, ordering, kitchen workflows, QR codes, teams, and customization.",
+  "SISTEMA OPERATIVO": "OPERATIONAL SYSTEM", "ERP para centralizar el ciclo comercial, inventario, operación y control financiero de manufactura.": "A custom ERP that centralizes the commercial cycle, inventory, operations, and financial control for manufacturing.", "Solicitar caso →": "Request case study →",
+  "Inicio de sesión de Sing Talk": "Sing Talk sign-in screen", "Sing Talk traduciendo una seña en tiempo real": "Sing Talk translating a sign in real time", "DETECCIÓN LOCAL": "ON-DEVICE DETECTION",
+  "Traductor de lengua de señas con visión por computadora, audio e historial privado.": "A sign-language translator with computer vision, audio output, and private history.", "Explorar producto →": "Explore product →",
+  "Diseño fotovoltaico sobre captura aérea": "Photovoltaic design over an aerial survey", "Levantamiento y disposición espacial": "Surveying and spatial layout", "INGENIERÍA ESPACIAL": "SPATIAL ENGINEERING",
+  "Levantamiento aéreo, disposición de módulos y validación espacial para diseño fotovoltaico.": "Aerial surveying, module layout, and spatial validation for photovoltaic design.", "Explorar capacidad →": "Explore capability →",
+  "03 / EXPERIENCIAS WEB": "03 / WEB EXPERIENCES", "También construimos presencia,": "We also build presence,", "marca y conversión.": "brand, and conversion.", "Desliza para explorar los proyectos →": "Swipe to explore the projects →", "Desliza para ver más trabajos →": "Swipe to see more work →",
+  "Una selección de páginas desarrolladas para negocios que necesitaban comunicar mejor y verse a la altura de su trabajo.": "A selection of websites built for businesses that needed to communicate better and look as strong as the work they deliver.", "Ver sitio ↗": "View site ↗",
+  "Mobiliario exterior · Catálogo digital": "Outdoor furniture · Digital catalog", "Salud dental · Experiencia de marca": "Dental care · Brand experience", "Energía · Presencia corporativa": "Energy · Corporate presence", "Alimentos · Marca y conversión": "Food · Brand and conversion", "Ingeniería eléctrica · Confianza técnica": "Electrical engineering · Technical trust",
+  "04 / STACK & HERRAMIENTAS": "04 / STACK & TOOLS", "Herramientas reales para": "Real tools to", "construir de principio a fin.": "build from start to finish.",
+  "El stack cambia según el problema. La intención se mantiene: elegir tecnología útil, mantenible y apropiada para cada producto.": "The stack changes with the problem. The intention remains the same: choose technology that is useful, maintainable, and appropriate for each product.",
+  "Desarrollo": "Development", "Diseño & producto": "Design & product", "3D & espacial": "3D & spatial",
+  "05 / MÉTODO": "05 / METHOD", "De una conversación": "From a conversation", "a un sistema útil.": "to a useful system.",
+  "El proceso es técnico, pero nunca impersonal. Trabajamos con claridad, entregables visibles y decisiones explicadas.": "The process is technical, but never impersonal. We work with clarity, visible deliverables, and well-explained decisions.",
+  "Entender": "Understand", "Objetivos, usuarios, operación y restricciones reales.": "Goals, users, operations, and real constraints.", "Diseñar": "Design", "Arquitectura, flujos y prototipos antes de construir.": "Architecture, flows, and prototypes before building.", "Desarrollar": "Build", "Implementación por capas, integraciones y control de calidad.": "Layered implementation, integrations, and quality control.", "Entregar & evolucionar": "Deliver & evolve", "Despliegue, documentación y siguientes mejoras.": "Deployment, documentation, and the next improvements.",
+  "06 / ¿TRABAJAMOS JUNTOS?": "06 / SHOULD WE WORK TOGETHER?", "En 30 segundos te digo": "In 30 seconds, I’ll show you", "la mejor ruta.": "the best route.",
+  "Responde tres preguntas. Al final prepararé un mensaje con tu contexto para que podamos empezar la conversación sin formularios eternos.": "Answer three questions. At the end, I’ll prepare a message with your context so we can start the conversation without an endless form.",
+  "1 / 3 · SITUACIÓN": "1 / 3 · CURRENT SITUATION", "¿Tu negocio tiene web actualmente?": "Does your business currently have a website?", "No, necesito crear una desde cero": "No, I need to build one from scratch", "Sí, pero no me representa bien": "Yes, but it doesn’t represent me well", "Sí, solo quiero optimizarla": "Yes, I only want to optimize it",
+  "2 / 3 · OBJETIVO": "2 / 3 · GOAL", "¿Qué quieres lograr con tu web?": "What do you want your website to achieve?", "Vender más productos o servicios": "Sell more products or services", "Generar confianza y presencia de marca": "Build trust and brand presence", "Captar clientes sin pagar publicidad": "Attract clients without paid advertising",
+  "3 / 3 · TIEMPO": "3 / 3 · TIMELINE", "¿Cuándo quieres tener tu web lista?": "When would you like your website to be ready?", "Lo antes posible, es urgente": "As soon as possible — it’s urgent", "En el próximo mes": "Within the next month", "Sin prisa, lo quiero bien hecho": "No rush — I want it done properly",
+  "CONTEXTO COMPLETO": "CONTEXT COMPLETE", "Listo. Ya sé por dónde empezar.": "Great. I know where to start.", "Tu mensaje incluirá las respuestas para que podamos ir directo a lo importante.": "Your message will include your answers so we can go straight to what matters.", "Hablar con Leilany ↗": "Talk to Leilany ↗", "Volver a empezar": "Start again",
+  "07 / INICIAR PROYECTO": "07 / START A PROJECT", "Hagamos algo sólido,": "Let’s build something solid,", "útil y muy tuyo.": "useful, and distinctly yours.",
+  "Cuéntame dónde estás, qué necesitas resolver y qué resultado buscas. Te responderé personalmente con próximos pasos claros.": "Tell me where you are, what you need to solve, and the outcome you are looking for. I’ll reply personally with clear next steps.", "Fundadora · Morán Studio": "Founder · Morán Studio",
+  "Cuéntame tu proyecto": "Tell me about your project", "RESPUESTA PERSONAL": "PERSONAL REPLY", "¿Qué necesitas construir?": "What do you need to build?", "Diseño 3D Solar": "3D Solar Design", "Página web": "Website", "Nombre / Empresa": "Name / Company", "Contexto del proyecto": "Project context", "Preparar solicitud ↗": "Prepare request ↗", "Se abrirá WhatsApp para que revises el mensaje antes de enviarlo.": "WhatsApp will open so you can review the message before sending it.",
+  "Software con precisión. Diseño con intención.": "Software with precision. Design with intention.", "© 2026 Morán Studio · República Dominicana": "© 2026 Morán Studio · Dominican Republic",
+  "Leilany Morán, fundadora y directora de Morán Studio": "Leilany Morán, founder and director of Morán Studio", "Panel de gestión de CartaYa": "CartaYa management dashboard", "Menú cliente de CartaYa": "CartaYa customer menu", "Dashboard del ERP Mash Factura": "Mash Factura ERP dashboard", "Inicio de sesión de Sing Talk": "Sing Talk sign-in screen", "Sing Talk traduciendo una seña en tiempo real": "Sing Talk translating a sign in real time", "Diseño fotovoltaico sobre captura aérea": "Photovoltaic design over an aerial survey", "Sitio web MASH": "MASH website", "Sitio web Lujan Smile Journey": "Lujan Smile Journey website", "Sitio web Solarys Ingeniería": "Solarys Engineering website", "Sitio web FitAppetit": "FitAppetit website", "Sitio web Nuvi Ingeniería": "Nuvi Engineering website",
+  "Tu nombre o empresa": "Your name or company", "nombre@empresa.com": "name@company.com", "¿Qué necesitas transformar o construir?": "What do you need to transform or build?"
 };
 
-/* ---- HEADER ---- */
+const translatedTextNodes = [];
+const translatedAttributes = [];
+let currentLanguage = localStorage.getItem("ms-lang") === "es" ? "es" : "en";
+
+function prepareTranslations() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  let node;
+  while ((node = walker.nextNode())) {
+    const raw = node.nodeValue;
+    const core = raw.trim();
+    if (!core || !ES_TO_EN[core]) continue;
+    translatedTextNodes.push({ node, es: core, en: ES_TO_EN[core], before: raw.slice(0, raw.indexOf(core)), after: raw.slice(raw.indexOf(core) + core.length) });
+  }
+  document.querySelectorAll("[placeholder],[alt],[aria-label]").forEach((element) => {
+    ["placeholder", "alt", "aria-label"].forEach((attribute) => {
+      const es = element.getAttribute(attribute);
+      if (es && ES_TO_EN[es]) translatedAttributes.push({ element, attribute, es, en: ES_TO_EN[es] });
+    });
+  });
+}
+
+function setLanguage(language, persist = true) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
+  translatedTextNodes.forEach((item) => { item.node.nodeValue = `${item.before}${item[language]}${item.after}`; });
+  translatedAttributes.forEach((item) => item.element.setAttribute(item.attribute, item[language]));
+  document.title = language === "en" ? "Morán Studio — Software, Design & 3D Solar Engineering" : "Morán Studio — Software, Diseño e Ingeniería Solar 3D";
+  document.querySelector("meta[name='description']")?.setAttribute("content", language === "en" ? "Technology and design studio led by Leilany Morán. SaaS products, industrial ERPs, web experiences, and 3D photovoltaic design." : "Estudio tecnológico y creativo dirigido por Leilany Morán. Productos SaaS, ERPs industriales, experiencias web y diseño fotovoltaico 3D.");
+  const toggle = document.querySelector("[data-lang-toggle]");
+  toggle?.setAttribute("aria-label", language === "en" ? "Cambiar idioma a español" : "Change language to English");
+  const menuControl = document.querySelector("[data-menu-toggle]");
+  if (menuControl) menuControl.setAttribute("aria-label", language === "en" ? "Open menu" : "Abrir menú");
+  if (persist) localStorage.setItem("ms-lang", language);
+}
+
+prepareTranslations();
+setLanguage(currentLanguage, false);
+document.querySelector("[data-lang-toggle]")?.addEventListener("click", () => setLanguage(currentLanguage === "en" ? "es" : "en"));
 const header = document.querySelector("[data-header]");
+const menuButton = document.querySelector("[data-menu-toggle]");
+const nav = document.querySelector("[data-nav]");
 
-if (header) {
-  const syncHeader = () => header.classList.toggle("is-scrolled", window.scrollY > 20);
-  syncHeader();
-  scrollCbs.push(syncHeader);
+function setMenu(open) {
+  if (!menuButton || !nav) return;
+  menuButton.classList.toggle("is-open", open);
+  nav.classList.toggle("is-open", open);
+  menuButton.setAttribute("aria-expanded", String(open));
+  menuButton.setAttribute("aria-label", open ? (currentLanguage === "en" ? "Close menu" : "Cerrar menú") : (currentLanguage === "en" ? "Open menu" : "Abrir menú"));
 }
 
-/* ---- ACTIVE NAV ---- */
-const navLinks = document.querySelectorAll(".site-nav a");
-const sections = document.querySelectorAll("section[id]");
+menuButton?.addEventListener("click", () => setMenu(!nav.classList.contains("is-open")));
+nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+document.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenu(false); });
 
-if (navLinks.length && sections.length) {
-  let sectionTops = [];
-  const cacheTops = () => {
-    sectionTops = Array.from(sections).map(sec => ({ id: sec.id, top: sec.offsetTop }));
-  };
-  cacheTops();
-  window.addEventListener("resize", cacheTops);
-
-  const syncActiveLink = () => {
-    let current = "";
-    sectionTops.forEach(({ id, top }) => {
-      if (window.scrollY >= top - 140) current = id;
-    });
-    navLinks.forEach(link => {
-      link.classList.toggle("is-active", link.getAttribute("href") === `#${current}`);
-    });
-  };
-  scrollCbs.push(syncActiveLink);
-  syncActiveLink();
+function syncHeader() {
+  header?.classList.toggle("is-scrolled", window.scrollY > 18);
 }
+syncHeader();
+window.addEventListener("scroll", syncHeader, { passive: true });
 
-/* ---- MOBILE MENU ---- */
-const menuToggle = document.querySelector("[data-menu-toggle]");
-const nav        = document.querySelector("[data-nav]");
-
-if (menuToggle && nav) {
-  const setMenuOpen = (open) => {
-    menuToggle.classList.toggle("is-open", open);
-    nav.classList.toggle("is-open", open);
-    menuToggle.setAttribute("aria-expanded", String(open));
-    menuToggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
-    document.body.style.overflow = open ? "hidden" : "";
-  };
-
-  menuToggle.addEventListener("click", (e) => {
-    e.stopPropagation();
-    setMenuOpen(!nav.classList.contains("is-open"));
-  });
-
-  nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => setMenuOpen(false)));
-
-  document.addEventListener("click", (e) => {
-    if (nav.classList.contains("is-open") && !nav.contains(e.target) && !menuToggle.contains(e.target)) {
-      setMenuOpen(false);
-    }
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && nav.classList.contains("is-open")) setMenuOpen(false);
-  });
-
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 860) setMenuOpen(false);
-  });
-}
-
-/* ---- REVEAL ON SCROLL ---- */
 const revealItems = document.querySelectorAll("[data-reveal]");
-
-if (revealItems.length && "IntersectionObserver" in window) {
-  revealItems.forEach(el => {
-    if (!el.classList.contains("is-visible")) {
-      onceVisible(el, () => el.classList.add("is-visible"), { threshold: 0.12, rootMargin: "0px 0px -36px 0px" });
-    }
-  });
+if (reducedMotion || !("IntersectionObserver" in window)) {
+  revealItems.forEach((item) => item.classList.add("is-visible"));
 } else {
-  revealItems.forEach(el => el.classList.add("is-visible"));
-}
-
-/* ---- HERO PARALLAX (desktop only) ---- */
-const parallaxTarget = document.querySelector("[data-parallax]");
-
-if (parallaxTarget && canHover && !reducedMotion) {
-  let rafId = null;
-  let lastY  = 0;
-  scrollCbs.push(() => {
-    const y = window.scrollY;
-    if (y === lastY) return;
-    lastY = y;
-    if (rafId) return;
-    rafId = requestAnimationFrame(() => {
-      parallaxTarget.style.transform = `translateY(${lastY * 0.05}px)`;
-      rafId = null;
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
     });
-  });
+  }, { threshold: 0.1, rootMargin: "0px 0px -35px" });
+  revealItems.forEach((item) => revealObserver.observe(item));
 }
 
-/* ---- HERO ROLE TEXT ROTATION ---- */
-const roleEl = document.querySelector(".hero-role");
-
-if (roleEl && !reducedMotion) {
-  const rolesEs = (roleEl.dataset.rolesEs || "").split(",");
-  const rolesEn = (roleEl.dataset.rolesEn || "").split(",");
-  let index = 0;
-  let currentLang = document.documentElement.classList.contains("lang-en") ? "en" : "es";
-
-  const rotate = () => {
-    roleEl.classList.add("is-fading");
-    setTimeout(() => {
-      index = (index + 1) % rolesEs.length;
-      roleEl.textContent = currentLang === "en" ? rolesEn[index] : rolesEs[index];
-      roleEl.classList.remove("is-fading");
-    }, 320);
-  };
-
-  let rotateInterval = setInterval(rotate, 2800);
-
-  document.addEventListener("visibilitychange", () => {
-    if (document.hidden) {
-      clearInterval(rotateInterval);
-    } else {
-      rotateInterval = setInterval(rotate, 2800);
-    }
-  });
-
-  /* expose so language toggle can sync lang + reset index */
-  roleEl._rolesEs = rolesEs;
-  roleEl._rolesEn = rolesEn;
-  roleEl._setLang = (lang) => { currentLang = lang; };
-}
-
-/* ---- SERVICE CARDS — 3D TILT (desktop only) ---- */
-if (canHover && !reducedMotion) {
-  document.querySelectorAll(".service-card").forEach((card) => {
-    const MAX = 10;
-
-    card.addEventListener("mousemove", (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width  - 0.5;
-      const y = (e.clientY - rect.top)  / rect.height - 0.5;
-      card.style.transform = `perspective(600px) rotateX(${-y * MAX}deg) rotateY(${x * MAX}deg) scale(1.02)`;
-    });
-
-    card.addEventListener("mouseleave", () => { card.style.transform = ""; });
-  });
-}
-
-/* ---- TECH PILLS — STAGGERED CASCADE ---- */
+const sections = document.querySelectorAll("main section[id]");
+const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
 if ("IntersectionObserver" in window) {
-  document.querySelectorAll(".tech-group").forEach(group => {
-    onceVisible(group, () => {
-      group.querySelectorAll(".tech-pill").forEach((pill, i) => {
-        setTimeout(() => pill.classList.add("is-visible"), i * 70);
-      });
-    }, { threshold: 0.2 });
-  });
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const current = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (!current) return;
+    navLinks.forEach((link) => link.classList.toggle("is-active", link.hash === `#${current.target.id}`));
+  }, { rootMargin: "-20% 0px -65%", threshold: [0, 0.25, 0.5] });
+  sections.forEach((section) => sectionObserver.observe(section));
 }
 
-/* ---- TECH PILLS — MAGNETIC HOVER (desktop only) ---- */
-if (canHover && !reducedMotion) {
-  document.querySelectorAll(".tech-pill").forEach((pill) => {
-    pill.addEventListener("mousemove", (e) => {
-      const rect = pill.getBoundingClientRect();
-      const dx   = (e.clientX - (rect.left + rect.width  / 2)) * 0.28;
-      const dy   = (e.clientY - (rect.top  + rect.height / 2)) * 0.28;
-      pill.style.transform = `translate(${dx}px, ${dy}px) scale(1.05)`;
-    });
-
-    pill.addEventListener("mouseleave", () => { pill.style.transform = ""; });
-  });
-}
-
-/* ---- ANIMATED COUNTERS ---- */
-const counters = document.querySelectorAll("[data-counter]");
-
-if (counters.length && "IntersectionObserver" in window) {
-  const runCounter = (el) => {
-    const target   = parseInt(el.dataset.counter, 10);
-    const suffix   = el.dataset.suffix || "";
-    const duration = 900;
-    const start    = performance.now();
-
-    const tick = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      const ease     = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.round(ease * target) + suffix;
-      if (progress < 1) requestAnimationFrame(tick);
-    };
-
-    requestAnimationFrame(tick);
-  };
-
-  counters.forEach(el => onceVisible(el, () => runCounter(el), { threshold: 0.6 }));
-}
-
-/* ---- TIMELINE FILL ---- */
-const timelineFill = document.querySelector("[data-timeline-fill]");
-
-if (timelineFill && "IntersectionObserver" in window) {
-  const timeline = timelineFill.closest(".process-timeline");
-  if (timeline) {
-    onceVisible(timeline, () => timelineFill.classList.add("is-filled"), { threshold: 0.3 });
-  }
-}
-
-/* ---- WHATSAPP CTAs ---- */
-const getCurrentLang = () => (document.documentElement.classList.contains("lang-en") ? "en" : "es");
-
-const getWaNumber = () => {
-  const href = document.querySelector("[data-wa-cta]")?.getAttribute("href")
-    || document.querySelector('a[href^="https://wa.me/"]')?.getAttribute("href")
-    || "";
-  const match = href.match(/wa\.me\/(\d+)/);
-  return match?.[1] || "18092697630";
-};
-
-const waNumber = getWaNumber();
-const buildWaHref = (text) => `https://wa.me/${waNumber}?text=${encodeURIComponent(text)}`;
-
-const quizWaState = {
-  situation: null,
-  goal: null,
-  timeline: null,
-  complete: false,
-};
-
-const waGeneralMessage = (lang) => {
-  if (lang === "en") {
-    return [
-      "Hi Leilany, I saw your site and I’d like to request a website quote.",
-      "",
-      "Business:",
-      "Type (landing / website / store):",
-      "Goal:",
-    ].join("\n");
-  }
-
-  return [
-    "Hola Leilany, vi tu página y me gustaría cotizar una web.",
-    "",
-    "Negocio:",
-    "Tipo (landing / web / tienda):",
-    "Objetivo:",
-  ].join("\n");
-};
-
-const waQuizMessage = (lang) => {
-  const situation = quizWaState.situation?.[lang] || quizWaState.situation?.es || "";
-  const goal      = quizWaState.goal?.[lang]      || quizWaState.goal?.es      || "";
-  const timeline  = quizWaState.timeline?.[lang]  || quizWaState.timeline?.es  || "";
-
-  if (lang === "en") {
-    return [
-      "Hi Leilany, I completed the quiz on your site.",
-      "",
-      `- Current: ${situation}`,
-      `- Goal: ${goal}`,
-      `- Timeline: ${timeline}`,
-      "",
-      "Business:",
-    ].join("\n");
-  }
-
-  return [
-    "Hola Leilany, hice el quiz en tu web.",
-    "",
-    `- Situación: ${situation}`,
-    `- Objetivo: ${goal}`,
-    `- Tiempo: ${timeline}`,
-    "",
-    "Mi negocio:",
-  ].join("\n");
-};
-
-const syncWaCtas = (lang = getCurrentLang()) => {
-  const ctas = document.querySelectorAll("[data-wa-cta]");
-  if (!ctas.length) return;
-
-  ctas.forEach((a) => {
-    const kind = a.dataset.waCta || "general";
-    const message = (kind === "quiz" && quizWaState.complete)
-      ? waQuizMessage(lang)
-      : waGeneralMessage(lang);
-    a.href = buildWaHref(message);
-  });
-};
-
-/* ---- QUIZ INTERACTIVO ---- */
-const quizCard = document.getElementById("quiz-card");
-
-if (quizCard) {
-  const quizSteps = quizCard.querySelectorAll(".quiz-step");
-  const quizDots  = document.querySelectorAll(".quiz-dot");
+const quiz = document.getElementById("quiz-card");
+if (quiz) {
+  const steps = [...quiz.querySelectorAll(".quiz-step")];
+  const progress = [...document.querySelectorAll(".quiz-progress i")];
+  const whatsapp = quiz.querySelector("[data-quiz-whatsapp]");
+  const restart = quiz.querySelector("[data-quiz-restart]");
+  const answers = [];
   let currentStep = 0;
 
-  const goToStep = (step) => {
-    quizSteps[currentStep].classList.remove("is-active");
-    if (quizDots[currentStep]) quizDots[currentStep].classList.remove("is-active");
-    currentStep = step;
-    quizSteps[currentStep].classList.add("is-active");
-    if (quizDots[currentStep]) quizDots[currentStep].classList.add("is-active");
-  };
-
-  quizCard.querySelectorAll(".quiz-opt").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      // Visual feedback (only one per step)
-      const stepEl = btn.closest(".quiz-step");
-      stepEl?.querySelectorAll(".quiz-opt").forEach(b => b.classList.remove("is-selected"));
-      btn.classList.add("is-selected");
-
-      // Capture answer for WA message
-      const stepIndex = parseInt(stepEl?.dataset.step || "", 10);
-      const value = {
-        es: btn.dataset.es ?? btn.textContent.trim(),
-        en: btn.dataset.en ?? btn.textContent.trim(),
-      };
-
-      if (stepIndex === 0) quizWaState.situation = value;
-      if (stepIndex === 1) quizWaState.goal      = value;
-      if (stepIndex === 2) quizWaState.timeline  = value;
-
-      setTimeout(() => {
-        const next = btn.dataset.next;
-        if (next !== undefined) {
-          goToStep(parseInt(next));
-        } else {
-          // Final answer — go to result + sync WA message with answers
-          quizWaState.complete = true;
-          syncWaCtas(getCurrentLang());
-
-          // Result is the last step
-          quizSteps[currentStep].classList.remove("is-active");
-          if (quizDots[currentStep]) quizDots[currentStep].classList.remove("is-active");
-          currentStep = quizSteps.length - 1;
-          quizSteps[currentStep].classList.add("is-active");
-        }
-      }, 280);
-    });
-  });
-
-  const restartBtn = quizCard.querySelector(".quiz-restart");
-  if (restartBtn) {
-    restartBtn.addEventListener("click", () => {
-      quizCard.querySelectorAll(".quiz-opt").forEach(b => b.classList.remove("is-selected"));
-      quizWaState.situation = null;
-      quizWaState.goal = null;
-      quizWaState.timeline = null;
-      quizWaState.complete = false;
-      syncWaCtas(getCurrentLang());
-      currentStep = quizSteps.length - 1; // trick goToStep into removing result
-      goToStep(0);
-    });
+  function showStep(index) {
+    steps.forEach((step, stepIndex) => step.classList.toggle("is-active", stepIndex === index));
+    progress.forEach((item, itemIndex) => item.classList.toggle("is-active", itemIndex <= Math.min(index, 2)));
+    currentStep = index;
   }
-}
 
-/* ---- LANGUAGE TOGGLE ---- */
-const langToggles = document.querySelectorAll("[data-lang-toggle]");
-
-if (langToggles.length) {
-  const i18nEls = document.querySelectorAll("[data-es], [data-en]");
-
-  const applyLang = (lang) => {
-    document.documentElement.classList.toggle("lang-en", lang === "en");
-    document.documentElement.classList.toggle("lang-es", lang !== "en");
-    document.documentElement.lang = lang === "en" ? "en" : "es";
-
-    i18nEls.forEach((el) => {
-      const text = lang === "en" ? el.dataset.en : el.dataset.es;
-      if (text !== undefined) el.innerHTML = text;
-    });
-
-    if (roleEl) {
-      roleEl._setLang?.(lang);
-      if (!roleEl.classList.contains("is-fading")) {
-        roleEl.textContent = lang === "en" ? roleEl._rolesEn[0] : roleEl._rolesEs[0];
-      }
-    }
-
-    syncWaCtas(lang);
-    localStorage.setItem("ms-lang", lang);
-  };
-
-  langToggles.forEach(btn => {
-    btn.addEventListener("click", () => {
-      applyLang(document.documentElement.classList.contains("lang-en") ? "es" : "en");
+  quiz.querySelectorAll(".quiz-options button").forEach((button) => {
+    button.addEventListener("click", () => {
+      const group = button.closest(".quiz-options");
+      group.querySelectorAll("button").forEach((item) => item.classList.remove("is-selected"));
+      button.classList.add("is-selected");
+      answers[currentStep] = button.textContent.trim();
+      window.setTimeout(() => {
+        if (currentStep < 2) {
+          showStep(currentStep + 1);
+          return;
+        }
+        const message = currentLanguage === "en" ? [
+          "Hi Leilany, I completed the questions on the Morán Studio website.",
+          "",
+          `Current situation: ${answers[0]}`,
+          `Goal: ${answers[1]}`,
+          `Timeline: ${answers[2]}`,
+          "",
+          "I’d like to discuss my project.",
+        ].join("\n") : [
+          "Hola Leilany, completé las preguntas en la web de Morán Studio.",
+          "",
+          `Situación actual: ${answers[0]}`,
+          `Objetivo: ${answers[1]}`,
+          `Tiempo: ${answers[2]}`,
+          "",
+          "Me gustaría conversar sobre mi proyecto.",
+        ].join("\n");
+        whatsapp.href = `https://wa.me/18092697630?text=${encodeURIComponent(message)}`;
+        showStep(3);
+      }, 220);
     });
   });
 
-  applyLang(localStorage.getItem("ms-lang") === "es" ? "es" : "en");
+  restart?.addEventListener("click", () => {
+    answers.length = 0;
+    quiz.querySelectorAll(".quiz-options button").forEach((button) => button.classList.remove("is-selected"));
+    showStep(0);
+  });
 }
 
-// Ensure WA CTAs are populated even if language toggle is removed.
-syncWaCtas(getCurrentLang());
+document.querySelector("[data-quote-form]")?.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+  const data = new FormData(form);
+  const selectedService = form.querySelector("input[name='service']:checked")?.closest("label")?.querySelector("span")?.textContent.trim() || data.get("service");
+  const message = currentLanguage === "en" ? [
+    "Hi Leilany, I’d like to discuss a project with Morán Studio.",
+    "",
+    `Service: ${selectedService}`,
+    `Name / company: ${data.get("name")}`,
+    `Email: ${data.get("email")}`,
+    `Context: ${data.get("message")}`,
+  ].join("\n") : [
+    "Hola Leilany, quiero conversar sobre un proyecto con Morán Studio.",
+    "",
+    `Servicio: ${selectedService}`,
+    `Nombre / empresa: ${data.get("name")}`,
+    `Email: ${data.get("email")}`,
+    `Contexto: ${data.get("message")}`,
+  ].join("\n");
+  window.open(`https://wa.me/18092697630?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+});
