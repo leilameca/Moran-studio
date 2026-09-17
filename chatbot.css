@@ -129,6 +129,7 @@
 .chatbot__input { width: 100%; min-height: 42px; padding: 0 10px; border: 0; outline: 0; background: transparent; color: var(--text); font-size: 0.86rem; }
 .chatbot__input::placeholder { color: var(--text-faint); }
 .chatbot__send { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--rose); border-radius: 11px; background: var(--rose); color: var(--button-text); font-size: 1.05rem; font-weight: 700; cursor: pointer; }
+.chatbot__send svg { width: 20px; height: 20px; display: block; }
 .chatbot__send:hover { transform: translateY(-1px); box-shadow: 0 9px 22px rgba(185, 126, 130, 0.2); }
 .chatbot__send:disabled, .chatbot__input:disabled { cursor: wait; opacity: 0.62; }
 .chatbot__hint { margin: 0; color: var(--text-faint); font-size: 0.65rem; line-height: 1.45; }

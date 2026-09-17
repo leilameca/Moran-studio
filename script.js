@@ -73,7 +73,7 @@ const ES_TO_EN = {
   "Desliza para explorar los proyectos": "Swipe to explore the projects",
   "Desliza para ver más trabajos": "Swipe to see more work",
   "Una selección de páginas desarrolladas para negocios que necesitaban comunicar mejor y verse a la altura de su trabajo.": "A selection of websites built for businesses that needed to communicate better and look as strong as the work they deliver.",
-  "Ver sitio ↗": "View site ↗",
+  "Ver sitio": "View site",
   "Sitio web MASH": "MASH website",
   "Sitio web Lujan Smile Journey": "Lujan Smile Journey website",
   "Sitio web Solarys Ingeniería": "Solarys Engineering website",
