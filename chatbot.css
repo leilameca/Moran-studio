@@ -47,8 +47,8 @@
 }
 .chatbot__toggle { touch-action: manipulation; }
 .chatbot__toggle:active { transform: scale(0.94); }
-.chatbot.is-open .chatbot__toggle { opacity: 0; visibility: hidden; transform: translateY(8px) scale(0.96); pointer-events: none; }
-.chatbot__toggle-mark { width: 100%; height: 100%; display: grid; place-items: center; animation: assistant-launcher-in 520ms var(--ease-out) both; }
+.chatbot.is-open .chatbot__toggle { opacity: 1; visibility: visible; transform: none; pointer-events: auto; }
+.chatbot__toggle-mark { width: 100%; height: 100%; display: grid; place-items: center; }
 .chatbot__toggle-mark img { display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 8px 10px rgba(0, 0, 0, 0.22)); }
 .chatbot__toggle-mark { transform-origin: 50% 85%; }
 .chatbot__toggle-mark[data-gesture="hop"] { animation: assistant-hop 2400ms ease-in-out; }
@@ -78,9 +78,9 @@
 .chatbot__panel {
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: 128px;
   width: min(410px, calc(100vw - 32px));
-  height: min(650px, calc(100dvh - 120px));
+  height: min(650px, calc(100dvh - 170px));
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   border: 1px solid var(--border-strong);
@@ -154,7 +154,7 @@ body:has(.chatbot) .site-footer { padding-bottom: 150px; }
 
 @media (max-width: 760px) {
   .chatbot.is-open { bottom: calc(12px + env(safe-area-inset-bottom) + var(--assistant-keyboard-inset, 0px)); }
-  .chatbot .chatbot__panel { max-height: calc(var(--assistant-viewport-height, 100dvh) - 28px - env(safe-area-inset-bottom)); }
+  .chatbot .chatbot__panel { bottom: 96px; max-height: calc(var(--assistant-viewport-height, 100dvh) - 124px - env(safe-area-inset-bottom)); }
   .chatbot__input { font-size: 16px; }
   .chatbot { right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); }
   .chatbot__panel { width: min(400px, calc(100vw - 28px)); height: min(70dvh, 610px); }

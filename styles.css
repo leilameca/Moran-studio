@@ -68,7 +68,7 @@ html[data-theme="light"] {
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; overflow-x: hidden; overscroll-behavior-x: none; }
 body {
   margin: 0;
   background: var(--canvas);
@@ -76,7 +76,7 @@ body {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.65;
-  overflow-x: clip;
+  overflow-x: hidden;
   transition: background-color var(--duration-ui) ease, color var(--duration-ui) ease;
 }
 body.is-menu-open { overflow: hidden; }
@@ -86,6 +86,7 @@ button { color: inherit; }
 img, svg { display: block; max-width: 100%; }
 figure, blockquote { margin: 0; }
 .shell { width: var(--shell); margin-inline: auto; }
+.shell > *, main, main section { min-width: 0; }
 
 :where(a, button, input, textarea):focus-visible {
   outline: 2px solid var(--focus);
@@ -590,8 +591,9 @@ html[data-theme="light"] .hero h1 em { color: var(--rose-strong); }
   .discipline-rail span:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
   .service-card { min-height: 0; padding: 26px; }
   .service-card h3 { margin-top: 70px; font-size: 1.5rem; }
-  .mobile-swipe { margin: -14px 0 19px; display: flex; align-items: center; gap: 8px; color: var(--rose-strong); font-size: 0.76rem; font-weight: 700; }
-  .featured-grid, .web-grid { width: calc(100vw - 14px); margin-left: 0; padding: 0 22px 18px 0; display: flex; gap: 13px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-inline: contain; scrollbar-width: thin; scrollbar-color: var(--rose) var(--border); }
+  .mobile-swipe { display: none; }
+  .featured-grid, .web-grid { width: 100%; margin-inline: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .motion-ready [data-reveal], .motion-ready [data-reveal].is-visible { opacity: 1; transform: none; transition: none; }
   .case { min-width: 0; min-height: 0; flex: 0 0 min(88vw, 430px); scroll-snap-align: start; }
   .case-media { height: 310px; }
   .case-copy { min-height: 210px; display: block; }
