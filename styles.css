@@ -182,7 +182,7 @@ figure, blockquote { margin: 0; }
 }
 .nav-wrap { height: 100%; display: flex; align-items: center; gap: 30px; }
 .brand { margin-right: auto; display: inline-flex; align-items: center; gap: 11px; min-width: max-content; }
-.brand img { width: 36px; height: 28px; object-fit: contain; }
+.brand img { width: 56px; height: 44px; object-fit: contain; flex-shrink: 0; }
 .brand > span { display: flex; flex-direction: column; line-height: 1; }
 .brand strong { font: 700 0.78rem var(--font-display); letter-spacing: 0.12em; }
 .brand small { margin-top: 5px; color: var(--text-faint); font-size: 0.55rem; letter-spacing: 0.13em; }
@@ -561,7 +561,7 @@ html[data-theme="light"] .hero h1 em { color: var(--rose-strong); }
 @media (max-width: 760px) {
   :root { --shell: calc(100% - 28px); }
   .section { padding: 82px 0; }
-  .brand img { width: 31px; height: 25px; }
+  .brand img { width: 44px; height: 35px; }
   .brand strong { font-size: 0.7rem; }
   .brand small { font-size: 0.48rem; }
   .language-toggle { height: 40px; }
