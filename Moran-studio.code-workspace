@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../recursos"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Moran-studio"
+	}
+}
