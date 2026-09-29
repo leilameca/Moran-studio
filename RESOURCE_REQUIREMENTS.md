@@ -16,6 +16,7 @@
 - Mash Factura: dashboard real del ERP.
 - Sing Talk: login y captura de traducción en tiempo real.
 - Solar 3D & Photogrammetry Lab: disposición fotovoltaica sobre captura aérea real.
+- Leilany Labs: repositorio y web revisados. SolarCalc y Power disponibles; ocho conceptos pendientes. Portada incorporada desde `qa/home-1440-viewport.png` del repositorio `leilameca/Leilany-labs`. Enlaces públicos dirigidos a la web y las calculadoras.
 
 ## Recursos todavía requeridos para producción completa
 

@@ -100,8 +100,17 @@
           text: "Puedes explorar sistemas y productos digitales, o una selección de experiencias web desarrolladas para negocios reales.",
           replies: [
             { label: "Sistemas y productos", intent: "project-systems" },
+            { label: "Leilany Labs", intent: "project-labs" },
             { label: "Experiencias web", intent: "project-web" },
             { label: "Ver todos", action: "scroll", target: "#proyectos" }
+          ]
+        },
+        "project-labs": {
+          text: "Leilany Labs es el laboratorio personal de Leilany: ejercicios de ingeniería convertidos en herramientas interactivas. SolarCalc estima potencia solar, paneles y espacio en techo; Power desglosa el consumo eléctrico por equipo. Hay dos herramientas disponibles y ocho conceptos por desarrollar.",
+          replies: [
+            { label: "Ver Leilany Labs", action: "scroll", target: "#leilany-labs" },
+            { label: "Explorar el laboratorio", action: "link", href: "https://leilanylabs.vercel.app/" },
+            { label: "Volver a proyectos", intent: "projects" }
           ]
         },
         "project-systems": {
@@ -271,8 +280,17 @@
           text: "You can explore digital systems and products, or a selection of web experiences developed for real businesses.",
           replies: [
             { label: "Systems and products", intent: "project-systems" },
+            { label: "Leilany Labs", intent: "project-labs" },
             { label: "Web experiences", intent: "project-web" },
             { label: "View all", action: "scroll", target: "#proyectos" }
+          ]
+        },
+        "project-labs": {
+          text: "Leilany Labs is Leilany's personal lab: engineering exercises turned into interactive tools. SolarCalc estimates solar capacity, panels, and roof area; Power breaks down energy use by appliance. Two tools are available, with eight more concepts to develop.",
+          replies: [
+            { label: "View Leilany Labs", action: "scroll", target: "#leilany-labs" },
+            { label: "Explore the lab", action: "link", href: "https://leilanylabs.vercel.app/" },
+            { label: "Back to projects", intent: "projects" }
           ]
         },
         "project-systems": {

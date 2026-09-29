@@ -30,6 +30,9 @@ AppShell
 │       ├── MashFacturaERPCase
 │       ├── SingTalkCase
 │       └── Solar3DLabCase
+├── PersonalLabSection (Leilany Labs)
+│   ├── LabsHomepagePreview
+│   └── ExperimentLinks (SolarCalc / Power)
 ├── WebExperiencesSection
 ├── ToolsSection
 ├── MethodologySection
@@ -67,3 +70,4 @@ AppShell
 - Mash Factura: dashboard ERP real incorporado; sin métricas promocionales no verificadas.
 - Sing Talk: producto de accesibilidad para traducción de lengua de señas en tiempo real; login y captura funcional reales incorporados.
 - Solar 3D Lab: disposición fotovoltaica sobre captura aérea real incorporada; faltan renders 3D y datos técnicos completos.
+- Leilany Labs: laboratorio personal en Next.js, React y TypeScript. SolarCalc y Power están disponibles; los ocho experimentos restantes son conceptos. Captura del repositorio original y enlaces a las herramientas publicadas. Contenido bilingüe también disponible en Studio Assistant.

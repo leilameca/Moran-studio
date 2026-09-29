@@ -27,6 +27,7 @@
 
     resolveIntent(text) {
       const value = normalize(text);
+      if (/(leilany\s*labs|solarcalc|\bpower\b|calculadora|calculator|laboratorio)/.test(value)) return "project-labs";
       if (/(hola|hello|menu|inicio|start|volver)/.test(value)) return "welcome";
       if (/(estudio|studio|quienes|equipo|team|leilany|yascari)/.test(value)) return "studio";
       if (/(servicio|service|capacidad|capabilities|que hacen|what do you do)/.test(value)) return "services";
