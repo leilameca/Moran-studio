@@ -27,6 +27,7 @@
 
     resolveIntent(text) {
       const value = normalize(text);
+      if (/\bcoro(?:\s*rd)?\b/.test(value)) return "project-coro";
       if (/(leilany\s*labs|solarcalc|\bpower\b|calculadora|calculator|laboratorio)/.test(value)) return "project-labs";
       if (/(hola|hello|menu|inicio|start|volver)/.test(value)) return "welcome";
       if (/(estudio|studio|quienes|equipo|team|leilany|yascari)/.test(value)) return "studio";

@@ -1,6 +1,12 @@
 const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 const ES_TO_EN = {
+  "Una selección de páginas para negocios y proyectos conceptuales que exploran nuevas formas de comunicar, construir marca y convertir.": "A selection of websites for businesses and concept projects exploring new ways to communicate, build a brand, and convert.",
+  "Diseño & Desarrollo Web": "Web Design & Development",
+  "Proyecto conceptual de Moran Studio · Demo interactiva": "Concept project by Moran Studio · Interactive demo",
+  "Una plataforma conceptual para convertir excursiones en experiencias digitales.": "A concept platform for turning excursions into digital experiences.",
+  "VER PROYECTO EN VIVO": "VIEW LIVE PROJECT",
+  "Inicio de CORO RD: ¿Pa' dónde nos vamos?, con fotografía de destinos dominicanos": "CORO RD homepage: Where are we heading?, with photography of Dominican destinations",
   "Software, diseño": "Software, design",
   "e ingeniería solar.": "& solar engineering.",
   "LAB / PROYECTO PERSONAL": "LAB / PERSONAL PROJECT",

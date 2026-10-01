@@ -512,6 +512,7 @@ html[data-theme="light"] .hero h1 em { color: var(--rose-strong); }
 .web-card--large .web-image { height: 385px; }
 .web-image::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 52%, rgba(7, 8, 12, 0.56)); opacity: 0.4; }
 .web-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 700ms var(--ease-out); }
+#coro-rd .web-image img { object-position: left center; }
 .web-card:hover .web-image img { transform: scale(1.035); }
 .web-image > span { position: absolute; z-index: 2; right: 14px; bottom: 14px; padding: 7px 10px; border: 1px solid rgba(255, 255, 255, 0.19); border-radius: 5px; background: rgba(8, 9, 12, 0.78); color: #fff; font-size: 0.67rem; backdrop-filter: blur(10px); transition: transform var(--duration-ui) var(--ease-out); }
 .web-card:hover .web-image > span { transform: translate(-2px, -2px); }
@@ -572,6 +573,7 @@ html[data-theme="light"] .hero h1 em { color: var(--rose-strong); }
 .quote-form > label,
 .field-row label { display: block; color: var(--text-secondary); font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; }
 .service-options { margin-top: 11px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.service-options label { position: relative; }
 .service-options input { position: absolute; opacity: 0; }
 .service-options span { min-height: 48px; padding: 0 12px; display: flex; align-items: center; border: 1px solid var(--border); border-radius: var(--radius-sm); background: var(--input-bg); color: var(--text-muted); font-size: 0.8rem; font-weight: 500; text-transform: none; letter-spacing: 0; cursor: pointer; transition: border-color var(--duration-fast) ease, background-color var(--duration-fast) ease, color var(--duration-fast) ease; }
 .service-options input:checked + span { border-color: color-mix(in srgb, var(--rose) 55%, transparent); background: var(--accent-soft); color: var(--text); box-shadow: inset 3px 0 var(--rose); }

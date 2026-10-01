@@ -153,10 +153,19 @@
           ]
         },
         "project-web": {
-          text: "La selección web incluye MASH, Lujan Smile Journey, Solarys Ingeniería, FitAppetit y Nuvi Ingeniería.",
+          text: "La selección web incluye MASH, Lujan Smile Journey, Solarys Ingeniería, FitAppetit, Nuvi Ingeniería y CORO RD, un proyecto conceptual de Moran Studio para empresas dominicanas de tours y excursiones.",
           replies: [
+            { label: "CORO RD · Demo interactiva", intent: "project-coro" },
             { label: "Ver experiencias web", action: "scroll", target: "#webs" },
             { label: "Contar mi proyecto", intent: "start-web" },
+            { label: "Volver a proyectos", intent: "projects" }
+          ]
+        },
+        "project-coro": {
+          text: "CORO RD es un proyecto conceptual de Moran Studio, no un cliente ni una empresa real. La aventura empieza antes de salir: una experiencia para descubrir excursiones, consultar fechas, precios y disponibilidad, explorar galerías y solicitar cupos por WhatsApp. La demo también explora administración y personalización de identidad, combinando dirección visual, UX/UI, frontend y motion.",
+          replies: [
+            { label: "Ver CORO RD en el portafolio", action: "scroll", target: "#coro-rd" },
+            { label: "VER PROYECTO EN VIVO", action: "link", href: "https://corord.vercel.app/" },
             { label: "Volver a proyectos", intent: "projects" }
           ]
         },
@@ -333,10 +342,19 @@
           ]
         },
         "project-web": {
-          text: "The web selection includes MASH, Lujan Smile Journey, Solarys Engineering, FitAppetit, and Nuvi Engineering.",
+          text: "The web selection includes MASH, Lujan Smile Journey, Solarys Engineering, FitAppetit, Nuvi Engineering, and CORO RD, a concept project by Moran Studio for Dominican tour and excursion businesses.",
           replies: [
+            { label: "CORO RD · Interactive demo", intent: "project-coro" },
             { label: "View web experiences", action: "scroll", target: "#webs" },
             { label: "Tell us about my project", intent: "start-web" },
+            { label: "Back to projects", intent: "projects" }
+          ]
+        },
+        "project-coro": {
+          text: "CORO RD is a concept project by Moran Studio, not a client or a real business. The adventure starts before you leave: an experience to discover excursions, check dates, prices, and availability, explore galleries, and request places through WhatsApp. The demo also explores administration and identity customization, combining creative direction, UX/UI, frontend development, and motion.",
+          replies: [
+            { label: "View CORO RD in the portfolio", action: "scroll", target: "#coro-rd" },
+            { label: "VIEW LIVE PROJECT", action: "link", href: "https://corord.vercel.app/" },
             { label: "Back to projects", intent: "projects" }
           ]
         },
